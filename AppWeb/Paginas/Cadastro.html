@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTROS ASD</title>
+      <link rel="shortcut icon" href="../src/Logo_ASD.png" type="image/x-icon">
+    <link rel="stylesheet" href="">
+    <meta property="og:title" content="Logos Adventistas!">
+    <meta property="og:description" content="Confira Logos e materias Adventistas!">
+    <meta property="og:image" content="https://carloseapp.github.io/Rutimoveis/web/src/Rutimoveis-img.png">
+    <meta property="og:url" content="https://carloseapp.github.io/Rutimoveis/web/index.html">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="../Css/cad.css">
+
+</head>
+<body>
+  <div id="div_geral">
+    <div id="div_heaad">
+      <a id="aVisible_heaad" href="#div_body" title="a"></a>
+      <div id="heaad01">
+       <h2 id="Titulo_heaad"> Cadastros</h2>  <label for="" onclick="Home()">Home <i class="fa-solid fa-house"></i></label>  <label id="lbl02_heaad01" for="" onclick="toggleFullScreen()">Tela <i class="fa-solid fa-desktop"></i></label>
+      </div>
+      <div id="heaad02">
+       <div id="todList">
+          <select name="Procura" id="select_procuraTdlist" title="Procurar" onchange="select()">
+             <option value="">Listas Principais</option>
+                <option value="logos">Logos</option>
+                 <option value="design">Design</option>
+                  <option value="GIF">GIFs</option>
+           </select>
+          </div> <button onclick="Cadastrar()">Cadastrar <i class="fa-solid fa-table-list"></i></button><button id="btn2_heaadMenu" onclick="Menu()">Menu <i class="fa-solid fa-bars"></i></button>
+      </div>
+      
+    </div>
+    <div id="div_body">
+      <div id="body01">
+         <h1 id="Titulo">Procurar</h1>
+            <select name="Procura" id="select_procura" title="Procurar">
+              <option value="">Material</option>
+                 <option value="logos">Logos</option>
+                   <option value="design">Design</option>
+                       <option value="GIF">GIFs</option>
+                </select>
+                  <select name="Procura" id="select_Departamentos" title="Departamentos">
+                  <option value="">Departamento</option>
+                     <option value="IASD">IASD</option>
+                       <option value="Desbravador">Desbravadores</option>
+                         <option value="Aventureiros">Aventureiros</option>
+                          <option value="Adolecentes">Adolecentes</option>
+                            <option value="Ministério da Criança">Ministério da Criança</option>
+                              <option value="Ministério_Jovens">Ministério Jovens</option>
+                               <option value="Escola_Sabatina">Escola Sabatina</option>
+                                <option value="Saúde">Saúde</option>
+                                  <option value="Asa">Asa</option>
+                                   <option value="Cominicação">Comunicação</option>
+                                    <option value="Som e Imagem">Som e Imagem</option>
+                                     <option value="Ministério_Pessoal">Ministério Pessoal</option>
+                                      <option value="Ministério_Família">Ministério da Família</option>
+                                       <option value="Saúde">Saúde</option>
+                                        <option value="Evangelismo">Evangelismo</option>
+                                         <option value="Ministério da Mulher">Ministério da Mulher</option>
+                                          <option value="Ministério da Musíca">Ministério da Musíca</option>
+                                           <option value="liberdade_Religiosa">Liberdade Religiosa</option>
+                                            <option value="Publicações">Publicações</option>
+                                             <option value="Diversos">Diversos</option>
+                                       
+                </select>
+                     <button id="buscar">Buscar</button>
+                <br>
+           <div id="div_lista_result">
+               <h3>Resultado da busca:</h3>
+               <div id="list_result"></div>
+           </div>
+       
+      </div>
+      <div id="body02">
+            <div id="div_list">
+              <h1 class="title" id="Titulo" onclick="titulo()">Listas <i class="fa-solid fa-table-list"></i></h1>
+              <div id="listas"></div>
+          </div>
+      </div>
+      <div id="div_cadastro">
+        <label id="lbl_sair_Cad" for="" onclick="lbl_sair_Cad()"> <i class="fa-solid fa-delete-left"></i> Sair </label>
+        <div id="cadastro">
+          <h1>Cadastro</h1> 
+            <div id="inputs">
+              <a id="a_visible_img" onclick="A_visible_img()" href="#lbl_sair_Cad" title="a"></a>
+              <img id="img_apresent" onclick="click_IMG()" src="../src/Logo_ASD.png" alt="Imagem" width="70">
+                <input class="input_visible" id="Files" type="file" title="files">
+              <label for="">Código Chave ID: <br>
+                <input type="text" name="" id="input_codigo" placeholder="00000000"><br><br>
+              </label>
+             <label for=""> Selecione uma lista <br>
+              <select name="Lista" id="select_lista" title="Listas">
+                <option value="">Material</option>
+                  <option value="logos">Logos</option>
+                   <option value="design">Design</option>
+                       <option value="GIF">GIFs</option>
+                </select></label><br>
+                    <label for="">Departamento: <br>
+                   <select name="Ministerio" id="select_Departamentos_Ministerial" title="Departamento">
+                   <option value="">Departamento</option>
+                   <option value="IASD">IASD</option>
+                       <option value="Desbravador">Desbravadores</option>
+                         <option value="Aventureiros">Aventureiros</option>
+                          <option value="Adolecentes">Adolecentes</option>
+                            <option value="Ministério da Criança">Ministério da Criança</option>
+                              <option value="Ministério_Jovens">Ministério Jovens</option>
+                               <option value="Escola_Sabatina">Escola Sabatina</option>
+                                <option value="Saúde">Saúde</option>
+                                  <option value="Asa">Asa</option>
+                                   <option value="Cominicação">Comunicação</option>
+                                    <option value="Som e Imagem">Som e Imagem</option>
+                                     <option value="Ministério_Pessoal">Ministério Pessoal</option>
+                                      <option value="Ministério_Família">Ministério da Família</option>
+                                       <option value="Saúde">Saúde</option>
+                                        <option value="Evangelismo">Evangelismo</option>
+                                         <option value="Ministério da Mulher">Ministério da Mulher</option>
+                                          <option value="Ministério da Musíca">Ministério da Musíca</option>
+                                           <option value="liberdade_Religiosa">Liberdade Religiosa</option>
+                                            <option value="Publicações">Publicações</option>
+                                             <option value="Diversos">Diversos</option>
+                                       
+                           </select></label>
+                           <br>
+                           <label for="">Titulo: <br>
+                              <input id="input_Titulo" type="text" placeholder="Digite um Titulo">
+                           </label>
+                           <br>
+                            <label for="">Nome: <br>
+                               <input id="input_nome" type="text" placeholder="Nome...">
+                           </label>
+                           <br>
+                            <label for="">Descrição: <br>
+                               <input id="input_descriçao" type="text" placeholder="Descrição">
+                           </label>
+                           <br>
+                           <label for="">Formato: <br>
+                               <input id="input_formato" type="text" placeholder="Formato...">
+                           </label>
+                           <br>
+                            <label for="">Url Canvas: <br>
+                               <input id="input_canvas" type="text" placeholder="Url canvas...">
+                           </label>
+                           <br>
+                              <label for="">Data de criação: <br>
+                            <input type="text" name="" id="criaçãoData" maxlength="10" placeholder="DD/MM/AAAA" oninput="formatarDataS(this)">
+                          </label>
+                          <br>
+                             <div id="myProgress" title="progresso">
+                             <div id="myBar">10% </div></div>
+                          <button id="MG_GIF_DESIGNE" onclick="selectIMG()"><i id="i_MG_GIF_DESIGNE" class="fa-solid fa-images" ></i> Selecione ( IMG, GIF , DESIGNE.. ) </button>
+                          <br><br>
+                          <button id="SalvarCad" onclick="SalvarCad()">Salvar</button> <button id="LimparCad" onclick="LimparCad()">Limpar</button>
+                      
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="div_footer">
+      <div id="footer01">
+        <label for="">Tela de Cadastro</label>
+      </div>
+        <div id="footer02"></div>
+    </div>
+
+  </div>
+    <script src="../Js/cad.js"></script>
+</body>
+</html>

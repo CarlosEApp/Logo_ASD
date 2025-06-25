@@ -275,8 +275,17 @@ function lbl_sair_Cad(){
 function select(){
      document.getElementById('body02').style.display='block';
      document.getElementById('div_cadastro').style.display='none';
+     var respItens= document.getElementById('p_itens_list');
+     var arquivos= document.getElementById('lbl_arquivos');
    sessionStorage.setItem('itens',``)
   var resp=  document.getElementById('select_procuraTdlist').value;
+  if(!resp||resp==''){
+   
+  var lista = document.getElementById('listas');
+   lista.innerHTML = '';
+   arquivos.innerHTML= ''
+    respItens.innerHTML= 'Arquivos';
+  }else{
    document.getElementById('select_procuraTdlist').style.backgroundColor='rgb(21, 31, 168)';
       respList('click')
     var firebaseConfig = {
@@ -345,8 +354,10 @@ function select(){
     div1.appendChild(div2);
      div1.appendChild(div3);
    lista.appendChild(div1) ;
-
+    
    sessionStorage.setItem('itens',`${itens}`)
+   respItens.innerHTML= itens;
+   arquivos.innerHTML= doc.Lista
 
      img.addEventListener('click',function(){
       swal('',`${doc.Nome}`,`${doc.URL}`)
@@ -439,6 +450,7 @@ function select(){
 
   })
  })
+}
 }
 
 

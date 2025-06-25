@@ -72,7 +72,8 @@ display: flex;
 justify-content: space-around;
 align-items: center;
 width: 100%;
-border-bottom: 1px solid black;
+padding-bottom: 5px;
+border-bottom: 2px solid black;
 
 }
 #div_body{
@@ -140,7 +141,10 @@ color: rgb(255, 255, 255);
 cursor: pointer;
 }
 #banner{
+margin: auto;
+width: 100%;
 margin-bottom: 40px;
+
 }
 #div_procura{
 margin: auto;

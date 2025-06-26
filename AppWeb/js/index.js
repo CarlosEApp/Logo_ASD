@@ -52,33 +52,46 @@ setInterval(function() {
    video.load();
   video.play().then(() => {
     console.log('Vídeo executado com sucesso.');
+       clearTimeout(respTime)
   }).catch((erro) => {
     console.warn('Falha ao executar o vídeo:', erro); });
-      setTimeout(function() { 
-    const video = document.getElementById('video_banner');
+   
+    var video = document.getElementById('video_banner');
     // Tenta forçar a execução do vídeo
     const tentativaPlay = () => {
       video.play().then(() => {
         //alert('Vídeo reproduzido com sucesso!');
+        clearTimeout(respTime)
       }).catch((erro) => {
-        //alert('Navegador bloqueou o autoplay:');
-        // Exibe botão para o usuário iniciar manualmente
-        mostrarBotaoPlay();
+      var respTime=  setTimeout(function(){
+        // video.src="src/Logosasd.mp4";
+       //  video.load();
+        //    mostrarBotaoPlay('click');
+        },7000)
+       
       });
     };
     const mostrarBotaoPlay = () => {
+       var video = document.getElementById('video_banner');
       const botao = document.createElement('button');
       botao.textContent = 'Iniciar vídeo';
       botao.style.position = 'absolute';
-      botao.style.top = '50%';
+      botao.style.top = '100px';
       botao.style.left = '50%';
       botao.style.transform = 'translate(-50%, -50%)';
-      botao.style.zIndex = '10';
+      botao.style.zIndex = '9999';
+      botao.id='carregarVD';
       botao.onclick = () => {
-        video.play();
+       
         botao.remove();
       };
       document.getElementById('banner').appendChild(botao);
     };
     tentativaPlay();
-},7000)
+
+    document.getElementById('banner').addEventListener('click',function(){
+      video.src="src/Logosasd.mp4";
+        video.load();
+
+    })
+

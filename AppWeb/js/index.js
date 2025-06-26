@@ -90,7 +90,7 @@ setInterval(function() {
     tentativaPlay();
 
     document.getElementById('banner').addEventListener('click',function(){
-      video.src="src/Logosasd.mp4";
+      video.src="/src/Logosasd.mp4";
         video.load();
 
     })

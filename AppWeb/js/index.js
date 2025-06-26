@@ -57,6 +57,7 @@ setInterval(function() {
   }).catch((erro) => {
     console.warn('Falha ao executar o vídeo:', erro); });
 
+
        window.addEventListener('load', () => {
     const video = document.getElementById('video_banner');
 

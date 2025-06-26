@@ -260,4 +260,14 @@ width: 100%;
 .my-custom_CarregaPag label{
   font-size: 12px;
 }
-
+#carregarVD{
+  width: 120px;
+  border: 0cap;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.378);
+  background-color: aliceblue;
+  color: black;
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 5px;
+  
+}

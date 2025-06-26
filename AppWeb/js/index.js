@@ -50,28 +50,42 @@ setInterval(function() {
 } 
 
 //Carregamento do Banner
- document.getElementById('banner').addEventListener('click',function(){
-         const video = document.getElementById('video_banner');
-       video.src="src/Logos_ASD_.mp4"
-    video.play()
- });
-
-  window.addEventListener('load', function () {
-    const video = document.getElementById('video_banner');
-    video.play().catch(function (erro) {
-      console.warn('O navegador bloqueou o autoplay:', erro);
-    });
-  });
-  
-       
- const video = document.getElementById('video_banner');
+ var video = document.getElementById('video_banner');
    video.load();
-
-  // Tenta executar o vídeo
   video.play().then(() => {
     console.log('Vídeo executado com sucesso.');
   }).catch((erro) => {
     console.warn('Falha ao executar o vídeo:', erro); });
 
+       window.addEventListener('load', () => {
+    const video = document.getElementById('video_banner');
 
- 
+    // Tenta forçar a execução do vídeo
+    const tentativaPlay = () => {
+      video.play().then(() => {
+        console.log('Vídeo reproduzido com sucesso!');
+      }).catch((erro) => {
+        console.warn('Navegador bloqueou o autoplay:', erro);
+        // Exibe botão para o usuário iniciar manualmente
+        mostrarBotaoPlay();
+      });
+    };
+
+    const mostrarBotaoPlay = () => {
+      const botao = document.createElement('button');
+      botao.textContent = 'Iniciar vídeo';
+      botao.style.position = 'absolute';
+      botao.style.top = '50%';
+      botao.style.left = '50%';
+      botao.style.transform = 'translate(-50%, -50%)';
+      botao.style.zIndex = '10';
+      botao.onclick = () => {
+        video.play();
+        botao.remove();
+      };
+      document.getElementById('banner').appendChild(botao);
+    };
+
+    tentativaPlay();
+  });
+

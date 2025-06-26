@@ -5,6 +5,9 @@
 document.getElementById('heaad_btn03').addEventListener('click',function(){
  window.open('Paginas/Cadastro.html')
 });
+ var video = document.getElementById('video_banner');
+video.src="src/Logosasd.mp4";
+        video.load();
 
 //Time Relogio
 setInterval(function() {

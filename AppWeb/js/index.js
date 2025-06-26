@@ -51,16 +51,26 @@ setInterval(function() {
 } 
 
 //Carregamento do Banner
+ Swal.fire({
+        title: `Carregando... `,
+        text: `Aguarde...`,
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        didOpen: () => {
+            Swal.showLoading();
+             document.body.style.paddingRight = '0px';        
+        }
+      });
  var video = document.getElementById('video_banner');
    video.load();
   video.play().then(() => {
     console.log('Vídeo executado com sucesso.');
-   
+   Swal.close();
   }).catch((erro) => {
     console.warn('Falha ao executar o vídeo:', erro); 
       setTimeout(function(){
         window.location.reload()
-        },3000)
+        },500)
   });
    
    

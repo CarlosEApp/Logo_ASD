@@ -58,7 +58,8 @@ setInterval(function() {
   }).catch((erro) => {
     console.warn('Falha ao executar o vídeo:', erro); 
       setTimeout(function(){
-        window.location.reload()
+         video.src="src/Logosasd.mp4";
+        video.play();
         },100)
   });
    

@@ -49,8 +49,12 @@ setInterval(function() {
 }
 } 
 
-
-
+//Carregamento do Banner
+ document.getElementById('banner').addEventListener('click',function(){
+         const video = document.getElementById('video_banner');
+       video.src="src/Logos_ASD_.mp4"
+    video.play()
+ });
 
   window.addEventListener('load', function () {
     const video = document.getElementById('video_banner');
@@ -58,3 +62,16 @@ setInterval(function() {
       console.warn('O navegador bloqueou o autoplay:', erro);
     });
   });
+  
+       
+ const video = document.getElementById('video_banner');
+   video.load();
+
+  // Tenta executar o vídeo
+  video.play().then(() => {
+    console.log('Vídeo executado com sucesso.');
+  }).catch((erro) => {
+    console.warn('Falha ao executar o vídeo:', erro); });
+
+
+ 

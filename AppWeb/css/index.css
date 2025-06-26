@@ -144,6 +144,9 @@ cursor: pointer;
 margin: auto;
 width: 100%;
 margin-bottom: 40px;
+background-image: url('src/Sorry.png');
+background-position-x: center;
+z-index: 999;
 
 }
 #div_procura{
@@ -245,3 +248,16 @@ right: 0;
 #heaad2 button:hover::after {
 width: 100%;
 }
+.my-custom_CarregaPag{
+  max-width: 370px;
+  border-radius: 20px;
+  border: 5px solid #d9d9da;
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.378);
+}
+.my-custom_CarregaPag h2{
+  font-size: 22px;
+}
+.my-custom_CarregaPag label{
+  font-size: 12px;
+}
+

@@ -48,28 +48,4 @@ setInterval(function() {
 }
 } 
 
-//Carregamento do Banner
-
- var video = document.getElementById('video_banner');
-   video.load();
-  video.play().then(() => {
-    console.log('Vídeo executado com sucesso.');
-
-  }).catch((erro) => {
-    
-    console.warn('Falha ao executar o vídeo:', erro); 
-      setTimeout(function(){
-         var video = document.getElementById('video_banner');
-         video.src="src/logosasd.mp4";
-         video.load();
-        },3000)
-  });
-   
-   
-
-    document.getElementById('banner').addEventListener('click',function(){
-      video.src="src/logosasd.mp4";
-        video.play();
-
-    })
 

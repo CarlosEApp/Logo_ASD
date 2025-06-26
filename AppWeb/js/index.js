@@ -48,3 +48,13 @@ setInterval(function() {
  }
 }
 } 
+
+
+
+
+  window.addEventListener('load', function () {
+    const video = document.getElementById('video_banner');
+    video.play().catch(function (erro) {
+      console.warn('O navegador bloqueou o autoplay:', erro);
+    });
+  });

@@ -60,15 +60,15 @@ setInterval(function() {
     console.warn('Falha ao executar o vídeo:', erro); 
       setTimeout(function(){
          var video = document.getElementById('video_banner');
-         video.src="src/Logosasd.mp4";
+         video.src="src/logosasd.mp4";
          video.load();
-        },3)
+        },3000)
   });
    
    
 
     document.getElementById('banner').addEventListener('click',function(){
-      video.src="src/Logosasd.mp4";
+      video.src="src/logosasd.mp4";
         video.play();
 
     })

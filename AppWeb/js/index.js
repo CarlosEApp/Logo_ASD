@@ -6,7 +6,6 @@ document.getElementById('heaad_btn03').addEventListener('click',function(){
  window.open('Paginas/Cadastro.html')
 });
 
-
 //Time Relogio
 setInterval(function() {
  const newDate = new Date()
@@ -26,7 +25,6 @@ setInterval(function() {
  //var Data = document.getElementById('lbl_data_head')
  //Data.innerHTML= data;
  }, 1000)
-
   // Tela Cheia
    function toggleFullScreen() {
  if ((document.fullScreenElement && document.fullScreenElement !== null) ||
@@ -56,22 +54,18 @@ setInterval(function() {
     console.log('Vídeo executado com sucesso.');
   }).catch((erro) => {
     console.warn('Falha ao executar o vídeo:', erro); });
-
-
-       window.addEventListener('load', () => {
+      setTimeout(function() { 
     const video = document.getElementById('video_banner');
-
     // Tenta forçar a execução do vídeo
     const tentativaPlay = () => {
       video.play().then(() => {
-        console.log('Vídeo reproduzido com sucesso!');
+        //alert('Vídeo reproduzido com sucesso!');
       }).catch((erro) => {
-        console.warn('Navegador bloqueou o autoplay:', erro);
+        //alert('Navegador bloqueou o autoplay:');
         // Exibe botão para o usuário iniciar manualmente
         mostrarBotaoPlay();
       });
     };
-
     const mostrarBotaoPlay = () => {
       const botao = document.createElement('button');
       botao.textContent = 'Iniciar vídeo';
@@ -86,7 +80,5 @@ setInterval(function() {
       };
       document.getElementById('banner').appendChild(botao);
     };
-
     tentativaPlay();
-  });
-
+},7000)

@@ -73,11 +73,9 @@ justify-content: space-around;
 align-items: center;
 width: 100%;
 padding-bottom: 5px;
-border-bottom: 2px solid black;
-
+border-bottom: 2px solid rgb(134, 134, 134);
 }
 #div_body{
-width: 100%;
 margin: 0%;
 padding: 0%;
 min-height: 100vh;
@@ -144,10 +142,6 @@ cursor: pointer;
 margin: auto;
 width: 100%;
 margin-bottom: 40px;
-background-image: url('src/Sorry.png');
-background-position-x: center;
-z-index: 999;
-
 }
 #div_procura{
 margin: auto;
@@ -163,10 +157,9 @@ background-color: aliceblue;
 border: 1px solid rgb(36, 36, 36);
 border-radius: 3px;
 }
-
 #div_procura h1{
-    margin-bottom: 15px;
-    font-size: 25px;
+margin-bottom: 15px;
+font-size: 25px;
 }
 #buscar{
 min-width: 100px;
@@ -185,7 +178,6 @@ color: blue;
 }
 #div_procura select:hover{
  border: 1px solid rgb(63, 0, 209);
-
 }
 #body01{
 width: 100%;
@@ -248,26 +240,4 @@ right: 0;
 #heaad2 button:hover::after {
 width: 100%;
 }
-.my-custom_CarregaPag{
-  max-width: 370px;
-  border-radius: 20px;
-  border: 5px solid #d9d9da;
-   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.378);
-}
-.my-custom_CarregaPag h2{
-  font-size: 22px;
-}
-.my-custom_CarregaPag label{
-  font-size: 12px;
-}
-#carregarVD{
-  width: 120px;
-  border: 0cap;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.378);
-  background-color: aliceblue;
-  color: black;
-  cursor: pointer;
-  padding: 7px;
-  border-radius: 5px;
-  
-}
+

@@ -54,25 +54,12 @@ setInterval(function() {
     console.log('Vídeo executado com sucesso.');
    
   }).catch((erro) => {
-    console.warn('Falha ao executar o vídeo:', erro); });
-   
-    var video = document.getElementById('video_banner');
-    // Tenta forçar a execução do vídeo
-    const tentativaPlay = () => {
-      video.play().then(() => {
-        //alert('Vídeo reproduzido com sucesso!');
-      
-      }).catch((erro) => {
-     setTimeout(function(){
-        // video.src="src/Logosasd.mp4";
-       //  video.load();
-        //    mostrarBotaoPlay('click');
+    console.warn('Falha ao executar o vídeo:', erro); 
+      setTimeout(function(){
         window.location.reload()
-        alert('0k')
-        },7000)
-       
-      });
-    };
+        },3000)
+  });
+   
    
 
     document.getElementById('banner').addEventListener('click',function(){

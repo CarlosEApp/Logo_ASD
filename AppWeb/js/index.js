@@ -52,7 +52,7 @@ setInterval(function() {
    video.load();
   video.play().then(() => {
     console.log('Vídeo executado com sucesso.');
-       clearTimeout(respTime)
+   
   }).catch((erro) => {
     console.warn('Falha ao executar o vídeo:', erro); });
    
@@ -61,36 +61,22 @@ setInterval(function() {
     const tentativaPlay = () => {
       video.play().then(() => {
         //alert('Vídeo reproduzido com sucesso!');
-        clearTimeout(respTime)
+      
       }).catch((erro) => {
-      var respTime=  setTimeout(function(){
+     setTimeout(function(){
         // video.src="src/Logosasd.mp4";
        //  video.load();
         //    mostrarBotaoPlay('click');
+        window.location.reload()
+        alert('0k')
         },7000)
        
       });
     };
-    const mostrarBotaoPlay = () => {
-       var video = document.getElementById('video_banner');
-      const botao = document.createElement('button');
-      botao.textContent = 'Iniciar vídeo';
-      botao.style.position = 'absolute';
-      botao.style.top = '100px';
-      botao.style.left = '50%';
-      botao.style.transform = 'translate(-50%, -50%)';
-      botao.style.zIndex = '9999';
-      botao.id='carregarVD';
-      botao.onclick = () => {
-       
-        botao.remove();
-      };
-      document.getElementById('banner').appendChild(botao);
-    };
-    tentativaPlay();
+   
 
     document.getElementById('banner').addEventListener('click',function(){
-      video.src="/src/Logosasd.mp4";
+      video.src="src/Logosasd.mp4";
         video.load();
 
     })

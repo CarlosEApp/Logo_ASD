@@ -264,9 +264,16 @@ function lbl_sair_Procura(){
      var list= document.getElementById('list_result');
    list.innerHTML = '';
    document.getElementById('lbl_sair_procura').style.display='none'
+     document.getElementById('select_procura').style.backgroundColor=' #ffffff'
+  document.getElementById('select_procura').style.color='black'
+    document.getElementById('div_lista_result').style.display='none'
 }
 //Select Procura detalhada
 function Procura(){
+  
+  document.getElementById('select_procura').style.backgroundColor=' #ffffff'
+  document.getElementById('select_procura').style.color='black'
+
    document.getElementById('lbl_sair_procura').style.display='none'
  var selectLista= document.getElementById('select_procura').value;
  var selecctDepartamento= document.getElementById('select_Departamentos').value;
@@ -341,6 +348,7 @@ function Procura(){
     
    sessionStorage.setItem('itens',`${itens}`)
   document.getElementById('lbl_sair_procura').style.display='block'
+  document.getElementById('div_lista_result').style.display='block'
 
      img.addEventListener('click',function(){
       swal('',`${doc.Nome}`,`${doc.URL}`)
@@ -924,7 +932,11 @@ function select(){
 
 
 
+document.getElementById('h3_listResult').addEventListener('click',function(){
+  document.getElementById('select_procura').style.backgroundColor='red'
+  document.getElementById('select_procura').style.color='#ffffff'
 
+});
 
 
 

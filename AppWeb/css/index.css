@@ -87,14 +87,14 @@ border: 0cap;
 background-color: rgba(0, 0, 0, 0);
 color: rgb(255, 255, 255);
 cursor: pointer;
-font-size: 12px;
+font-size: clamp(0.575rem, 1vw + 0.5rem, 1rem);
  }
  #div_heaad #heaad2 button{
 border: 0cap;
 background-color: rgba(0, 0, 0, 0);
 color: rgb(0, 0, 131);
 cursor: pointer;
-font-size: 12px;
+font-size: clamp(0.575rem, 1vw + 0.5rem, 1rem);
  }
 #heaad2 button:hover{
   color: rgb(16, 1, 221);
@@ -148,9 +148,9 @@ margin: auto;
 width: 90%;
 }
 #div_procura select{
-padding: 8px;
+padding: clamp(0.577rem, 1vw, 1rem);
 cursor: pointer;
-font-size: 16px;
+font-size: clamp(0.975rem, 1vw + 0.5rem, 1rem);
 min-width: 300px;
 margin-bottom: 15px;
 background-color: aliceblue;
@@ -163,11 +163,11 @@ font-size: 25px;
 }
 #buscar{
 min-width: 100px;
-padding: 8px;
+padding: clamp(0.577rem, 1vw, 1rem);
 border-radius: 5px;
 border: 1px solid rgb(75, 74, 74);
 cursor: pointer;
-font-size: 15px;
+font-size: clamp(0.975rem, 1vw + 0.5rem, 1rem);
  background-color: rgb(21, 31, 168);
 color: azure;
 }

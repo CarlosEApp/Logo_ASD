@@ -39,12 +39,12 @@ margin-bottom: 2px;
 margin-top: 2px;
 margin: 0px;
 }
-  #div_geral{
-  margin: auto;
-  max-width: 1920px;
-  min-width: 400px;
-  min-height: 100vh;
-  background-color: rgb(255, 255, 255);
+#div_geral{
+margin: auto;
+max-width: 1920px;
+min-width: 400px;
+min-height: 100vh;
+background-color: rgb(255, 255, 255);
 }
 #div_heaad{
  width: 100%;
@@ -71,40 +71,39 @@ z-index: 9999;
  width: 100%;
  padding-top: 10px;
  border-bottom: 1px solid rgb(177, 177, 177);
-
 }
 #div_heaad #heaad01 label{
- border: 0cap;
- background-color: rgba(0, 0, 0, 0);
- color: rgb(255, 255, 255);
+border: 0cap;
+background-color: rgba(0, 0, 0, 0);
+color: rgb(255, 255, 255);
 cursor: pointer;
-font-size: 12px;
+font-size: clamp(0.775rem, 1vw + 0.5rem, 1rem);
 }
 #div_heaad #heaad02 button{
- border: 0cap;
- background-color: rgba(0, 0, 0, 0);
- color: rgb(0, 0, 10);
-  cursor: pointer;
-  font-size: 12px;
+border: 0cap;
+background-color: rgba(0, 0, 0, 0);
+color: rgb(0, 0, 10);
+cursor: pointer;
+font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem);
 }
  #div_body{
-  width: 100%;
-  max-width: 1920px;
-  min-height: 100vh;
-  background-color: rgba(0, 255, 255, 0);
-  padding-top: 95px;
+width: 100%;
+max-width: 1920px;
+min-height: 100vh;
+background-color: rgba(0, 255, 255, 0);
+padding-top: 95px;
 }
 #Titulo_heaad{
- font-size: 22px;
- font-weight: bold;
- margin-left: 20px;
+font-size: 22px;
+font-weight: bold;
+margin-left: 20px;
 }
 #Titulo{
- font-size: 23px;
- font-weight: bold;
- margin-left: 20px;
- padding-bottom: 5px;
- padding-top: 10px;
+font-size: 23px;
+font-weight: bold;
+margin-left: 20px;
+padding-bottom: 5px;
+padding-top: 10px;
 }
 #lbl02_heaad01{
  margin-right: 20px;
@@ -117,21 +116,20 @@ margin-top: 15px;
 background-color: rgba(255, 0, 200, 0);
 }
 #body01 select{
-padding: 8px;
+padding: clamp(0.577rem, 1vw, 1rem);
 cursor: pointer;
-font-size: 16px;
+font-size: clamp(0.975rem, 1vw + 0.5rem, 1rem);
 min-width: 300px;
-margin-bottom: 7px;
+margin-bottom: 15px;
 background-color: aliceblue;
 border: 1px solid rgb(36, 36, 36);
 border-radius: 3px;
-margin-left: 15px;
 }
 #todList select{
 width: 250px;
 cursor: pointer;
-padding: 8px;
- background-color: rgb(21, 31, 168);
+padding: clamp(0.2rem, 0.500vw, 1rem);
+background-color: rgb(32, 34, 153);
 border-color: azure;
 color: rgb(255, 255, 255);
 font-size: 15px;
@@ -143,55 +141,53 @@ background-color: rgb(0, 48, 151) ;
 }
 #buscar{
 min-width: 100px;
-padding: 8px;
+padding: clamp(0.577rem, 1vw, 1rem);
 border-radius: 5px;
 border: 1px solid rgb(75, 74, 74);
 cursor: pointer;
-font-size: 15px;
-background-color: rgb(28, 28, 128);
+font-size: clamp(0.975rem, 1vw + 0.5rem, 1rem);
+ background-color: rgb(21, 31, 168);
 color: azure;
-margin-left: 15px;
-margin-right: 10px;
 }
 #btn2_heaadMenu{
-    margin-right: 20px;
+margin-right: 20px;
 }
 #div_footer{
-    width: 100%;
-    max-width: 1920px;
-    min-width: 400px;
-    height: 70vh;
-    background-color: rgb(1, 0, 7);
+width: 100%;
+max-width: 1920px;
+min-width: 400px;
+height: 70vh;
+background-color: rgb(1, 0, 7);
 }
 #body02{
-    margin: auto;
-    max-width: 1400px;
-    min-height: 20vh;
-    background-color: rgba(0, 255, 255, 0);
-    color: black;
-    margin-top: 50px;
+margin: auto;
+max-width: 1400px;
+min-height: 20vh;
+background-color: rgba(0, 255, 255, 0);
+color: black;
+margin-top: 50px;
 }
 #body02 label{
-    color: black;
+color: black;
 }
 #div_list{
-    margin: auto;
-    max-width: 1000px;
-    min-width: 390px;
+margin: auto;
+max-width: 1000px;
+min-width: 390px;
 }
 #div_list h1{
-    text-align: center;
+text-align: center;
 }
 #i_select_procuraTdlist{
-    font-size: 25px;
+font-size: 25px;
 }
 #heaad01 label {
 position: relative;
 background-color: #ffffff00;
 color: white;
-padding: 10px 10px;
-border: none;
-font-size: 14px;
+font-size: clamp(0.875rem, 1vw + 0.5rem, 1.25rem);
+padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem);
+border: 0cap;
 cursor: pointer;
 overflow: hidden;
 font-weight: bold;
@@ -254,45 +250,46 @@ padding-bottom: 50px;
 #cadastro select{
 width: 50%;
 min-width: 200px;
-padding: 7px;
+padding: clamp(0.53rem, 0.800vw, 0.100rem) ;
 background-color: rgb(233, 240, 255);
 color: rgb(32, 32, 32);
 cursor: pointer;
-font-size: 14px;
+font-size: clamp(0.875rem, 1vw + 0.5rem, 0.900rem);
 margin-bottom: 10px;
-border: 1px solid rgb(170, 170, 170);
+border: 1px solid rgb(223, 222, 222);
 border-radius: 5px;
 }
 #cadastro #input_codigo{
-width: 30%;
-min-width: 200px;
-padding: 10px;
-background-color: rgb(21, 31, 168);
-color: aliceblue;
-font-size: 16px;
+width: 25%;
+min-width: 150px;
+padding: clamp(0.73rem, 1vw, 0.100rem) ;
+background-color: rgb(8, 15, 116);
+color: rgb(0, 255, 34);
+font-size: clamp(0.875rem, 1vw + 0.5rem, 0.900rem);
+font-weight: bold;
 }
 #inputs input {
-width: 85%;
-padding: 7px;
+width: 90%;
+padding: clamp(0.73rem, 1vw, 0.800rem) ;
 cursor: pointer;
 background-color: rgb(233, 240, 255);
-color: rgb(31, 30, 30);
-border: 1px solid rgb(170, 170, 170);
-border-radius: 2px;
+color: rgb(24, 24, 24);
+border: 1px solid rgb(223, 222, 222);
+border-radius: 7px;
 margin-bottom: 10px;
-font-size: 14px;
+font-size: clamp(0.875rem, 1vw + 0.5rem, 0.900rem);
 }
 #lbl_sair_lista{
-  margin-bottom: 50px;
-  margin-left: 220px;
-  display: none;
+margin-bottom: 28px;
+margin-left: 220px;
+display: none;
 }
 #inputs label{
-    font-size: 12px;
+font-size: clamp(0.875rem, 1vw + 0.5rem, 0.900rem);
 }
 #lbl_sair_Cad,#lbl_sair_procura,#lbl_sair_lista{
- margin-top: 30px;
- font-size: 15px;
+ margin-top: 10px;
+ font-size: clamp(0.875rem, 1vw + 0.5rem, 0.900rem);
  cursor: pointer;
  font-weight: bold;
 }
@@ -300,22 +297,25 @@ font-size: 14px;
  color: rgb(88, 0, 59);
 }
 #lbl_sair_procura{
-  display: none;
-  margin-bottom: 30px;
+display: none;
+margin-bottom: 30px;
 }
 #div_lista_result{
-width: 95%;
-max-width: 800px;
-padding-left: 20px;
+width: 94%;
+max-width: 600px;
+padding: 10px;
 background-color: #2502be00;
 margin-top: 20px;
+border: 2px solid rgb(189, 189, 189);
+border-radius: 10px;
+ box-shadow: 0 3px 7px rgba(0, 0, 0, 0.378);
 }
 #inputs #LimparCad{
 margin-left: 70px;
-padding: 7px;
+padding: clamp(0.73rem, 1vw, 0.800rem) ;
 max-width: 250px;
 border: 0cap;
-font-size: 14px;
+font-size: clamp(0.875rem, 1vw + 0.5rem, 0.900rem);
 background-color: #ffffff00;
 cursor: pointer;
 font-weight: bold;
@@ -326,10 +326,10 @@ font-weight: bold;
 }
 #inputs #SalvarCad{
 margin-left: 50px;
-padding: 10px;
+padding: clamp(0.73rem, 1vw, 0.800rem) ;
 min-width: 150px;
 border: 1px solid rgb(0, 28, 184);
-font-size: 16px;
+font-size: clamp(0.875rem, 1vw + 0.5rem, 0.900rem);
 background-color: #ffffff00;
 cursor: pointer;
 font-weight: bold;
@@ -339,51 +339,49 @@ color: rgb(36, 3, 219);
 margin-top: 30px;
 }
 #inputs #SalvarCad:hover{
-    color: rgb(255, 255, 255);
-    background-color: #2502be;
+color: rgb(255, 255, 255);
+background-color: #2502be;
 }
 .input_visible{
-    display: none;
+ display: none;
 }
  #cadastro #img_apresent{
- float: right;
-  width: 100px;
-  max-height:110px;
-  margin-right: 180px;
-  margin-top: 100px;
-  padding: 4px;
-   box-shadow: 0 3px 7px rgba(87, 87, 87, 0.815);
-  border-radius: 5px;
-  cursor: pointer;
-
+float: right;
+width: 100px;
+max-height:110px;
+margin-right: 180px;
+margin-top: 100px;
+padding: 4px;
+box-shadow: 0 3px 7px rgba(87, 87, 87, 0.815);
+border-radius: 5px;
+cursor: pointer;
 }
 #cadastro #img_apresent:hover{
   background-color: #2a00e6;
-
 }
 #MG_GIF_DESIGNE{
-  width: 85%;
-  border: 2px solid rgba(0, 0, 255, 0.658);
-  padding: 5px;
-  border-radius: 5px;
-  background-color: rgb(255, 255, 255);
-  margin-left: 10px;
-  cursor: pointer;
-  margin-top: 20px;
+width: 85%;
+border: 2px solid rgba(0, 0, 255, 0.658);
+padding: 5px;
+border-radius: 5px;
+background-color: rgb(255, 255, 255);
+margin-left: 10px;
+cursor: pointer;
+margin-top: 20px;
 }
 #i_MG_GIF_DESIGNE{
-  font-size: 28px;
-  margin-left: 10px;
-  color: #2a00e6;
-  margin-bottom: 3px;
-  margin-right: 5px;
+font-size: 28px;
+margin-left: 10px;
+color: #2a00e6;
+margin-bottom: 3px;
+margin-right: 5px;
 }
 #MG_GIF_DESIGNE:hover{
-  background-color: #2a00e6;
-  color: #ffffff;
+background-color: #2a00e6;
+color: #ffffff;
 }
 #MG_GIF_DESIGNE:hover #i_MG_GIF_DESIGNE{
-  color: #ffffff;
+color: #ffffff;
 }
 #myProgress{
  width: 70%;
@@ -433,21 +431,22 @@ margin-top: 30px;
  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.378);
  padding: 5px;
  border-radius: 5px;
+ 
 }
 #imgList{
-  width: 70px;
-  height: 70px;
-  cursor: pointer;
+width: 70px;
+height: 70px;
+cursor: pointer;
 }
 #div1List label,#div1List_ label{
-  font-size: 12px;
-  font-weight: bold;
+font-size: clamp(0.875rem, 1vw + 0.5rem, 0.900rem);
+font-weight: bold;
 }
 #div1List button,#div1List_ button {
-  font-size: 16px;
-  border: 0cap;
-  cursor: pointer;
-  margin-right: 10px;
+font-size: clamp(0.875rem, 1vw + 0.5rem, 1.25rem);
+border: 0cap;
+cursor: pointer;
+margin-right: 10px;
 }
 #div1List #botão1List:hover, #div1List_ #botão1List:hover, #div1List_C #botão1List:hover{
 color: #2f00ff;
@@ -456,41 +455,43 @@ color: #2f00ff;
 color: #c50202;
 }
 #div1List_{
-  width: 80%;
-  max-width: 400px;
- margin-left: 5px;
- margin-right: 5px;
- display: flex;
- justify-content: space-between;
- align-items: center;
- margin-top: 10px;
- margin-bottom: 20px;
- background-color: #f6f8ff;
- box-shadow: 0 5px 10px rgba(0, 0, 0, 0.378);
- padding: 5px;
- border-radius: 5px;
+width: 95%;
+max-width: 400px;
+margin-left: 5px;
+margin-right: 5px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 10px;
+margin-bottom: 20px;
+background-color: #f6f8ff;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.378);
+padding: 5px;
+border-radius: 5px;
+
 }
 #div1List_C{
-   width: 95%;
-  max-width: 390px;
- margin-left: 5px;
- margin-right: 5px;
- display: flex;
- justify-content: space-between;
- align-items: center;
- margin-top: 10px;
- margin-bottom: 20px;
- background-color: #f6f8ff;
- box-shadow: 0 5px 10px rgba(0, 0, 0, 0.378);
- padding: 5px;
- border-radius: 5px;
+width: 95%;
+max-width: 390px;
+margin-left: 5px;
+margin-right: 5px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 10px;
+margin-bottom: 20px;
+background-color: #f6f8ff;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.378);
+padding: 5px;
+border-radius: 5px;
 
 }
 #div1List_C label{
   font-size: 12px;
 }
-#div_lista_result h3{
-  font-size: 20px;
+#div_lista_result #h3_listResult{
+ font-size: clamp(0.875rem, 1vw + 0.5rem, 1.25rem);
+color: #a30202;
 }
 .my-custom_CadExCód{
   max-width: 370px;
@@ -541,6 +542,9 @@ color: #c50202;
 .my-custom_{
   background-color: #e7ecff00;
 
+}
+#div_lista_result{
+  display: none;
 }
 
 
@@ -675,7 +679,7 @@ margin-left: 20px;
 }
 @media(max-width: 700px){
    #lbl_sair_lista{
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   margin-left: 40px;
 }
   #cadastro #img_apresent{
@@ -700,7 +704,7 @@ margin-left: 20px;
 @media(max-width: 600px){
    #lbl_sair_lista{
   margin-bottom: 50px;
-  margin-left:40px;
+  margin-left:30px;
 }
   #cadastro #img_apresent{
  float: right;
@@ -724,7 +728,7 @@ margin-left: 20px;
 }
 @media(max-width: 500px){
    #lbl_sair_lista{
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   margin-left: 30px;
 }
   #cadastro #img_apresent{
@@ -749,7 +753,7 @@ margin-left: 20px;
 }
 @media(max-width: 400px){
    #lbl_sair_lista{
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   margin-left: 30px;
 }
   #cadastro #img_apresent{
@@ -774,7 +778,7 @@ margin-left: 20px;
 }
 @media(max-width: 300px){
    #lbl_sair_lista{
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   margin-left: 25px;
 }
   #cadastro #img_apresent{

@@ -79,10 +79,11 @@
                                              <option value="Diversos">Diversos</option>
                                        
                 </select>
-                     <button id="buscar">Buscar</button>
+                     <button id="buscar" onclick='Procura()' >Buscar</button>
                 <br>
            <div id="div_lista_result">
                <h3>Resultado da busca:</h3>
+                 <label id="lbl_sair_procura" for="" onclick="lbl_sair_Procura()"> <i class="fa-solid fa-delete-left"></i> Sair </label>
                <div id="list_result"></div>
            </div>
        
@@ -90,6 +91,7 @@
       <div id="body02">
             <div id="div_list">
               <h1 class="title" id="Titulo" onclick="titulo()">Listas/<label id="lbl_arquivos" for="">Arquivos</label>: <label id="p_itens_list"></label>  <i class="fa-solid fa-table-list"></i> </h1>
+               <label id="lbl_sair_lista" for="" onclick="lbl_sair_lista()"> <i class="fa-solid fa-delete-left"></i> Sair </label>
               <div id="listas"></div>
           </div>
       </div>

@@ -1,5 +1,441 @@
 
 
+  
+
+  ///menu
+  function Menu(){
+       Swal.fire({
+      title: `Menu <i class="fa-solid fa-bars"></i>`,
+      html:` <div  class="menu-container">
+          <br>
+          <button id='PsqCódigo'>Código <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> </button>
+           <br><br>
+         <button id="Tela" title="">Tela Cheia <i class="fa-solid fa-desktop"></i></button>
+         <br><br>  <button id='Sair' class='cancelar'> Cancelar </button>
+         </div>
+      `,
+      showCancelButton: false,
+       showConfirmButton: false,
+       customClass: {
+       popup: 'my-custom_CadExCód' // Aplica a classe CSS personalizada
+     },
+      didOpen: () => {
+           document.body.style.paddingRight = '0px';
+        }
+   });  
+   document.getElementById('Sair').addEventListener('click',function(){
+    Swal.close()
+
+   });
+
+   document.getElementById('Tela').addEventListener('click',function(){
+        toggleFullScreen('click')
+        Swal.close()
+   });
+   document.getElementById('PsqCódigo').addEventListener('click',function(){
+    lbl_sair_Cad('click');
+    lbl_sair_Procura('click');
+    lbl_sair_lista('click');
+      Swal.fire({
+      title: `Pesquise por Código`,
+      html:` <div  class="menu-container">
+           <p>Digite Código</p>
+           <br>
+           <input id='idcódigo' type='text' placeholder='Código...'>
+           <br><br>
+           <button id="PasqCodigo" title="">Start <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> </button>
+           <br><br>  
+           <button id='Sair' class='cancelar'> Cancelar </button>
+         </div>
+      `,
+      showCancelButton: false,
+       showConfirmButton: false,
+       customClass: {
+       popup: 'my-custom_PesqCódigo' // Aplica a classe CSS personalizada
+     },
+      didOpen: () => {
+           document.body.style.paddingRight = '0px';
+        }
+   });  
+   document.getElementById('Sair').addEventListener('click',function(){
+    Swal.close()
+
+   });
+   document.getElementById('PasqCodigo').addEventListener('click',function(){
+  sessionStorage.setItem('itens',``)
+     var respDoc= document.getElementById('idcódigo').value;
+
+    Swal.fire({
+      title: ``,
+      html:` <div  id='listSwal' class="menu-container">
+         </div>
+      `,
+      showCancelButton: false,
+       showConfirmButton: false,
+       customClass: {
+       popup: 'my-custom_' // Aplica a classe CSS personalizada
+     },
+      didOpen: () => {
+           document.body.style.paddingRight = '0px';
+        }
+   });  
+    setTimeout(function(){
+    var time=  sessionStorage.getItem('itens')
+    if(!time|| time==''){
+      Swal.close()
+    }
+     
+    },3000)
+   var firebaseConfig = {
+   apiKey: "AIzaSyD7q-qzsIhACByHciJkDBI3yPuKK_bgHUM",
+   authDomain: "logos-asd.firebaseapp.com",
+   projectId: "logos-asd",
+   storageBucket: "logos-asd.firebasestorage.app",
+   messagingSenderId: "801633317687",
+   appId: "1:801633317687:web:3a38f39b2e9861902e20b2",
+   measurementId: "G-GJEW931Y73"
+  };
+   firebase.initializeApp(firebaseConfig);  
+   var db = firebase.firestore();
+   var produtosRef = db.collection(`Codigos`);
+   var listC= document.getElementById('listSwal');
+   listC.innerHTML = '';
+   produtosRef.get().then((querySnapshot) => {
+     querySnapshot.forEach(doc => {
+     var doc = doc.data();
+     var itens= querySnapshot.size;
+
+     if(respDoc== doc.Código){
+
+    var div1=document.createElement('div');
+    var div2=document.createElement('div');
+    var div3=document.createElement('div');        
+    var img=document.createElement('img');
+    var botão1= document.createElement('button');
+    var botão2= document.createElement('button'); 
+    var label1= document.createElement('label');
+    var label2= document.createElement('label'); 
+    var label3= document.createElement('label');
+    var br1=  document.createElement('br');
+    var br2=  document.createElement('br');  
+    var br3=  document.createElement('br');  
+    var br4=  document.createElement('br');
+    var br5=  document.createElement('br'); 
+     
+      div1.id='div1List_C';
+      div2.id='div2List';
+      img.id='imgList';
+      label1.id='label1List';
+      label2.id='label2List'; 
+      label3.id='label3List';
+      botão1.id='botão1List';
+      botão2.id='botão2List'; 
+
+      img.src=`${doc.URL}`;
+      label1.textContent=`${doc.Titulo}`;
+      label2.textContent=`${doc.Nome}`;
+      label3.textContent=`Código: ${doc.Código}`;
+      botão1.textContent='';
+      botão1.className=`fa-solid fa-pen-to-square`;
+      botão2.textContent='';
+      botão2.className=`fa-solid fa-trash`;
+
+
+     div1.appendChild(img);
+     div2.appendChild(label1);
+     div2.appendChild(br1); 
+     div2.appendChild(label2); 
+     div2.appendChild(br2); 
+     div2.appendChild(label3); 
+     div3.appendChild(botão1);
+     div3.appendChild(br3); 
+     div3.appendChild(br4); 
+     div3.appendChild(botão2); 
+     div1.appendChild(div2);
+     div1.appendChild(div3);
+     listC.appendChild(div1) ;
+    
+   sessionStorage.setItem('itens',`${itens}`)
+  
+
+     img.addEventListener('click',function(){
+      swal('',`${doc.Nome}`,`${doc.URL}`)
+     });
+      botão1.addEventListener('click',function(){
+      document.getElementById('body02').style.display='none';
+     document.getElementById('div_cadastro').style.display='block';
+       document.getElementById('select_lista').value= doc.Lista;
+       document.getElementById('input_nome').value= doc.Nome;
+        document.getElementById('select_Departamentos_Ministerial').value= doc.Departamento; 
+         document.getElementById('input_Titulo').value= doc.Titulo;
+          document.getElementById('input_descriçao').value= doc.Descrição;
+           document.getElementById('input_formato').value= doc.Formato;
+            document.getElementById('criaçãoData').value= doc.Data_criação;
+            document.getElementById('input_canvas').value= doc.Canvas;
+             document.getElementById('img_apresent').src= doc.URL;
+               document.getElementById('input_codigo').value= doc.Código;
+                sessionStorage.setItem('ArquivoUrl',doc.URL) 
+                 sessionStorage.setItem('Nome_arquivo',doc.Nome_Arquivo)
+                   Swal.close()
+             
+      });
+      botão2.addEventListener('click',function(){
+      Swal.close()
+        Swal.fire({
+      title: `Excluir Arquivo!`,
+      html:` <div  class="menu-container">
+         <p>Digite o código e click em Excluir. <br> A exclusão não podera ser desfeita!</p>
+         <br>
+         <input id='inputEx' type='text' placeHolder='Digite código...'>
+         <br><br>
+         <button id="SwalExCód" title="">Excluir <i class="fa-solid fa-trash"></i></button>
+         <br><br>  <button id='Sair' class='cancelar'> Cancelar </button>
+         </div>
+      `,
+      showCancelButton: false,
+       showConfirmButton: false,
+       customClass: {
+       popup: 'my-custom_CadExCód' // Aplica a classe CSS personalizada
+     },
+      didOpen: () => {
+           document.body.style.paddingRight = '0px';
+        }
+   });  
+   document.getElementById('Sair').addEventListener('click',function(){
+    Swal.close('click')
+
+   });
+   document.getElementById('SwalExCód').addEventListener('click',function(){
+    var respC= doc.Código;
+    var respINP= document.getElementById('inputEx').value;
+    if(respC == respINP){
+    
+      var dbex = firebase.firestore();
+        dbex.collection(`Coleção_${doc.Lista}`).doc(respINP).delete();
+
+       var img_file = firebase.storage();
+        var mm = img_file.ref(`${doc.Nome_Arquivo}`);
+        // Deletar o arquivo
+        mm.delete().then(() => {
+         // window.swal('Sucesso!','Imagem deletada do banco de dados','success')
+        }).catch((error) => {
+           window.swal('ERRO!','','error')
+        });
+            
+        Swal.fire({
+           title: `Deletando Arquivos... `,
+           text: `Aguarde...`,
+           allowOutsideClick: false,
+           showConfirmButton: false,
+           didOpen: () => {
+               Swal.showLoading();
+                document.body.style.paddingRight = '0px';        
+           }
+         });
+       setTimeout(function(){
+          Swal.fire('Sucesso!','','success')
+          setTimeout(function(){
+            select('click')
+          },2000)
+       },4000)
+
+    }else{
+      Swal.fire('Código incorreto','O Código digitado não corresponde ao arquivo que você deseja excluir.<br><br>Tente Novamente!','error')
+    }
+
+   })
+
+  })
+     } else{
+
+     }
+
+     })
+    })
+  
+   });
+
+   });
+
+  }
+
+// Sair lista procura
+function lbl_sair_Procura(){
+     var list= document.getElementById('list_result');
+   list.innerHTML = '';
+   document.getElementById('lbl_sair_procura').style.display='none'
+}
+//Select Procura detalhada
+function Procura(){
+   document.getElementById('lbl_sair_procura').style.display='none'
+ var selectLista= document.getElementById('select_procura').value;
+ var selecctDepartamento= document.getElementById('select_Departamentos').value;
+
+  var firebaseConfig = {
+      apiKey: "AIzaSyD7q-qzsIhACByHciJkDBI3yPuKK_bgHUM",
+      authDomain: "logos-asd.firebaseapp.com",
+      projectId: "logos-asd",
+      storageBucket: "logos-asd.firebasestorage.app",
+      messagingSenderId: "801633317687",
+      appId: "1:801633317687:web:3a38f39b2e9861902e20b2",
+      measurementId: "G-GJEW931Y73"
+  };
+   firebase.initializeApp(firebaseConfig);  
+   var db = firebase.firestore();
+   var produtosRef = db.collection(`Coleção_${selectLista}`);
+   var list= document.getElementById('list_result');
+   list.innerHTML = '';
+   produtosRef.get().then((querySnapshot) => {
+     querySnapshot.forEach(doc => {
+     var doc = doc.data();
+     var itens= querySnapshot.size;
+
+     if(selecctDepartamento== doc.Departamento){
+
+     var div1=document.createElement('div');
+      var div2=document.createElement('div');
+        var div3=document.createElement('div');        
+     var img=document.createElement('img');
+     var botão1= document.createElement('button');
+      var botão2= document.createElement('button'); 
+     var label1= document.createElement('label');
+      var label2= document.createElement('label'); 
+       var label3= document.createElement('label');
+     var br1=  document.createElement('br');
+      var br2=  document.createElement('br');  
+       var br3=  document.createElement('br');  
+        var br4=  document.createElement('br');
+         var br5=  document.createElement('br'); 
+         
+     div1.id='div1List_';
+      div2.id='div2List';
+     img.id='imgList';
+     label1.id='label1List';
+      label2.id='label2List'; 
+       label3.id='label3List';
+     botão1.id='botão1List';
+      botão2.id='botão2List'; 
+
+       img.src=`${doc.URL}`;
+       label1.textContent=`${doc.Titulo}`;
+       label2.textContent=`${doc.Nome}`;
+       label3.textContent=`Código: ${doc.Código}`;
+       botão1.textContent='';
+       botão1.className=`fa-solid fa-pen-to-square`;
+       botão2.textContent='';
+       botão2.className=`fa-solid fa-trash`;
+
+    div1.appendChild(img);
+    div2.appendChild(label1);
+     div2.appendChild(br1); 
+     div2.appendChild(label2); 
+      div2.appendChild(br2); 
+      div2.appendChild(label3); 
+    div3.appendChild(botão1);
+       div3.appendChild(br3); 
+          div3.appendChild(br4); 
+     div3.appendChild(botão2); 
+    div1.appendChild(div2);
+     div1.appendChild(div3);
+   list.appendChild(div1) ;
+    
+   sessionStorage.setItem('itens',`${itens}`)
+  document.getElementById('lbl_sair_procura').style.display='block'
+
+     img.addEventListener('click',function(){
+      swal('',`${doc.Nome}`,`${doc.URL}`)
+     });
+      botão1.addEventListener('click',function(){
+      document.getElementById('body02').style.display='none';
+     document.getElementById('div_cadastro').style.display='block';
+       document.getElementById('select_lista').value= doc.Lista;
+       document.getElementById('input_nome').value= doc.Nome;
+        document.getElementById('select_Departamentos_Ministerial').value= doc.Departamento; 
+         document.getElementById('input_Titulo').value= doc.Titulo;
+          document.getElementById('input_descriçao').value= doc.Descrição;
+           document.getElementById('input_formato').value= doc.Formato;
+            document.getElementById('criaçãoData').value= doc.Data_criação;
+            document.getElementById('input_canvas').value= doc.Canvas;
+             document.getElementById('img_apresent').src= doc.URL;
+               document.getElementById('input_codigo').value= doc.Código;
+                sessionStorage.setItem('ArquivoUrl',doc.URL) 
+                 sessionStorage.setItem('Nome_arquivo',doc.Nome_Arquivo)
+             
+      });
+      botão2.addEventListener('click',function(){
+    
+        Swal.fire({
+      title: `Excluir Arquivo!`,
+      html:` <div  class="menu-container">
+         <p>Digite o código e click em Excluir. <br> A exclusão não podera ser desfeita!</p>
+         <br>
+         <input id='inputEx' type='text' placeHolder='Digite código...'>
+         <br><br>
+         <button id="SwalExCód" title="">Excluir <i class="fa-solid fa-trash"></i></button>
+         <br><br>  <button id='Sair' class='cancelar'> Cancelar </button>
+         </div>
+      `,
+      showCancelButton: false,
+       showConfirmButton: false,
+       customClass: {
+       popup: 'my-custom_CadExCód' // Aplica a classe CSS personalizada
+     },
+      didOpen: () => {
+           document.body.style.paddingRight = '0px';
+        }
+   });  
+   document.getElementById('Sair').addEventListener('click',function(){
+    Swal.close('click')
+
+   });
+   document.getElementById('SwalExCód').addEventListener('click',function(){
+    var respC= doc.Código;
+    var respINP= document.getElementById('inputEx').value;
+    if(respC == respINP){
+    
+      var dbex = firebase.firestore();
+        dbex.collection(`Coleção_${doc.Lista}`).doc(respINP).delete();
+
+       var img_file = firebase.storage();
+        var mm = img_file.ref(`${doc.Nome_Arquivo}`);
+        // Deletar o arquivo
+        mm.delete().then(() => {
+         // window.swal('Sucesso!','Imagem deletada do banco de dados','success')
+        }).catch((error) => {
+           window.swal('ERRO!','','error')
+        });
+            
+        Swal.fire({
+           title: `Deletando Arquivos... `,
+           text: `Aguarde...`,
+           allowOutsideClick: false,
+           showConfirmButton: false,
+           didOpen: () => {
+               Swal.showLoading();
+                document.body.style.paddingRight = '0px';        
+           }
+         });
+       setTimeout(function(){
+          Swal.fire('Sucesso!','','success')
+          setTimeout(function(){
+            select('click')
+          },2000)
+       },4000)
+
+    }else{
+      Swal.fire('Código incorreto','O Código digitado não corresponde ao arquivo que você deseja excluir.<br><br>Tente Novamente!','error')
+    }
+
+   })
+
+  })
+     } else{
+
+     }
+
+     })
+    })
+  };
 
  //iniciar da pagina
   sessionStorage.setItem('ArquivoUrl',``)
@@ -201,6 +637,7 @@ function lbl_sair_Cad(){
   }
 
  };
+
  // botão para salvar o cadastro
  function SalvarCad(){
   var lista= document.getElementById('select_lista').value;
@@ -249,6 +686,25 @@ function lbl_sair_Cad(){
       Nome_Arquivo:nomeArquivo,
       Canvas:urlCanvas,
 
+     });
+        var dbcc= firebase.firestore();
+       dbcc.collection(`Codigos`).doc(`${codigo}`).set({
+       
+      Lista: lista,
+      Departamento:departamento,
+      Titulo: titulo,
+      Nome:nome,
+      Descrição: descriçao,
+      Formato: formato,
+      Data_criação: data_criação,
+      Código:codigo,
+      Especifc: lista,
+      Data: data,
+      Hora: hora,
+      URL: arquivo,
+      Nome_Arquivo:nomeArquivo,
+      Canvas:urlCanvas,
+
      })
      setTimeout(function(){
         Swal.fire('Sucesso!','Aquivo salvo com sucesso! ','success')
@@ -270,9 +726,21 @@ function lbl_sair_Cad(){
   document.getElementById('select_procuraTdlist').style.backgroundColor=' rgb(184, 6, 130)';
  }
  
+  // sair lista
+  function lbl_sair_lista(){
+     var respItens= document.getElementById('p_itens_list');
+     var arquivos= document.getElementById('lbl_arquivos');
+   var lista = document.getElementById('listas');
+   lista.innerHTML = '';
+   arquivos.innerHTML= ''
+    respItens.innerHTML= 'Arquivos';
+    document.getElementById('lbl_sair_lista').style.display='none'
+    document.getElementById('select_procuraTdlist').value='';
 
+  }
 //Selec lista do heaader função optino botão
 function select(){
+      document.getElementById('lbl_sair_lista').style.display='none'
      document.getElementById('body02').style.display='block';
      document.getElementById('div_cadastro').style.display='none';
      var respItens= document.getElementById('p_itens_list');
@@ -280,7 +748,7 @@ function select(){
    sessionStorage.setItem('itens',``)
   var resp=  document.getElementById('select_procuraTdlist').value;
   if(!resp||resp==''){
-   
+      document.getElementById('lbl_sair_lista').style.display='none'
   var lista = document.getElementById('listas');
    lista.innerHTML = '';
    arquivos.innerHTML= ''
@@ -358,6 +826,7 @@ function select(){
    sessionStorage.setItem('itens',`${itens}`)
    respItens.innerHTML= itens;
    arquivos.innerHTML= doc.Lista
+   document.getElementById('lbl_sair_lista').style.display='block'
 
      img.addEventListener('click',function(){
       swal('',`${doc.Nome}`,`${doc.URL}`)

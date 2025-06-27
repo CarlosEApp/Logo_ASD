@@ -103,8 +103,8 @@ font-size: 12px;
  font-size: 23px;
  font-weight: bold;
  margin-left: 20px;
- margin-bottom: 20px;
- padding-top: 20px;
+ padding-bottom: 5px;
+ padding-top: 10px;
 }
 #lbl02_heaad01{
  margin-right: 20px;
@@ -113,7 +113,7 @@ font-size: 12px;
 margin: auto;
 width: 95%;
 max-width: 1400px;
-margin-top: 30px;
+margin-top: 15px;
 background-color: rgba(255, 0, 200, 0);
 }
 #body01 select{
@@ -121,14 +121,14 @@ padding: 8px;
 cursor: pointer;
 font-size: 16px;
 min-width: 300px;
-margin-bottom: 15px;
+margin-bottom: 7px;
 background-color: aliceblue;
 border: 1px solid rgb(36, 36, 36);
 border-radius: 3px;
 margin-left: 15px;
 }
 #todList select{
-width: 280px;
+width: 250px;
 cursor: pointer;
 padding: 8px;
  background-color: rgb(21, 31, 168);
@@ -184,7 +184,6 @@ margin-right: 10px;
 }
 #i_select_procuraTdlist{
     font-size: 25px;
-    
 }
 #heaad01 label {
 position: relative;
@@ -283,17 +282,26 @@ border-radius: 2px;
 margin-bottom: 10px;
 font-size: 14px;
 }
+#lbl_sair_lista{
+  margin-bottom: 50px;
+  margin-left: 220px;
+  display: none;
+}
 #inputs label{
     font-size: 12px;
 }
-#lbl_sair_Cad{
+#lbl_sair_Cad,#lbl_sair_procura,#lbl_sair_lista{
  margin-top: 30px;
  font-size: 15px;
  cursor: pointer;
  font-weight: bold;
 }
-#lbl_sair_Cad:hover{
+#lbl_sair_Cad:hover, #lbl_sair_procura:hover, #lbl_sair_lista:hover{
  color: rgb(88, 0, 59);
+}
+#lbl_sair_procura{
+  display: none;
+  margin-bottom: 30px;
 }
 #div_lista_result{
 width: 95%;
@@ -313,8 +321,8 @@ cursor: pointer;
 font-weight: bold;
 }
 #inputs #LimparCad:hover{
-    color: rgb(126, 0, 98);
-    text-decoration: underline 1px solid blue;
+ color: rgb(126, 0, 98);
+ text-decoration: underline 1px solid blue;
 }
 #inputs #SalvarCad{
 margin-left: 50px;
@@ -408,8 +416,10 @@ margin-top: 30px;
   margin: auto;
   width: 98%;
   max-width: 600px;
-  background-color: rgba(0, 255, 255, 0);
+  background-color: rgba(4, 175, 175, 0);
   margin-top: 20px;
+  margin-bottom: 200px;
+  padding-bottom: 100px;
 }
 #div1List{
  margin-left: 5px;
@@ -429,21 +439,58 @@ margin-top: 30px;
   height: 70px;
   cursor: pointer;
 }
-#div1List label{
+#div1List label,#div1List_ label{
   font-size: 12px;
   font-weight: bold;
 }
-#div1List button{
+#div1List button,#div1List_ button {
   font-size: 16px;
   border: 0cap;
   cursor: pointer;
   margin-right: 10px;
 }
-#div1List #botão1List:hover{
+#div1List #botão1List:hover, #div1List_ #botão1List:hover, #div1List_C #botão1List:hover{
 color: #2f00ff;
 }
-#div1List #botão2List:hover{
+#div1List #botão2List:hover, #div1List_ #botão2List:hover, #div1List_C #botão2List:hover{
 color: #c50202;
+}
+#div1List_{
+  width: 80%;
+  max-width: 400px;
+ margin-left: 5px;
+ margin-right: 5px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-top: 10px;
+ margin-bottom: 20px;
+ background-color: #f6f8ff;
+ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.378);
+ padding: 5px;
+ border-radius: 5px;
+}
+#div1List_C{
+   width: 95%;
+  max-width: 390px;
+ margin-left: 5px;
+ margin-right: 5px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-top: 10px;
+ margin-bottom: 20px;
+ background-color: #f6f8ff;
+ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.378);
+ padding: 5px;
+ border-radius: 5px;
+
+}
+#div1List_C label{
+  font-size: 12px;
+}
+#div_lista_result h3{
+  font-size: 20px;
 }
 .my-custom_CadExCód{
   max-width: 370px;
@@ -455,7 +502,7 @@ color: #c50202;
   font-size: 13px;
   font-weight: bold;
 }
-.my-custom_CadExCód input{
+.my-custom_CadExCód input, .my-custom_PesqCódigo input{
   width: 80%;
   padding: 7px;
   border: 2px solid #e0e0e0;
@@ -463,7 +510,7 @@ color: #c50202;
   cursor: pointer;
   font-size: 14px;
 }
-.my-custom_CadExCód button{
+.my-custom_CadExCód button, .my-custom_PesqCódigo button{
   width: 60%;
   padding: 7px;
   border: 1px solid rgb(214, 214, 214);
@@ -471,12 +518,30 @@ color: #c50202;
   border-radius: 3px;
   cursor: pointer;
 }
-.my-custom_CadExCód button:hover{
+.my-custom_CadExCód button:hover, .my-custom_PesqCódigo button:hover{
   background-color: #ffffff;
   color: #c50202;
     border: 1px solid rgb(255, 0, 0);
 }
+#div_lista_result h3{
+  margin: 0%;
+  color: #c50202;
+  margin-bottom: 10px;
+}
+.my-custom_PesqCódigo{
+  max-width: 400px;
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.603);
+  border-radius: 10px;
 
+}
+.my-custom_PesqCódigo h2{
+  font-size: 22px;
+  
+}
+.my-custom_{
+  background-color: #e7ecff00;
+
+}
 
 
 
@@ -557,6 +622,10 @@ color: #c50202;
 
 }
 @media(max-width: 1000px){
+   #lbl_sair_lista{
+  margin-bottom: 50px;
+  margin-left: 180px;
+}
   #cadastro #img_apresent{
  float: right;
   width: 100px;
@@ -567,6 +636,10 @@ color: #c50202;
 
 }
 @media(max-width: 900px){
+   #lbl_sair_lista{
+  margin-bottom: 50px;
+  margin-left: 146px;
+}
   #cadastro #img_apresent{
  float: right;
   width: 100px;
@@ -577,10 +650,14 @@ color: #c50202;
 
 }
 @media(max-width: 800px){
+  #lbl_sair_lista{
+  margin-bottom: 50px;
+  margin-left: 90px;
+}
   #cadastro #img_apresent{
  float: right;
   width: 100px;
-  margin-right: 130px;
+  margin-right: 120px;
   margin-top: 100px;
 }
 #todList select{
@@ -595,9 +672,12 @@ border-radius: 4px;
 margin-left: 20px;
 }
 
-
 }
 @media(max-width: 700px){
+   #lbl_sair_lista{
+  margin-bottom: 50px;
+  margin-left: 40px;
+}
   #cadastro #img_apresent{
  float: right;
   width: 100px;
@@ -616,10 +696,12 @@ border-radius: 4px;
 margin-left: 20px;
 }
 
-
-
 }
 @media(max-width: 600px){
+   #lbl_sair_lista{
+  margin-bottom: 50px;
+  margin-left:40px;
+}
   #cadastro #img_apresent{
  float: right;
   width: 100px;
@@ -641,6 +723,10 @@ margin-left: 20px;
 
 }
 @media(max-width: 500px){
+   #lbl_sair_lista{
+  margin-bottom: 50px;
+  margin-left: 30px;
+}
   #cadastro #img_apresent{
  float: right;
   width: 80px;
@@ -662,6 +748,10 @@ margin-left: 20px;
 
 }
 @media(max-width: 400px){
+   #lbl_sair_lista{
+  margin-bottom: 40px;
+  margin-left: 30px;
+}
   #cadastro #img_apresent{
  float: right;
   width: 75px;
@@ -683,6 +773,10 @@ margin-left: 20px;
 
 }
 @media(max-width: 300px){
+   #lbl_sair_lista{
+  margin-bottom: 50px;
+  margin-left: 25px;
+}
   #cadastro #img_apresent{
  float: right;
   width: 70px;

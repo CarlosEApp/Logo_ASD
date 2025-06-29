@@ -31,10 +31,10 @@
     <div id="div_geral">
         <div id="div_heaad">
             <div id="heaad1">
-          <img src="src/Logo_ASD.png" alt="" width="30">   <label id="Titulo" for="">LOGOS ADS</label> <button id="heaad_btn01" onclick="toggleFullScreen()">Tela <i class="fa-solid fa-desktop"></i></button> 
+            <label id="Titulo" for="">LOGOS ADS</label>  <button  id="heaad_btn03">Home <i class="fa-solid fa-house"></i> <button id="heaad_btn01" onclick="toggleFullScreen()">Tela <i class="fa-solid fa-desktop"></i></button> 
             </div>
              <div id="heaad2">
-                <button  id="heaad_btn03">Home <i class="fa-solid fa-house"></i></button> <button  id="heaad_btn04">Botão 02</button><button  id="heaad_btn05">Botão 03</button> <button  id="heaad_Menu" onclick="toggleFullScreenIndex()">Menu <i class="fa-solid fa-bars"></i></button>
+                 <div id="div_input_heaader_pesq"> <i id="pesqheaad" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i><input id="input_heaader_pesq" type="text" title="Pesquisa" placeholder="Pesquisar..."> </div> <button  id="heaad_Menu" onclick="Menu()">Menu <i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
         <div id="div_body">
@@ -43,10 +43,11 @@
             <div id="div_procura">
                 <h1>Oque você procura?</h1>
                 <select name="Procura" id="select_procura" title="Procurar">
-                    <option value="">Material</option>
-                       <option value="logos">Logos</option>
-                          <option value="design">Design</option>
-                           <option value="GIF">Folder</option>
+                 <option value="">Material</option>
+                   <option value="logos">Logos</option>
+                     <option value="design">Design</option>
+                       <option value="GIF">GIFs</option>
+                        <option value="video">Vídeo</option>
                 </select>
                   <select name="Procura" id="select_Departamentos" title="Departamentos">
                      <option value="">Departamento</option>
@@ -80,14 +81,14 @@
                   <div id="div_listas">
                     <div id="Lista"></div>
                   </div>
-
             </div>
             <div id="body02">
-               <label for="">Lista</label>
-                
+              <label for="">Lista</label>
+              <div id="listasUm">
+              </div>
+               
             </div>
         </div>
-
         <div id="div_footer">
             <div id="footer01">
                 <label id="Titulo_footer" for=""> Logos Adventistas / ASD</label><br><br><img src="src/Logo_ASD.png" alt="" width="70"> <img src="src/Logo01.png" alt="" width="70">
@@ -97,10 +98,8 @@
             </div>
              <div id="footer03">
                       <button>Botã 01</button> <button>Botão 02</button><button>Botão 03</button> <button>Botão 04</button>
-                
              </div>
         </div>
-
     </div>
 
     <script src="js/index.js"></script>

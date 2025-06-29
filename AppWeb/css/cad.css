@@ -3,8 +3,9 @@
     padding: 0%;
 }
 body{
-    background-color: rgb(239, 241, 255);
+    background-color: rgb(237, 245, 252);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+
  }
 
 ::-webkit-scrollbar {
@@ -46,23 +47,25 @@ min-width: 400px;
 min-height: 100vh;
 background-color: rgb(255, 255, 255);
 }
-#div_heaad{
+#div_geral #div_heaad{
  width: 100%;
  max-width: 1920px;
  min-width: 400px;
  position: fixed;
- background-color: rgb(255, 255, 255);
+background-color: rgb(0, 3, 5);
 z-index: 9999;
+font-size: clamp(0.775rem, 1vw + 0.5rem, 1rem);
+
 }
 #heaad01{
  display: flex;
  justify-content: space-between;
  align-items: center;
  width: 100%;
- padding-top: 3px;
  padding-bottom: 3px;
- background-color: rgb(21, 31, 168);
+ background-color: rgb(0, 3, 5);
  color: aliceblue;
+ 
 }
  #heaad02{
  display: flex;
@@ -71,6 +74,8 @@ z-index: 9999;
  width: 100%;
  padding-top: 10px;
  border-bottom: 1px solid rgb(177, 177, 177);
+  color: rgb(10, 10, 10);
+  
 }
 #div_heaad #heaad01 label{
 border: 0cap;
@@ -82,9 +87,9 @@ font-size: clamp(0.775rem, 1vw + 0.5rem, 1rem);
 #div_heaad #heaad02 button{
 border: 0cap;
 background-color: rgba(0, 0, 0, 0);
-color: rgb(0, 0, 10);
+color: rgb(255, 255, 255);
 cursor: pointer;
-font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem);
+font-size: clamp(0.575rem, 1vw + 0.5rem, 1rem);
 }
  #div_body{
 width: 100%;
@@ -95,12 +100,10 @@ padding-top: 95px;
 }
 #Titulo_heaad{
 font-size: 22px;
-font-weight: bold;
 margin-left: 20px;
 }
 #Titulo{
 font-size: 23px;
-font-weight: bold;
 margin-left: 20px;
 padding-bottom: 5px;
 padding-top: 10px;
@@ -112,7 +115,7 @@ padding-top: 10px;
 margin: auto;
 width: 95%;
 max-width: 1400px;
-margin-top: 15px;
+margin-top: 25px;
 background-color: rgba(255, 0, 200, 0);
 }
 #body01 select{
@@ -121,23 +124,26 @@ cursor: pointer;
 font-size: clamp(0.975rem, 1vw + 0.5rem, 1rem);
 min-width: 300px;
 margin-bottom: 15px;
-background-color: aliceblue;
-border: 1px solid rgb(36, 36, 36);
-border-radius: 3px;
+background-color: rgba(240, 248, 255, 0);
+border: 1px solid rgb(134, 134, 134);
+border-radius: 7px;
+border-color: rgb(0, 0, 0);
+font-weight: bold;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+   outline: none;  
 }
 #todList select{
 width: 250px;
 cursor: pointer;
 padding: clamp(0.2rem, 0.500vw, 1rem);
-background-color: rgb(32, 34, 153);
-border-color: azure;
+background-color: rgb(0, 3, 5);
+border-color: rgba(0, 2, 14, 0);
 color: rgb(255, 255, 255);
 font-size: 15px;
 border-radius: 4px;
 margin-left: 20px;
-}
-#todList select:hover{
-background-color: rgb(0, 48, 151) ;
+font-weight: bold;
+  outline: none;  
 }
 #buscar{
 min-width: 100px;
@@ -146,8 +152,12 @@ border-radius: 5px;
 border: 1px solid rgb(75, 74, 74);
 cursor: pointer;
 font-size: clamp(0.975rem, 1vw + 0.5rem, 1rem);
- background-color: rgb(21, 31, 168);
+background-color: rgb(0, 3, 5);
 color: azure;
+}
+#buscar:hover{
+  background-color: #05005c;
+  color: rgb(255, 255, 255);
 }
 #btn2_heaadMenu{
 margin-right: 20px;
@@ -157,7 +167,7 @@ width: 100%;
 max-width: 1920px;
 min-width: 400px;
 height: 70vh;
-background-color: rgb(1, 0, 7);
+background-color: rgb(0, 0, 0);
 }
 #body02{
 margin: auto;
@@ -185,7 +195,7 @@ font-size: 25px;
 position: relative;
 background-color: #ffffff00;
 color: white;
-font-size: clamp(0.875rem, 1vw + 0.5rem, 1.25rem);
+font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem);
 padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem);
 border: 0cap;
 cursor: pointer;
@@ -196,6 +206,7 @@ font-weight: bold;
 content: "";
 position: absolute;
 width: 0%;
+font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem);
 height: 3px;
 background: #ffffff; /* Cor da linha */
 transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
@@ -210,10 +221,10 @@ width: 100%;
 #heaad02 button {
 position: relative;
 background-color: #ffffff00;
-color: rgb(39, 39, 39);
+color: rgb(255, 255, 255);
 padding: 10px 0px;
 border: none;
-font-size: 16px;
+font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem);
 cursor: pointer;
 overflow: hidden;
 font-weight: bold;
@@ -222,8 +233,9 @@ font-weight: bold;
 content: "";
 position: absolute;
 width: 0%;
-height: 4px;
-background: #2502be; /* Cor da linha */
+font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem);
+height: 3px;
+background: #ffffff; /* Cor da linha */
 transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
 }
 #heaad02 button::after {
@@ -294,7 +306,7 @@ font-size: clamp(0.875rem, 1vw + 0.5rem, 0.900rem);
  font-weight: bold;
 }
 #lbl_sair_Cad:hover, #lbl_sair_procura:hover, #lbl_sair_lista:hover{
- color: rgb(88, 0, 59);
+ color: rgb(78, 0, 0);
 }
 #lbl_sair_procura{
 display: none;
@@ -306,9 +318,9 @@ max-width: 600px;
 padding: 10px;
 background-color: #2502be00;
 margin-top: 20px;
-border: 2px solid rgb(189, 189, 189);
-border-radius: 10px;
- box-shadow: 0 3px 7px rgba(0, 0, 0, 0.378);
+
+
+
 }
 #inputs #LimparCad{
 margin-left: 70px;
@@ -413,7 +425,7 @@ color: #ffffff;
 #listas{
   margin: auto;
   width: 98%;
-  max-width: 600px;
+  max-width: 610px;
   background-color: rgba(4, 175, 175, 0);
   margin-top: 20px;
   margin-bottom: 200px;
@@ -428,10 +440,9 @@ color: #ffffff;
  margin-top: 10px;
  margin-bottom: 20px;
  background-color: #f6f8ff;
- box-shadow: 0 5px 10px rgba(0, 0, 0, 0.378);
+ box-shadow: 0 3px 7px rgba(0, 0, 0, 0.378);
  padding: 5px;
  border-radius: 5px;
- 
 }
 #imgList{
 width: 70px;
@@ -465,7 +476,7 @@ align-items: center;
 margin-top: 10px;
 margin-bottom: 20px;
 background-color: #f6f8ff;
-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.378);
+box-shadow: 0 3px 7px rgba(0, 0, 0, 0.378);
 padding: 5px;
 border-radius: 5px;
 
@@ -491,7 +502,7 @@ border-radius: 5px;
 }
 #div_lista_result #h3_listResult{
  font-size: clamp(0.875rem, 1vw + 0.5rem, 1.25rem);
-color: #a30202;
+color: #7e0000;
 }
 .my-custom_CadExCód{
   max-width: 370px;
@@ -510,17 +521,18 @@ color: #a30202;
   border-radius: 3px;
   cursor: pointer;
   font-size: 14px;
+    outline: none;  
 }
 .my-custom_CadExCód button, .my-custom_PesqCódigo button{
   width: 60%;
   padding: 7px;
-  border: 1px solid rgb(214, 214, 214);
-  background-color: #e7ecff;
+  border: 1px solid rgb(233, 233, 233);
+  background-color: #dce3ff;
   border-radius: 3px;
   cursor: pointer;
 }
 .my-custom_CadExCód button:hover, .my-custom_PesqCódigo button:hover{
-  background-color: #ffffff;
+  background-color: #f0efff;
   color: #c50202;
     border: 1px solid rgb(255, 0, 0);
 }
@@ -546,6 +558,9 @@ color: #a30202;
 #div_lista_result{
   display: none;
 }
+#a_REF{
+  display: none;
+}
 
 
 
@@ -561,238 +576,208 @@ color: #a30202;
 
 
 @media(max-width: 1600px){
-  #Titulo_heaad{
-  font-size: 20px;
-  font-weight: bold;
-  margin-left: 20px;
-}
-  #cadastro #img_apresent{
-  float: right;
-  width: 100px;
-  margin-right: 170px;
-  margin-top: 100px;
-}
+#Titulo_heaad{
+font-size: 20px;
 
-
+margin-left: 20px;
+}
+#cadastro #img_apresent{
+float: right;
+width: 100px;
+margin-right: 170px;
+margin-top: 100px;
+}
 }
 @media(max-width: 1500px){
-  #cadastro #img_apresent{
- float: right;
-  width: 100px;
-  margin-right: 170px;
-  margin-top: 100px;
+#cadastro #img_apresent{
+float: right;
+width: 100px;
+margin-right: 170px;
+margin-top: 100px;
 }
-
-
 }
 @media(max-width: 1400px){
-  #cadastro #img_apresent{
- float: right;
-  width: 100px;
-  margin-right: 170px;
-  margin-top: 100px;
+#cadastro #img_apresent{
+float: right;
+width: 100px;
+margin-right: 170px;
+margin-top: 100px;
 }
-
-
 }
 @media(max-width: 1300px){
-  #cadastro #img_apresent{
- float: right;
-  width: 100px;
-  margin-right: 170px;
-  margin-top: 100px;
+#cadastro #img_apresent{
+float: right;
+width: 100px;
+margin-right: 170px;
+margin-top: 100px;
 }
-
-
 }
 @media(max-width: 1200px){
-  #cadastro #img_apresent{
- float: right;
-  width: 100px;
-  margin-right: 170px;
-  margin-top: 100px;
+#cadastro #img_apresent{
+float: right;
+width: 100px;
+margin-right: 170px;
+margin-top: 100px;
 }
-
-
 }
 @media(max-width: 1100px){
-  #cadastro #img_apresent{
- float: right;
-  width: 100px;
-  margin-right: 170px;
-  margin-top: 100px;
+#cadastro #img_apresent{
+float: right;
+width: 100px;
+margin-right: 170px;
+margin-top: 100px;
 }
-
-
 }
 @media(max-width: 1000px){
-   #lbl_sair_lista{
-  margin-bottom: 50px;
-  margin-left: 180px;
+#lbl_sair_lista{
+margin-bottom: 50px;
+margin-left: 180px;
 }
-  #cadastro #img_apresent{
- float: right;
-  width: 100px;
-  margin-right: 170px;
-  margin-top: 100px;
+#cadastro #img_apresent{
+float: right;
+width: 100px;
+margin-right: 170px;
+margin-top: 100px;
 }
-
-
 }
 @media(max-width: 900px){
-   #lbl_sair_lista{
-  margin-bottom: 50px;
-  margin-left: 146px;
+#lbl_sair_lista{
+margin-bottom: 50px;
+margin-left: 146px;
 }
-  #cadastro #img_apresent{
- float: right;
-  width: 100px;
-  margin-right: 170px;
-  margin-top: 100px;
+#cadastro #img_apresent{
+float: right;
+width: 100px;
+margin-right: 170px;
+margin-top: 100px;
 }
-
-
 }
 @media(max-width: 800px){
-  #lbl_sair_lista{
-  margin-bottom: 50px;
-  margin-left: 90px;
+#lbl_sair_lista{
+margin-bottom: 50px;
+margin-left: 90px;
 }
-  #cadastro #img_apresent{
- float: right;
-  width: 100px;
-  margin-right: 120px;
-  margin-top: 100px;
+#cadastro #img_apresent{
+float: right;
+width: 100px;
+margin-right: 120px;
+margin-top: 100px;
 }
 #todList select{
 width: 220px;
 cursor: pointer;
 padding: 7px;
-background-color: rgb(0, 12, 78);
-border-color: azure;
+background-color: rgb(0, 3, 5);
 color: rgb(255, 255, 255);
 font-size: 14px;
 border-radius: 4px;
 margin-left: 20px;
 }
-
 }
 @media(max-width: 700px){
-   #lbl_sair_lista{
-  margin-bottom: 30px;
-  margin-left: 40px;
+#lbl_sair_lista{
+margin-bottom: 30px;
+margin-left: 40px;
 }
-  #cadastro #img_apresent{
- float: right;
-  width: 100px;
-  margin-right: 130px;
-  margin-top: 100px;
+#cadastro #img_apresent{
+float: right;
+width: 100px;
+margin-right: 130px;
+margin-top: 100px;
 }
 #todList select{
 width: 180px;
 cursor: pointer;
 padding: 7px;
-background-color: rgb(0, 12, 78);
-border-color: azure;
+background-color: rgb(0, 3, 5);
 color: rgb(255, 255, 255);
 font-size: 14px;
 border-radius: 4px;
 margin-left: 20px;
 }
-
 }
 @media(max-width: 600px){
-   #lbl_sair_lista{
-  margin-bottom: 50px;
-  margin-left:30px;
+#lbl_sair_lista{
+margin-bottom: 50px;
+margin-left:30px;
 }
-  #cadastro #img_apresent{
- float: right;
-  width: 100px;
-  margin-right: 100px;
-  margin-top: 100px;
+#cadastro #img_apresent{
+float: right;
+width: 100px;
+margin-right: 100px;
+margin-top: 100px;
 }
 #todList select{
 width: 160px;
 cursor: pointer;
 padding: 7px;
-background-color: rgb(0, 12, 78);
-border-color: azure;
+background-color: rgb(0, 3, 5);
 color: rgb(255, 255, 255);
 font-size: 14px;
 border-radius: 4px;
 margin-left: 20px;
 }
-
-
 }
 @media(max-width: 500px){
-   #lbl_sair_lista{
-  margin-bottom: 30px;
-  margin-left: 30px;
+#lbl_sair_lista{
+margin-bottom: 30px;
+margin-left: 30px;
 }
-  #cadastro #img_apresent{
- float: right;
-  width: 80px;
-  margin-right: 70px;
-  margin-top: 120px;
+#cadastro #img_apresent{
+float: right;
+width: 80px;
+margin-right: 70px;
+margin-top: 120px;
 }
 #todList select{
 width: 145px;
 cursor: pointer;
 padding: 7px;
-background-color: rgb(0, 12, 78);
-border-color: azure;
+background-color: rgb(0, 3, 5);
 color: rgb(255, 255, 255);
 font-size: 13px;
 border-radius: 4px;
 margin-left: 20px;
 }
-
-
 }
 @media(max-width: 400px){
-   #lbl_sair_lista{
-  margin-bottom: 30px;
-  margin-left: 30px;
+#lbl_sair_lista{
+margin-bottom: 30px;
+margin-left: 30px;
 }
-  #cadastro #img_apresent{
- float: right;
-  width: 75px;
-  margin-right: 55px;
-  margin-top: 130px;
+#cadastro #img_apresent{
+float: right;
+width: 75px;
+margin-right: 55px;
+margin-top: 130px;
 }
 #todList select{
 width: 140px;
 cursor: pointer;
 padding: 7px;
-background-color: rgb(0, 12, 78);
-border-color: azure;
+background-color: rgb(0, 3, 5);
 color: rgb(255, 255, 255);
 font-size: 13px;
 border-radius: 4px;
 margin-left: 20px;
 }
-
-
 }
 @media(max-width: 300px){
-   #lbl_sair_lista{
-  margin-bottom: 30px;
-  margin-left: 25px;
+#lbl_sair_lista{
+margin-bottom: 30px;
+margin-left: 25px;
 }
-  #cadastro #img_apresent{
- float: right;
-  width: 70px;
-  margin-right: 45px;
-  margin-top: 130px;
+#cadastro #img_apresent{
+float: right;
+width: 70px;
+margin-right: 45px;
+margin-top: 130px;
 }
 #todList select{
 width: 140px;
 cursor: pointer;
 padding: 7px;
-background-color: rgb(0, 12, 78);
-border-color: azure;
+background-color: rgb(0, 3, 5);
 color: rgb(255, 255, 255);
 font-size: 15px;
 border-radius: 4px;

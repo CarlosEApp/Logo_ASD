@@ -70,7 +70,7 @@ margin-left: 15px;
 }
 #heaad2{
 display: flex;
-justify-content: space-between;
+justify-content: space-around;
 align-items: center;
 width: 100%;
 padding-bottom: 5px;
@@ -305,7 +305,6 @@ opacity: 1;
 caret-color:  #fafaff;
 outline: none;  
 padding: clamp(0.2rem, 0.500vw, 2rem);
-
 
 }
 #div_input_heaader_pesq{

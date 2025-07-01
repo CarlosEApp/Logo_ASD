@@ -112,32 +112,39 @@ max-width: 1920px;
 background-color: rgb(0, 3, 12);
 height: 80vh;
 color: aliceblue;
+padding-bottom: 100px;
 }
 #footer01{
 margin: auto;
-width: 80%;
+width: 90%;
 padding-top: 70px;
 margin-bottom: 70px;
 text-align: center;
 }
  #footer02{
  margin: auto;
-width: 80%;
+width: 70%;
+min-width: 390px;
 margin-bottom: 30px;
 text-align: center;
 margin-top: 50px;
 }
 #footer03{
 margin: auto;
-width: 80%;
+width: 90%;
 display: flex;
 justify-content: space-around;
 align-items: center;
-margin-top: 100px;
+margin-top: 170px;
 }
 #Titulo_footer{
-font-size: 28px;
+font-size: clamp(2rem, 2vw + 0.10rem, 3.200rem);
 font-weight: bold;
+}
+#h2footer{
+  width: 100%;
+font-size: clamp(1rem, 2vw + 0.5rem, 1.200rem);
+
 }
 #footer03 button{
 border: 0cap;
@@ -370,13 +377,12 @@ border: 1cap rgb(255, 255, 255) ;
 font-size: clamp(0.400rem, 1vw + 0.5rem, 0.900rem);
 color: #000205;
 background-color: #e0e0e000;
-
 }
 #botão2List, #botão3List{
-  font-size: clamp(1.900rem, 1vw + 0.5rem, 1.700rem);
-  border: 0cap;
-  background-color: #e0e0e000;
-  cursor: pointer;
+font-size: clamp(1.900rem, 1vw + 0.5rem, 1.700rem);
+border: 0cap;
+background-color: #e0e0e000;
+cursor: pointer;
 }
 #botão2List:hover, #botão3List:hover{
   color: #0e008a;
@@ -387,8 +393,6 @@ height: 37px;
 cursor: pointer;
 margin-left: 10px; 
 border: 1px rgb(255, 255, 255) ;
-
-
 }
 #div3List_{
   display: flex;

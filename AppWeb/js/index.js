@@ -121,14 +121,24 @@ list.appendChild(div1) ;
  sessionStorage.setItem('pesQuiSar', '');
  sessionStorage.setItem('itens',`${itens}`)
 
+ botão3.addEventListener('click',function(){
+var url = "https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html";
+var img = `${doc.Titulo}: ${doc.URL}`;
+var cod=`${doc.Código}`
+var whatsappMessage =`Pagina Web: ${url}\n\n📷 ${img} \n\n Código: ${cod}\n\n`;
+var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
+
+window.open(whatsappLink, "_blank");
+ });
+
 botão1.addEventListener('click',function(){
     if(doc.Canvas==''){
-       Swal.fire('desculpe-me!','Esse design não possue link para edição no canva.')
+       Swal.fire('desculpe-me!','Esse design não possui link para edição no Canva..')
     } else{
        window.open(`${doc.Canvas}`,'_blank')
     }
    
-})
+});
     
 } else{
 

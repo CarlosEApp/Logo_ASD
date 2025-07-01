@@ -357,7 +357,7 @@ padding: 10px;
   margin-top: 10px;
   cursor: pointer;
 }
-#Lista{
+#Lista,#listaInicial{
 display: flex;
 justify-content: space-evenly;
 align-items: center;
@@ -405,7 +405,47 @@ border: 1px rgb(255, 255, 255) ;
 
 
 
+.my-custom_CadExCód{
+  max-width: 370px;
+  border-radius: 15px;
+  background-color: #ffffff;
+   box-shadow: 0 7px 15px rgba(0, 0, 0, 0.603);
+}
+.my-custom_CadExCód p{
+  font-size: 13px;
+  font-weight: bold;
+}
+.my-custom_CadExCód input, .my-custom_PesqCódigo input{
+  width: 80%;
+  padding: 7px;
+  border: 2px solid #e0e0e0;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+    outline: none;  
+}
+.my-custom_CadExCód button, .my-custom_PesqCódigo button{
+  width: 60%;
+  padding: 7px;
+  border: 1px solid rgb(233, 233, 233);
+  background-color: #dce3ff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.my-custom_CadExCód button:hover, .my-custom_PesqCódigo button:hover{
+  background-color: #f0efff;
+  color: #c50202;
+    border: 1px solid rgb(255, 0, 0);
+}
+.my-custom_PesqCódigo{
+  max-width: 400px;
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.603);
+  border-radius: 10px;
 
+}
+.my-custom_PesqCódigo h2{
+  font-size: 22px;
+}
 
 @media(max-width: 800px){
 #input_heaader_pesq{

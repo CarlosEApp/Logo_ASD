@@ -353,7 +353,7 @@ padding-top: 15px;
 padding: 10px;
 }
 #imgList{
-  width: 90%;
+  width: 64%;
   margin-top: 10px;
   cursor: pointer;
 }
@@ -400,6 +400,40 @@ border: 1px rgb(255, 255, 255) ;
   align-items: center;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+#buttonLista{
+  width: 100%;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  background-color: #000308;
+
+}
+#buttonLista select{
+  width: 250px;
+  border: 0cap;
+  background-color: #00020500;
+  color: #dce3ff; 
+ font-size: clamp(1.100rem, 1vw + 0.5rem, 1.300rem);
+}
+#buttonLista option{
+ color: #000205;
+}
+#lbl_sair_procura{
+  display: none;
+  cursor: pointer;
+   font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+      margin-left: 50px;
+      color: #cf0056;
+}
+#itensListInit{
+     font-size: clamp(0.700rem, 1vw + 0.5rem, 0.900rem);
+     color: #dce3ff;
+     margin-left: 20px;
+     display: none;
+
 }
 
 

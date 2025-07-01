@@ -75,11 +75,21 @@
                                                 <button id="buscar" onclick="buscar_()">Buscar</button>
             </div>
             <div id="body01">
+                   <label id="lbl_sair_procura" for="" onclick="lbl_sair_P()"> <i class="fa-solid fa-delete-left"></i> Sair </label>
                  <h3 id="he_derpartamentos"></h3>
                   <div id="div_listas">
                     <div id="Lista"></div>
                   </div>
             </div>
+            <div id="buttonLista">
+          <select name="Procura" id="select_procuraTdlist" title="Procurar" onchange="selectInit()">
+                <option value="logos">Logos</option>
+                 <option value="design">Design</option>
+                  <option value="GIF">GIFs</option>
+                   <option value="video">Vídeo</option>
+           </select> <label id="itensListInit" for=""></label>
+            </div>
+            
             <div id="body02">
               
               <div id="listaInicial">

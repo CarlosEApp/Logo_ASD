@@ -1,7 +1,11 @@
 
 
 
-
+function lbl_sair_P(){
+var list= document.getElementById('Lista');
+list.innerHTML = '';
+ document.getElementById('lbl_sair_procura').style.display='none'
+}
 // Procura
 function buscar_(){
     buscar('click')
@@ -43,15 +47,12 @@ var itens= querySnapshot.size;
  function removerAcentos(texto) {
 return (texto ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
-
          if(
 removerAcentos(pesquisa.toLowerCase()) === removerAcentos(doc.Código?.toLowerCase()) ||
 removerAcentos(pesquisa.toLowerCase()) === removerAcentos(doc.Departamento?.toLowerCase()) ||
 removerAcentos(pesquisa.toLowerCase()) === removerAcentos(doc.Nome?.toLowerCase())||
 removerAcentos(pesquisa.toLowerCase()) === removerAcentos(doc.Titulo?.toLowerCase())
 ) {
-
-
 
 var div1=document.createElement('div');
 var div2=document.createElement('div');
@@ -93,17 +94,12 @@ if(!doc.Canvas||doc.Canvas==''){
 } else{
    
 imgbotão.src='src/logoCanva.png'
-
- 
 }
 
 botão2.textContent='';
 botão2.className=`fa-solid fa-download`;
 botão3.textContent='';
 botão3.className=`fa-solid fa-square-share-nodes`;
-
-
-
 
 botão1.appendChild(imgbotão);
 div1.appendChild(label1);
@@ -120,6 +116,11 @@ div1.appendChild(div3);
 list.appendChild(div1) ;
  sessionStorage.setItem('pesQuiSar', '');
  sessionStorage.setItem('itens',`${itens}`)
+ document.getElementById('lbl_sair_procura').style.display='block'
+
+ img.addEventListener('click', function(){
+    swal(`${doc.Titulo}`,` Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
+ });
 
  botão3.addEventListener('click',function(){
 var url = "https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html";
@@ -166,6 +167,31 @@ if(!respl||respl==''){
 Swal.fire('Lista Vazia')
 document.getElementById('input_heaader_pesq').value=''
  sessionStorage.setItem('pesQuiSar','');
+}else{
+Swal.close()
+}
+
+},5000)
+
+}
+//Alerta de lista vazia
+function respList_(){
+Swal.fire({
+title: `Procurando Arquivos... `,
+text: `Aguarde...`,
+allowOutsideClick: false,
+showConfirmButton: false,
+didOpen: () => {
+Swal.showLoading();
+ document.body.style.paddingRight = '0px';        
+}
+});
+setTimeout(function(){
+var respl=  sessionStorage.getItem('itens_')
+if(!respl||respl==''){
+Swal.fire('Lista Vazia')
+document.getElementById('itensListInit').style.display='none'
+
 }else{
 Swal.close()
 }
@@ -267,7 +293,7 @@ Swal.close()
 });
 document.getElementById('PasqCodigo').addEventListener('click',function(){
 sessionStorage.setItem('itens',``)
-var respDoc= document.getElementById('idcódigo').value;
+var respDoc= document.getElementById('idcódigo').value.trim();
 if(!respDoc|| respDoc==''){
  sessionStorage.setItem('pesQuiSar', '');
  Swal.fire('Campo código vazio!')
@@ -388,11 +414,9 @@ didOpen: () => {
 }
 
 
-
-
 setInterval(function(){
     var pesquisar= document.getElementById('input_heaader_pesq').value.trim()
-    if(!pesquisar|| pesquisar==''||pesquisar.length <= 6){
+    if(!pesquisar|| pesquisar==''||pesquisar.length <= 4){
     document.getElementById('pesqheaad').style.display='none';
     }else{
         document.getElementById('pesqheaad').style.display='block';
@@ -454,15 +478,21 @@ setInterval(function() {
 } 
 
 
-
+function selectInit(){
+    var selectL= document.getElementById('select_procuraTdlist').value;
+    sessionStorage.setItem('ListInicio', selectL)
+    listaInicil('click')
+}
 
 
 // lista inicial firebase
+function listaInicil(){
+    var listaInt= sessionStorage.getItem('ListInicio');
 
 var list= document.getElementById('listaInicial');
 list.innerHTML = '';
 
-sessionStorage.setItem('itens',``)
+sessionStorage.setItem('itens_',``)
 var firebaseConfig = {
 apiKey: "AIzaSyD7q-qzsIhACByHciJkDBI3yPuKK_bgHUM",
 authDomain: "logos-asd.firebaseapp.com",
@@ -473,8 +503,8 @@ appId: "1:801633317687:web:3a38f39b2e9861902e20b2",
 measurementId: "G-GJEW931Y73"
 };
 firebase.initializeApp(firebaseConfig);  
-
-var produtosRef = db.collection(`Codigos`);
+respList_('click')
+var produtosRef = db.collection(`Coleção_${listaInt}`);
 produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();
@@ -543,8 +573,15 @@ div3.appendChild(botão3);
 div1.appendChild(div2);
 div1.appendChild(div3);
 list.appendChild(div1) ;
- sessionStorage.setItem('pesQuiSar', '');
- sessionStorage.setItem('itens',`${itens}`)
+
+document.getElementById('itensListInit').style.display='block';
+ sessionStorage.setItem('itens_',`${itens}`)
+ var repItens= document.getElementById('itensListInit');
+ repItens.innerHTML=`(${itens}) Itens`;
+
+img.addEventListener('click', function(){
+  swal(`${doc.Titulo}`,` Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
+ });
 
  botão3.addEventListener('click',function(){
 var url = "https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html";
@@ -567,4 +604,5 @@ botão1.addEventListener('click',function(){
     
 })
 })
-
+}
+ selectInit()

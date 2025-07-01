@@ -57,8 +57,10 @@ var div1=document.createElement('div');
 var div2=document.createElement('div');
 var div3=document.createElement('div');        
 var img=document.createElement('img');
+var imgbotão=document.createElement('img');
 var botão1= document.createElement('button');
 var botão2= document.createElement('button'); 
+var botão3= document.createElement('button'); 
 var label1= document.createElement('label');
 var label2= document.createElement('label'); 
 var label3= document.createElement('label');
@@ -69,6 +71,7 @@ var br4=  document.createElement('br');
 var br5=  document.createElement('br'); 
 
 div1.id='div1List_';
+div3.id='div3List_';
 div2.id='div2List';
 img.id='imgList';
 label1.id='label1List';
@@ -76,17 +79,33 @@ label2.id='label2List';
 label3.id='label3List';
 botão1.id='botão1List';
 botão2.id='botão2List'; 
+botão3.id='botão3List'; 
+imgbotão.id='imgList2';
 
 img.src=`${doc.URL}`;
+
 label1.textContent=`${doc.Titulo}`;
 label2.textContent=`${doc.Nome}`;
 label3.textContent=`Código: ${doc.Código}`;
-botão1.textContent='';
-botão1.className=`fa-solid fa-pen-to-square`;
+if(!doc.Canvas||doc.Canvas==''){
+ 
+  imgbotão.src='src/Logo_ASD.png'
+} else{
+   
+imgbotão.src='src/logoCanva.png'
+
+ 
+}
+
 botão2.textContent='';
-botão2.className=`fa-solid fa-trash`;
+botão2.className=`fa-solid fa-download`;
+botão3.textContent='';
+botão3.className=`fa-solid fa-square-share-nodes`;
 
 
+
+
+botão1.appendChild(imgbotão);
 div1.appendChild(label1);
 div1.appendChild(br1); 
 div1.appendChild(img);
@@ -94,14 +113,23 @@ div2.appendChild(label2);
 div2.appendChild(br2); 
 div2.appendChild(label3); 
 div3.appendChild(botão1);
-div3.appendChild(br3); 
-div3.appendChild(br4); 
 div3.appendChild(botão2); 
+div3.appendChild(botão3); 
 div1.appendChild(div2);
 div1.appendChild(div3);
 list.appendChild(div1) ;
  sessionStorage.setItem('pesQuiSar', '');
  sessionStorage.setItem('itens',`${itens}`)
+
+botão1.addEventListener('click',function(){
+    if(doc.Canvas==''){
+       Swal.fire('desculpe-me!','Esse design não possue link para edição no canva.')
+    } else{
+       window.open(`${doc.Canvas}`,'_blank')
+    }
+   
+})
+    
 } else{
 
 }
@@ -275,16 +303,42 @@ document.getElementById('heaad_btn03').addEventListener('click',function(){
 //Pesquisa do Heaader
 document.getElementById('input_heaader_pesq').focus()
 function pesquisar(){
-    var pesquisar= document.getElementById('input_heaader_pesq').value;
+    var pesquisar= document.getElementById('input_heaader_pesq').value.trim();
+    if(!pesquisar|| pesquisar==''){
+        Swal.fire({
+title: ``,
+html:` 
+
+`,
+showCancelButton: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_CadExCód' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+    document.body.style.paddingRight = '0px';
+ }
+}); 
+       Swal.fire('Atenção!','Preencha o campo pesquisa.','warning')
+    } else{
     sessionStorage.setItem('pesQuiSar', pesquisar);
     buscar()
+    }
     
 }
 
 
 
 
-
+setInterval(function(){
+    var pesquisar= document.getElementById('input_heaader_pesq').value.trim()
+    if(!pesquisar|| pesquisar==''||pesquisar.length <= 6){
+    document.getElementById('pesqheaad').style.display='none';
+    }else{
+        document.getElementById('pesqheaad').style.display='block';
+    }
+    
+})
 
 
 

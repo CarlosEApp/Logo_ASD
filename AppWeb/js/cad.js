@@ -62,7 +62,7 @@ Swal.close()
 });
 document.getElementById('PasqCodigo').addEventListener('click',function(){
 sessionStorage.setItem('itens',``)
-var respDoc= document.getElementById('idcódigo').value;
+var respDoc= document.getElementById('idcódigo').value.trim();
 
 Swal.fire({
 title: ``,

@@ -62,6 +62,7 @@ var imgbotão=document.createElement('img');
 var botão1= document.createElement('button');
 var botão2= document.createElement('button'); 
 var botão3= document.createElement('button'); 
+var botão4= document.createElement('button'); 
 var label1= document.createElement('label');
 var label2= document.createElement('label'); 
 var label3= document.createElement('label');
@@ -81,6 +82,7 @@ label3.id='label3List';
 botão1.id='botão1List';
 botão2.id='botão2List'; 
 botão3.id='botão3List'; 
+botão4.id='botão3List'; 
 imgbotão.id='imgList2';
 
 img.src=`${doc.URL}`;
@@ -97,9 +99,10 @@ imgbotão.src='src/logoCanva.png'
 }
 
 botão2.textContent='';
-botão2.className=`fa-solid fa-download`;
+botão2.className=`fa-solid fa-eye`;
 botão3.textContent='';
 botão3.className=`fa-solid fa-square-share-nodes`;
+botão4.className=`fa-solid fa-download`;
 
 botão1.appendChild(imgbotão);
 div1.appendChild(label1);
@@ -110,6 +113,7 @@ div2.appendChild(br2);
 div2.appendChild(label3); 
 div3.appendChild(botão1);
 div3.appendChild(botão2); 
+div3.appendChild(botão4); 
 div3.appendChild(botão3); 
 div1.appendChild(div2);
 div1.appendChild(div3);
@@ -117,32 +121,25 @@ list.appendChild(div1) ;
  sessionStorage.setItem('pesQuiSar', '');
  sessionStorage.setItem('itens',`${itens}`)
  document.getElementById('lbl_sair_procura').style.display='block'
+botão4.addEventListener('click', function () {
 
-botão2.addEventListener('click', function () {
-            const a = document.createElement('a');
-            let url =` ${doc.URL}`;
-           
-            a.href = url;
-            a.download = `${doc.Nome_Arquivo}`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-          
+
+});
+ botão2.addEventListener('click', function(){
+
+ swal(`${doc.Titulo}`,` Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
 });
 
 
-
-
-
  img.addEventListener('click', function(){
-    swal(`${doc.Titulo}`,` Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
+   window.open(doc.URL,'_blank')
  });
 
  botão3.addEventListener('click',function(){
 var url = "https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html";
 var img = `${doc.Titulo}: ${doc.URL}`;
 var cod=`${doc.Código}`
-var whatsappMessage =`Pagina Web: ${url}\n\n📷 ${img} \n\n Código: ${cod}\n\n`;
+var whatsappMessage =`Pagina Web: ${url}\n\n📷 ${img}\n\n Canva edite: ${doc.Canvas} \n\n Código: ${cod}\n\n`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 
 window.open(whatsappLink, "_blank");
@@ -535,6 +532,7 @@ var imgbotão=document.createElement('img');
 var botão1= document.createElement('button');
 var botão2= document.createElement('button'); 
 var botão3= document.createElement('button'); 
+var botão4= document.createElement('button'); 
 var label1= document.createElement('label');
 var label2= document.createElement('label'); 
 var label3= document.createElement('label');
@@ -554,6 +552,7 @@ label3.id='label3List';
 botão1.id='botão1List';
 botão2.id='botão2List'; 
 botão3.id='botão3List'; 
+botão4.id='botão3List'; 
 imgbotão.id='imgList2';
 
 img.src=`${doc.URL}`;
@@ -567,14 +566,13 @@ if(!doc.Canvas||doc.Canvas==''){
 } else{
    
 imgbotão.src='src/logoCanva.png'
- 
 }
 
 botão2.textContent='';
-botão2.className=`fa-solid fa-download`;
+botão2.className=`fa-solid fa-eye`;
 botão3.textContent='';
 botão3.className=`fa-solid fa-square-share-nodes`;
-
+botão4.className=`fa-solid fa-download`;
 
 botão1.appendChild(imgbotão);
 div1.appendChild(label1);
@@ -585,25 +583,33 @@ div2.appendChild(br2);
 div2.appendChild(label3); 
 div3.appendChild(botão1);
 div3.appendChild(botão2); 
+div3.appendChild(botão4); 
 div3.appendChild(botão3); 
 div1.appendChild(div2);
 div1.appendChild(div3);
 list.appendChild(div1) ;
-
-document.getElementById('itensListInit').style.display='block';
+ sessionStorage.setItem('pesQuiSar', '');
  sessionStorage.setItem('itens_',`${itens}`)
- var repItens= document.getElementById('itensListInit');
- repItens.innerHTML=`(${itens}) Itens`;
+ 
+botão4.addEventListener('click', function () {
+ Swal.fire('','Click esquerdo  segure bara baixa ou baixe direto na canva')
+          
+});
+ botão2.addEventListener('click', function(){
 
-img.addEventListener('click', function(){
-  swal(`${doc.Titulo}`,` Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
+ swal(`${doc.Titulo}`,` Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
+});
+
+
+ img.addEventListener('click', function(){
+   window.open(doc.URL,'_blank')
  });
 
  botão3.addEventListener('click',function(){
 var url = "https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html";
 var img = `${doc.Titulo}: ${doc.URL}`;
 var cod=`${doc.Código}`
-var whatsappMessage =`Pagina Web: ${url}\n\n📷 ${img} \n\n Código: ${cod}\n\n`;
+var whatsappMessage =`Pagina Web: ${url}\n\n📷 ${img}\n\n Canva edite: ${doc.Canvas} \n\n Código: ${cod}\n\n`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 
 window.open(whatsappLink, "_blank");
@@ -617,6 +623,7 @@ botão1.addEventListener('click',function(){
     }
    
 });
+
     
 })
 })

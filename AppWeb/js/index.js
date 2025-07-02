@@ -117,30 +117,37 @@ list.appendChild(div1) ;
  sessionStorage.setItem('pesQuiSar', '');
  sessionStorage.setItem('itens',`${itens}`)
  document.getElementById('lbl_sair_procura').style.display='block'
- botão2.addEventListener('click', function () {
- const urlFirebase = doc.URL; // substitua com o campo certo do seu `doc`
 
-fetch(urlFirebase)
-  .then(response => {
-    if (!response.ok) throw new Error("Falha ao buscar o arquivo");
-    return response.blob();
-  })
-  .then(blob => {
-    const link = document.createElement("a");
-    const objectUrl = URL.createObjectURL(blob);
-    link.href = objectUrl;
-    link.download = "arquivo.png"; // Pode ajustar dinamicamente se quiser
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(objectUrl);
-  })
-  .catch(error => {
-    console.error("Erro ao baixar o arquivo:", error);
-    alert("Não foi possível baixar o arquivo: " + error.message);
-  });
+botão2.addEventListener('click', function () {
+  const url = doc.URL;
+  const nomeArquivo = doc.Nome_Arquivo;
 
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', url, true);
+  xhr.responseType = 'blob';
+
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      const blob = xhr.response;
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.download = nomeArquivo;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      console.error("Erro no download:", xhr.status);
+    }
+  };
+
+  xhr.onerror = function () {
+    console.error("Erro de rede ao tentar baixar o arquivo.");
+  };
+
+  xhr.send();
 });
+
+
 
 
 

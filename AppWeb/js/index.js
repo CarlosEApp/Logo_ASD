@@ -117,6 +117,32 @@ list.appendChild(div1) ;
  sessionStorage.setItem('pesQuiSar', '');
  sessionStorage.setItem('itens',`${itens}`)
  document.getElementById('lbl_sair_procura').style.display='block'
+ botão2.addEventListener('click', function () {
+ const urlFirebase = doc.URL; // substitua com o campo certo do seu `doc`
+
+fetch(urlFirebase)
+  .then(response => {
+    if (!response.ok) throw new Error("Falha ao buscar o arquivo");
+    return response.blob();
+  })
+  .then(blob => {
+    const link = document.createElement("a");
+    const objectUrl = URL.createObjectURL(blob);
+    link.href = objectUrl;
+    link.download = "arquivo.png"; // Pode ajustar dinamicamente se quiser
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(objectUrl);
+  })
+  .catch(error => {
+    console.error("Erro ao baixar o arquivo:", error);
+    alert("Não foi possível baixar o arquivo: " + error.message);
+  });
+
+});
+
+
 
  img.addEventListener('click', function(){
     swal(`${doc.Titulo}`,` Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)

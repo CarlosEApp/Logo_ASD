@@ -119,32 +119,15 @@ list.appendChild(div1) ;
  document.getElementById('lbl_sair_procura').style.display='block'
 
 botão2.addEventListener('click', function () {
-  const url = doc.URL;
-  const nomeArquivo = doc.Nome_Arquivo;
-
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', url, true);
-  xhr.responseType = 'blob';
-
-  xhr.onload = function () {
-    if (xhr.status === 200) {
-      const blob = xhr.response;
-      const link = document.createElement('a');
-      link.href = window.URL.createObjectURL(blob);
-      link.download = nomeArquivo;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } else {
-      console.error("Erro no download:", xhr.status);
-    }
-  };
-
-  xhr.onerror = function () {
-    console.error("Erro de rede ao tentar baixar o arquivo.");
-  };
-
-  xhr.send();
+            const a = document.createElement('a');
+            let url =` ${doc.URL}`;
+           
+            a.href = url;
+            a.download = `${doc.Nome_Arquivo}`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+          
 });
 
 

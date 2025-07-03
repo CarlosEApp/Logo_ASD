@@ -126,7 +126,6 @@ botão4.addEventListener('click', () => {
     var name= nome.split('/')
     var n1= name[0]
     var n2= name[1]
-    alert(n2)
 
   fetch(doc.URL)
     .then(res => res.blob())
@@ -619,7 +618,6 @@ botão4.addEventListener('click', () => {
     var name= nome.split('/')
     var n1= name[0]
     var n2= name[1]
-    alert(n2)
 
   fetch(doc.URL)
     .then(res => res.blob())

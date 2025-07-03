@@ -591,10 +591,26 @@ list.appendChild(div1) ;
  sessionStorage.setItem('pesQuiSar', '');
  sessionStorage.setItem('itens_',`${itens}`)
  
-botão4.addEventListener('click', function () {
- Swal.fire('','Click esquerdo  segure bara baixa ou baixe direto na canva')
-          
+botão4.addEventListener('click', () => {
+  fetch(doc.URL)
+    .then(res => res.blob())
+    .then(blob => {
+      const blobURL = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = blobURL;
+      a.download = doc.Nome_Arquivo || 'arquivo.png';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(blobURL);
+    })
+    .catch(err => {
+      console.error("Erro ao baixar:", err);
+      Swal.fire("Oops!", "Não foi possível fazer o download.", "error");
+    });
 });
+
+
  botão2.addEventListener('click', function(){
 
  swal(`${doc.Titulo}`,` Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)

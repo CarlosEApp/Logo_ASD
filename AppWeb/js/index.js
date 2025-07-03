@@ -120,7 +120,7 @@ div1.appendChild(div3);
 list.appendChild(div1) ;
  sessionStorage.setItem('pesQuiSar', '');
  sessionStorage.setItem('itens',`${itens}`)
-  
+  document.getElementById('a_select_procura').click()
  document.getElementById('lbl_sair_procura').style.display='block'
 botão4.addEventListener('click', () => {
     var nome= doc.Nome_Arquivo;
@@ -198,7 +198,8 @@ setTimeout(function(){
 var respl=  sessionStorage.getItem('itens')
 if(!respl||respl==''){
 Swal.fire('Lista Vazia')
-document.getElementById('input_heaader_pesq').value=''
+document.getElementById('input_heaader_pesq').value='';
+ document.getElementById('lbl_sair_procura').style.display='none'
  sessionStorage.setItem('pesQuiSar','');
 }else{
 Swal.close()
@@ -691,11 +692,14 @@ div3.appendChild(botão3);
 div1.appendChild(div2);
 div1.appendChild(div3);
 list.appendChild(div1) ;
+
+
 sessionStorage.setItem('pesQuiSar', '');
 sessionStorage.setItem('itens_',`${itens}`)
 itensListInit.innerHTML=`(${itens}) Itens `;
 
 document.getElementById('itensListInit').style.display='block'
+//document.getElementById('a_select_procuraTdlist').click()
 
 botão4.addEventListener('click', () => {
     var nome= doc.Nome_Arquivo;

@@ -121,13 +121,33 @@ list.appendChild(div1) ;
  sessionStorage.setItem('pesQuiSar', '');
  sessionStorage.setItem('itens',`${itens}`)
  document.getElementById('lbl_sair_procura').style.display='block'
-botão4.addEventListener('click', function () {
+botão4.addEventListener('click', () => {
+    var nome= doc.Nome_Arquivo;
+    var name= nome.split('/')
+    var n1= name[0]
+    var n2= name[1]
+    alert(n2)
 
-
+  fetch(doc.URL)
+    .then(res => res.blob())
+    .then(blob => {
+      const blobURL = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = blobURL;
+      a.download = n2 || 'arquivo.png';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(blobURL);
+    })
+    .catch(err => {
+      console.error("Erro ao baixar:", err);
+      Swal.fire("Oops!", "Não foi possível fazer o download.", "error");
+    });
 });
  botão2.addEventListener('click', function(){
 
- swal(`${doc.Titulo}`,` Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
+ swal(`Formato do arquivo: ${doc.Formato}\n\n${doc.Titulo}`,` Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
 });
 
 
@@ -589,20 +609,25 @@ div3.appendChild(botão3);
 div1.appendChild(div2);
 div1.appendChild(div3);
 list.appendChild(div1) ;
- sessionStorage.setItem('pesQuiSar', '');
- sessionStorage.setItem('itens_',`${itens}`)
- itensListInit.innerHTML=`(${itens}) Itens `
- document.getElementById('itensListInit').style.display='block'
+sessionStorage.setItem('pesQuiSar', '');
+sessionStorage.setItem('itens_',`${itens}`)
+itensListInit.innerHTML=`(${itens}) Itens `
+document.getElementById('itensListInit').style.display='block'
 
- 
 botão4.addEventListener('click', () => {
+    var nome= doc.Nome_Arquivo;
+    var name= nome.split('/')
+    var n1= name[0]
+    var n2= name[1]
+    alert(n2)
+
   fetch(doc.URL)
     .then(res => res.blob())
     .then(blob => {
       const blobURL = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = blobURL;
-      a.download = doc.Nome_Arquivo || 'arquivo.png';
+      a.download = n2 || 'arquivo.png';
       document.body.appendChild(a);
       a.click();
       a.remove();
@@ -617,7 +642,7 @@ botão4.addEventListener('click', () => {
 
  botão2.addEventListener('click', function(){
 
- swal(`${doc.Titulo}`,` Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
+swal(`Formato do arquivo: ${doc.Formato}\n\n${doc.Titulo}`,` Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
 });
 
 

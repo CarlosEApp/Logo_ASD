@@ -167,7 +167,7 @@ window.open(whatsappLink, "_blank");
 
 botão1.addEventListener('click',function(){
     if(doc.Canvas==''){
-       Swal.fire('desculpe-me!','Esse design não possui link para edição no Canva..')
+        swal('desculpe-me!','Esse design não possui link para edição no Canva..','src/Sorry.png')
     } else{
        window.open(`${doc.Canvas}`,'_blank')
     }
@@ -277,13 +277,13 @@ html:` <div  class="menu-container">
     <button id='PsqCódigo'>Código <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> </button>
     <br><br>
     <button id="Tela" title="">Tela Cheia <i class="fa-solid fa-desktop"></i></button>
-    <br><br>
-    <button id='admin'> Administração <i class="fa-sharp-duotone fa-solid fa-lock"></i></button>
      <br><br>  
     <button id='instagran' > Instagran <i class="fa-brands fa-instagram"></i> </button>
       <br><br>  
     <button id='whatsapp' > WhatsApp <i class="fa-brands fa-whatsapp"></i> </button>
-    <br><br>  
+     <br><br>
+    <button id='admin'> Administração <i class="fa-sharp-duotone fa-solid fa-lock"></i></button>
+     <br><br>  
     <button id='Sair' class='cancelar'> Cancelar </button>
     </div>
 `,

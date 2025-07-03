@@ -439,6 +439,68 @@ border: 1px rgb(255, 255, 255) ;
 
 }
 
+#footer03 button{
+   font-size: clamp(1rem, 1vw + 0.5rem, 1.200rem);
+}
+#footer03 button:hover{
+  color: rgb(0, 253, 21);
+}
+.my-custom_login_Swl{
+max-width: 380px;
+margin-bottom: 10px;
+padding-right: 0;
+
+}
+#divWhats{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.my-custom_login_Swl #i_whats{
+color: #028b3b;
+font-size: 37px;
+font-weight: bold;
+}
+#imgWhats{
+width: 50px;
+height: 50px;
+padding: 2px;
+border: 1px solid rgb(56, 55, 55);
+border-radius: 50%;
+margin-right: 10px;
+cursor: pointer;
+margin-bottom: 10px;
+}
+#btn_whats{
+  width: 55%;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 0cap;
+  border-color: rgb(229, 236, 255);
+  background-color: #dce3ff;
+}
+#btn_whats:hover{
+  background-color: rgb(0, 141, 7);
+  color: aliceblue;
+  
+}
+#my-custom_login_Swl #divWhats{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+#my-custom_login_Swl label{
+font-size: 18px;
+font-weight: bold;
+}
+.my-custom_login_Swl{
+  border-radius: 55px;
+}
+.my-custom_login_Swl p{
+  font-size: 12px;
+}
+      
 
 
 

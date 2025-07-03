@@ -120,6 +120,7 @@ div1.appendChild(div3);
 list.appendChild(div1) ;
  sessionStorage.setItem('pesQuiSar', '');
  sessionStorage.setItem('itens',`${itens}`)
+  
  document.getElementById('lbl_sair_procura').style.display='block'
 botão4.addEventListener('click', () => {
     var nome= doc.Nome_Arquivo;
@@ -281,6 +282,10 @@ html:` <div  class="menu-container">
     <button id="Tela" title="">Tela Cheia <i class="fa-solid fa-desktop"></i></button>
     <br><br>
     <button id='admin'> Administração <i class="fa-sharp-duotone fa-solid fa-lock"></i></button>
+     <br><br>  
+    <button id='instagran' > Instagran <i class="fa-brands fa-instagram"></i> </button>
+      <br><br>  
+    <button id='whatsapp' > WhatsApp <i class="fa-brands fa-whatsapp"></i> </button>
     <br><br>  
     <button id='Sair' class='cancelar'> Cancelar </button>
     </div>
@@ -294,6 +299,16 @@ didOpen: () => {
     document.body.style.paddingRight = '0px';
  }
 });  
+document.getElementById('instagran').addEventListener('click',function(){
+  instagran('click')
+  Swal.click()
+
+});
+document.getElementById('whatsapp').addEventListener('click',function(){
+whatsapp('click')
+  
+  Swal.click()
+});
 document.getElementById('PsqCódigo').addEventListener('click',function(){
    
      sessionStorage.setItem('pesQuiSar', '');
@@ -460,12 +475,75 @@ setInterval(function(){
 
 
 
+  sessionStorage.setItem('Tel_Whats','');
+   sessionStorage.setItem('Foto_zap','');
+//redes sociais
+
+// instagran
+ function instagran(){
+  var URL_Intagran= localStorage.getItem('URL_Intagran')
+if(!URL_Intagran|| URL_Intagran==''){
+var url_Inst='https://www.instagram.com/asd.logos.design?utm_source=qr&igsh=MXg3aGF5cTY0ZGNzZQ=='
+} else{
+var url_Inst= URL_Intagran;
+}
+ window.open( url_Inst,'_blank')
+ }
+
+function whatsapp(){
+   var tell= sessionStorage.getItem('Tel_Whats');
+   var imagem= sessionStorage.getItem('Foto_zap');
+   if(!tell||tell==''){
+    var telefone=`11995501463`
+   }else{
+    var telefone=`${tell}`
+   };
+
+   if(!imagem||imagem==''){
+    var Foto=`src/Carlos.jpg`
+   }else{
+    var Foto=`${imagem}`
+   };
 
 
-
-
-
-
+Swal.fire({
+ title: `WhatsApp <i id='i_whats' class="fa-brands fa-whatsapp"></i>`,
+ html: `
+     <div id='divWhats'>
+     <img id='imgWhats'src=''> <label>Carlos Eduardo</label> </div>
+     <p>Envie sua opinião ou sugestão!
+     <br>  <br>   
+     <button id="btn_whats" title="">Mensagem <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
+     <br><br><br><button id='sair_'>Cancelar</button>
+     `,
+    showCancelButton: false,
+    showConfirmButton: false,
+    customClass: {
+    popup: 'my-custom_login_Swl' // Aplica a classe CSS personalizada
+  },
+    didOpen: () => {
+    document.body.style.paddingRight = '0px';
+  }
+});
+document.getElementById('imgWhats').src=`${Foto}`
+ document.getElementById('imgWhats').addEventListener('click',function(){
+  swal('','',`${imagem_Whats}`)
+ })
+  document.getElementById('btn_whats').addEventListener('click',function(){
+    
+    var tel_= sessionStorage.getItem('tel_whats')       
+    var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+    var mensagem = sessionStorage.getItem('Mens_Whats')  
+    var url = "https://wa.me/"+`${numero}?text= ASD Lodos design pedido de contato`;
+    
+         window.open(url, "_blank");
+          Swal.fire(`WhatsApp`,``,'success')       
+});
+document.getElementById('sair_').addEventListener('click',function(){
+     Swal.fire('Sair')
+     Swal.close()
+});
+}
 
 
 //Time Relogio
@@ -610,7 +688,8 @@ div1.appendChild(div3);
 list.appendChild(div1) ;
 sessionStorage.setItem('pesQuiSar', '');
 sessionStorage.setItem('itens_',`${itens}`)
-itensListInit.innerHTML=`(${itens}) Itens `
+itensListInit.innerHTML=`(${itens}) Itens `;
+
 document.getElementById('itensListInit').style.display='block'
 
 botão4.addEventListener('click', () => {

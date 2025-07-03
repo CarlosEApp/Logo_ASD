@@ -32,9 +32,10 @@
 </head>
 <body>
     <div id="div_geral">
+      
         <div id="div_heaad">
             <div id="heaad1">
-            <label id="Titulo" for="">LOGOS ADS</label>  <button  id="heaad_btn03">Home <i class="fa-solid fa-house"></i> <button id="heaad_btn01" onclick="toggleFullScreen()">Tela <i class="fa-solid fa-desktop"></i></button> 
+            <label id="Titulo" for="">LOGOS ADS</label>  <button  id="heaad_btn03" onclick="home()">Home<i class="fa-solid fa-house"></i> <button id="heaad_btn01" onclick="toggleFullScreen()">Tela <i class="fa-solid fa-desktop"></i></button> 
             </div>
              <div id="heaad2">
                  <div id="div_input_heaader_pesq"> <i  class="fa-solid fa-magnifying-glass"></i><input id="input_heaader_pesq" type="text" title="Pesquisa" placeholder="Pesquisar..."> <i id="pesqheaad" onclick="pesquisar()" class="fa-solid fa-check-double"></i> </div> <button  id="heaad_Menu" onclick="Menu()">Menu <i class="fa-solid fa-bars"></i></button>
@@ -110,7 +111,9 @@
                       <button onclick="instagran()">Instagran <i class="fa-brands fa-instagram"></i></button> <button onclick="whatsapp()">WhatsApp <i class="fa-brands fa-whatsapp"></i></button>
              </div>
         </div>
-        
+        <div id="div_oculta">
+         <a id="a_HOME" href="#div_body" title="Home"></a> 
+      </div>
     </div>
 
     <script src="js/index.js"></script>

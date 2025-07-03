@@ -147,7 +147,7 @@ botão4.addEventListener('click', () => {
 });
  botão2.addEventListener('click', function(){
 
- swal(`Formato do arquivo: ${doc.Formato}\n\n${doc.Titulo}`,` Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
+ swal(`${doc.Titulo}`,`Formato do arquivo: ${doc.Formato}\n\n Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
 });
 
 
@@ -545,6 +545,11 @@ document.getElementById('sair_').addEventListener('click',function(){
 });
 }
 
+// A HOME
+function home(){
+  document.getElementById('a_HOME').click()
+}
+
 
 //Time Relogio
 setInterval(function() {
@@ -719,7 +724,7 @@ botão4.addEventListener('click', () => {
 
  botão2.addEventListener('click', function(){
 
-swal(`Formato do arquivo: ${doc.Formato}\n\n${doc.Titulo}`,` Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
+swal(`${doc.Titulo}`,`Formato do arquivo: ${doc.Formato}\n\n Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
 });
 
 

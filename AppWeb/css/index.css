@@ -352,7 +352,7 @@ padding-top: 15px;
 padding: 10px;
 }
 #imgList{
-  max-width: 64%;
+  max-width: 61%;
   max-height: 25vh;
   margin-top: 10px;
   cursor: pointer;
@@ -544,6 +544,9 @@ font-weight: bold;
 }
 .my-custom_PesqCódigo h2{
   font-size: 22px;
+}
+#div_oculta{
+  display: none;
 }
 
 @media(max-width: 800px){

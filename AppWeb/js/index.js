@@ -171,13 +171,9 @@ botão1.addEventListener('click',function(){
     } else{
        window.open(`${doc.Canvas}`,'_blank')
     }
-   
 });
-    
 } else{
-
 }
-
 })
 })
 }
@@ -351,14 +347,10 @@ if(!respDoc|| respDoc==''){
    sessionStorage.setItem('pesQuiSar', respDoc);
    buscar()
   },1000)
-
-
 }
 
-
 })
 })
-
 
 document.getElementById('Sair').addEventListener('click',function(){
 Swal.close('click')
@@ -421,19 +413,13 @@ document.getElementById('Start').addEventListener('click',function(){
               Swal.fire('Senha incorreta!','','error');
         }
     }
-
 }); 
-
-
 });
 
 }
-
 //Botão para acessar a tela de cadastros
 document.getElementById('heaad_btn03').addEventListener('click',function(){
 });
-
-
 //Pesquisa do Heaader
 document.getElementById('input_heaader_pesq').focus()
 function pesquisar(){
@@ -442,7 +428,6 @@ function pesquisar(){
         Swal.fire({
 title: ``,
 html:` 
-
 `,
 showCancelButton: false,
 showConfirmButton: false,
@@ -748,7 +733,7 @@ window.open(whatsappLink, "_blank");
 
 botão1.addEventListener('click',function(){
     if(doc.Canvas==''){
-       Swal.fire('desculpe-me!','Esse design não possui link para edição no Canva..')
+       swal('desculpe-me!','Esse design não possui link para edição no Canva..','src/Sorry.png')
     } else{
        window.open(`${doc.Canvas}`,'_blank')
     }

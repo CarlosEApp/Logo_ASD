@@ -501,6 +501,7 @@ function selectInit(){
 // lista inicial firebase
 function listaInicil(){
     var listaInt= sessionStorage.getItem('ListInicio');
+    var itensListInit= document.getElementById('itensListInit');
 
 var list= document.getElementById('listaInicial');
 list.innerHTML = '';
@@ -590,6 +591,9 @@ div1.appendChild(div3);
 list.appendChild(div1) ;
  sessionStorage.setItem('pesQuiSar', '');
  sessionStorage.setItem('itens_',`${itens}`)
+ itensListInit.innerHTML=`(${itens}) Itens `
+ document.getElementById('itensListInit').style.display='block'
+
  
 botão4.addEventListener('click', () => {
   fetch(doc.URL)

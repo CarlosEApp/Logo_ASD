@@ -159,7 +159,7 @@ botão4.addEventListener('click', () => {
 
  botão3.addEventListener('click',function(){
   Swal.fire({
- title: `Compartilhar <i class="fa-solid fa-square-share-nodes"></i>`,
+ title: `Compartilhar <i id='i_compart' class="fa-solid fa-square-share-nodes"></i>`,
  html: `
        <br> 
      <button id="face" title="">Facebook <i class="fa-brands fa-facebook-f"></i></button>  
@@ -167,8 +167,8 @@ botão4.addEventListener('click', () => {
      <button id="whats" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
      <br><br><br><button id='sair_'>Cancelar</button><br><br>
      `,
-  background: ' #077fc5', // Cor de fundo
-  color: '#fff', // Cor do texto
+   background: 'rgb(255, 255, 255)', // Cor de fundo
+  color: 'black', // Cor do texto
     showCancelButton: false,
     showConfirmButton: false,
     customClass: {
@@ -546,7 +546,7 @@ var url_Inst= URL_Intagran;
 function Compartilhar(){
   
   Swal.fire({
- title: `Compartilhar <i class="fa-solid fa-square-share-nodes"></i>`,
+ title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
  html: `
        <br> 
      <button id="face" title="">Facebook <i class="fa-brands fa-facebook-f"></i></button>  
@@ -554,8 +554,8 @@ function Compartilhar(){
      <button id="whats" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
      <br><br><br><button id='sair_'>Cancelar</button><br><br>
      `,
-  background: ' #077fc5', // Cor de fundo
-  color: '#fff', // Cor do texto
+  background: 'rgb(255, 255, 255)', // Cor de fundo
+  color: 'black', // Cor do texto
     showCancelButton: false,
     showConfirmButton: false,
     customClass: {
@@ -831,7 +831,7 @@ swal(`${doc.Titulo}`,`Formato do arquivo: ${doc.Formato}\n\n Nome: ${doc.Nome}\n
 
  botão3.addEventListener('click',function(){
   Swal.fire({
- title: `Compartilhar <i class="fa-solid fa-square-share-nodes"></i>`,
+ title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
  html: `
        <br> 
      <button id="face" title="">Facebook <i class="fa-brands fa-facebook-f"></i></button>  
@@ -839,8 +839,8 @@ swal(`${doc.Titulo}`,`Formato do arquivo: ${doc.Formato}\n\n Nome: ${doc.Nome}\n
      <button id="whats" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
      <br><br><br><button id='sair_'>Cancelar</button><br><br>
      `,
-  background: ' #077fc5', // Cor de fundo
-  color: '#fff', // Cor do texto
+  background: 'rgb(255, 255, 255)', // Cor de fundo
+  color: 'black', // Cor do texto
     showCancelButton: false,
     showConfirmButton: false,
     customClass: {

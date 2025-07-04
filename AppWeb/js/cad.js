@@ -209,6 +209,13 @@ if(respC == respINP){
 var dbex = firebase.firestore();
 dbex.collection(`Coleção_${doc.Lista}`).doc(respINP).delete();
 
+setTimeout(function(){
+var db= firebase.firestore();
+db.collection(`Codigos`).doc(respC).delete();
+},1000)
+
+
+
 var img_file = firebase.storage();
 var mm = img_file.ref(`${doc.Nome_Arquivo}`);
 // Deletar o arquivo
@@ -233,7 +240,7 @@ Swal.fire('Sucesso!','','success')
 setTimeout(function(){
 select('click')
 },2000)
-},4000)
+},5000)
 
 }else{
 Swal.fire('Código incorreto','O Código digitado não corresponde ao arquivo que você deseja excluir.<br><br>Tente Novamente!','error')
@@ -397,15 +404,25 @@ document.getElementById('SwalExCód').addEventListener('click',function(){
 var respC= doc.Código;
 var respINP= document.getElementById('inputEx').value;
 if(respC == respINP){
+  
 
 var dbex = firebase.firestore();
 dbex.collection(`Coleção_${doc.Lista}`).doc(respINP).delete();
 
+setTimeout(function(){
+var db= firebase.firestore();
+db.collection(`Codigos`).doc(respC).delete();
+},1200)
+
+
+
 var img_file = firebase.storage();
 var mm = img_file.ref(`${doc.Nome_Arquivo}`);
+
 // Deletar o arquivo
 mm.delete().then(() => {
-// window.swal('Sucesso!','Imagem deletada do banco de dados','success')
+  
+//window.swal('Sucesso!','Imagem deletada do banco de dados','success')
 }).catch((error) => {
 window.swal('ERRO!','','error')
 });
@@ -425,7 +442,7 @@ Swal.fire('Sucesso!','','success')
 setTimeout(function(){
 select('click')
 },2000)
-},4000)
+},5000)
 
 }else{
 Swal.fire('Código incorreto','O Código digitado não corresponde ao arquivo que você deseja excluir.<br><br>Tente Novamente!','error')
@@ -880,6 +897,11 @@ if(respC == respINP){
 var dbex = firebase.firestore();
 dbex.collection(`Coleção_${doc.Lista}`).doc(respINP).delete();
 
+setTimeout(function(){
+var db= firebase.firestore();
+db.collection(`Codigos`).doc(respC).delete();
+},1200)
+
 var img_file = firebase.storage();
 var mm = img_file.ref(`${doc.Nome_Arquivo}`);
 // Deletar o arquivo
@@ -904,7 +926,7 @@ Swal.fire('Sucesso!','','success')
 setTimeout(function(){
 select('click')
 },2000)
-},4000)
+},5000)
 
 }else{
 Swal.fire('Código incorreto','O Código digitado não corresponde ao arquivo que você deseja excluir.<br><br>Tente Novamente!','error')

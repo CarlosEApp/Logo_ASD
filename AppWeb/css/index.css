@@ -513,22 +513,34 @@ font-weight: bold;
   border-radius: 20px;
 }
 .my-custom_compartilhar{
-  width: 340px;
+  width: 300px;
   border-radius: 20px;
 }
+.my-custom_compartilhar h2{
+  font-size: 23px;
+}
 .my-custom_compartilhar button{
-  width: 55%;
+  width:73%;
   padding: 10px;
   cursor: pointer;
   border-radius: 5px;
   border: 0cap;
-  border-color: rgb(229, 236, 255);
-  background-color: #dce3ff;
+  border-color: rgb(216, 227, 255);
+  background-color: #e2e0ff;
+  font-weight: bold;
+  font-size: 13px;
 }
 .my-custom_compartilhar button:hover{
   background-color: rgb(0, 109, 5);
   color: aliceblue;
   
+}
+ #i_compart{
+  font-size: 25px;
+}
+.my-custom_compartilhar i{
+  font-size: 15px;
+  font-weight: bold;
 }
 .my-custom_alert{
   background-color: #ffffff02;

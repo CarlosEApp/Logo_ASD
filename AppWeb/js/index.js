@@ -198,8 +198,7 @@ if(!respl||respl==''){
  Swal.fire({
 title: `Lista Vazia! `,
 text: ``,
-background: 'red', // Cor de fundo
-color: '#fff', // Cor do texto
+
 allowOutsideClick: false,
 showConfirmButton: true,
 customClass: {
@@ -237,8 +236,7 @@ if(!respl||respl==''){
   Swal.fire({
 title: `Lista Vazia! `,
 text: ``,
-background: 'red', // Cor de fundo
-color: '#fff', // Cor do texto
+
 allowOutsideClick: false,
 showConfirmButton: true,
 customClass: {
@@ -315,7 +313,7 @@ html:` <div  class="menu-container">
     <button id='admin'> Administração <i class="fa-sharp-duotone fa-solid fa-lock"></i></button>
      <br><br>  
     <button id='Sair' class='cancelar'> Cancelar </button>
-    </div>
+    </div> <br><br>  
 `,
 background: 'black', // Cor de fundo
   color: '#fff', // Cor do texto

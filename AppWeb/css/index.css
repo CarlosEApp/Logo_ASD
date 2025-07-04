@@ -45,6 +45,7 @@ max-width: 1920px;
 min-width: 400px;
 min-height: 100vh;
 background-color: rgb(255, 255, 255);
+
 }
 #div_heaad{
 width: 100%;
@@ -64,6 +65,7 @@ padding-top: 7px;
 padding-bottom: 5px;
  background-color: rgb(0, 0, 5);
 color: rgb(255, 255, 255);
+
 }
 #Titulo{
 font-size: clamp(1.200rem, 1vw + 0.5rem, 1.600rem);
@@ -80,6 +82,8 @@ padding-bottom: 5px;
 padding-top: 7px;
 border-bottom: 3px solid  rgba(21, 43, 59, 0);
 color: rgb(19, 19, 19);
+background-image: url('../src/Dese.png');
+  object-fit: cover;
 }
 #div_geral #div_body{
 margin: 0%;
@@ -87,6 +91,7 @@ padding: 0%;
 min-height: 100vh;
 background-color: rgb(255, 255, 255);
 padding-top: 77px;
+
 }
 #div_heaad #heaad1 button{
 border: 0cap;
@@ -114,6 +119,7 @@ background-color: rgb(0, 3, 12);
 height: 80vh;
 color: aliceblue;
 padding-bottom: 100px;
+
 }
 #footer01{
 margin: auto;
@@ -121,6 +127,7 @@ width: 90%;
 padding-top: 70px;
 margin-bottom: 70px;
 text-align: center;
+
 }
  #footer02{
  margin: auto;
@@ -152,16 +159,20 @@ border: 0cap;
 background-color: rgba(0, 0, 0, 0);
 color: rgb(255, 255, 255);
 cursor: pointer;
+
 }
 #banner{
 margin: auto;
 width: 100%;
 margin-bottom: 40px;
+
 }
 #div_procura{
 margin: auto;
 width: 90%;
+
 }
+
 #div_procura select{
 padding: clamp(0.500rem, 1vw, 0.700rem);
 cursor: pointer;
@@ -307,7 +318,6 @@ margin-top: 5px;
 }
 #input_heaader_pesq{
 width: 350px;
-background-color: #e0e0e000;
 cursor: pointer;
 color: #1f1e1e;
 font-size: clamp(0.950rem, 1vw + 0.5rem, 1.200rem);
@@ -341,6 +351,7 @@ margin-top: 1px;
 background-color: rgba(34, 185, 185, 0);
 min-height: 5vh;
 padding: 10px;
+
 }
 #div1List_{
 text-align: center;
@@ -530,12 +541,12 @@ font-weight: bold;
   background-color: rgb(0, 109, 5);
   color: aliceblue;
   
-  
 }
-#my-custom_l
+.my-custom_alert{
+  background-color: #ffffff02;
+  color: #0f0066;
+}
       
-
-
 
 .my-custom_CadExCód{
   max-width: 370px;

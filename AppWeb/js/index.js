@@ -215,10 +215,13 @@ botão1.addEventListener('click',function(){
 //Alerta de lista vazia
 function respList(){
 Swal.fire({
-title: `Procurando Arquivos... `,
+title: ``,
 text: `Aguarde...`,
 allowOutsideClick: false,
 showConfirmButton: false,
+customClass: {
+popup: 'my-custom_alert' // Aplica a classe CSS personalizada
+},
 didOpen: () => {
 Swal.showLoading();
  document.body.style.paddingRight = '0px';        
@@ -253,10 +256,13 @@ Swal.close()
 //Alerta de lista vazia
 function respList_(){
 Swal.fire({
-title: `Procurando Arquivos... `,
+title: ``,
 text: `Aguarde...`,
 allowOutsideClick: false,
 showConfirmButton: false,
+customClass: {
+popup: 'my-custom_alert' // Aplica a classe CSS personalizada
+},
 didOpen: () => {
 Swal.showLoading();
  document.body.style.paddingRight = '0px';        
@@ -510,7 +516,6 @@ didOpen: () => {
     
 }
 
-
 setInterval(function(){
     var pesquisar= document.getElementById('input_heaader_pesq').value.trim()
     if(!pesquisar|| pesquisar==''||pesquisar.length <= 4){
@@ -522,10 +527,7 @@ setInterval(function(){
 })
 
 
-
-
-
-  sessionStorage.setItem('Tel_Whats','');
+   sessionStorage.setItem('Tel_Whats','');
    sessionStorage.setItem('Foto_zap','');
 //redes sociais
 

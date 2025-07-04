@@ -317,6 +317,8 @@ html:` <div  class="menu-container">
     <button id='Sair' class='cancelar'> Cancelar </button>
     </div>
 `,
+background: 'black', // Cor de fundo
+  color: '#fff', // Cor do texto
 showCancelButton: false,
 showConfirmButton: false,
 customClass: {

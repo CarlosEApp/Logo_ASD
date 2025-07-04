@@ -202,6 +202,9 @@ background: 'red', // Cor de fundo
 color: '#fff', // Cor do texto
 allowOutsideClick: false,
 showConfirmButton: true,
+customClass: {
+popup: 'my-custom_alertlist' // Aplica a classe CSS personalizada
+},
 didOpen: () => {
  document.body.style.paddingRight = '0px';        
 }
@@ -237,7 +240,10 @@ text: ``,
 background: 'red', // Cor de fundo
 color: '#fff', // Cor do texto
 allowOutsideClick: false,
-showConfirmButton: false,
+showConfirmButton: true,
+customClass: {
+popup: 'my-custom_alertlist' // Aplica a classe CSS personalizada
+},
 didOpen: () => {
  document.body.style.paddingRight = '0px';        
 }

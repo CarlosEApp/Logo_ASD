@@ -53,6 +53,7 @@ position: fixed;
 background-color: rgb(255, 255, 255);
 z-index: 9999;
 border-bottom: 3px solid rgb(206, 206, 206);
+
 }
 #heaad1{
 display: flex;
@@ -175,7 +176,7 @@ font-weight: bold;
 #div_procura h1{
 margin-bottom: 12px;
 font-size: clamp(1.500rem, 1vw + 0.5rem, 2rem);
-margin-top: 55px;
+margin-top: 65px;
 }
 #buscar{
 min-width: 100px;
@@ -298,23 +299,25 @@ text-align: center;
 max-width: 70px;
 margin-left:30px;
 margin-top: 5px;
+
 }
 #pesqheaad:hover{
   background-color: #0e008a;
   color: #ffffff;
 }
 #input_heaader_pesq{
-max-width: 400px;
+width: 350px;
 background-color: #e0e0e000;
 cursor: pointer;
 color: #1f1e1e;
 font-size: clamp(0.950rem, 1vw + 0.5rem, 1.200rem);
 border: 0cap;
-border-color: rgb(0, 0, 0);
+border-color: rgba(0, 0, 0, 0);
 opacity: 1;  
 caret-color:  #a1005e;
 outline: none;  
 padding: clamp(0.2rem, 0.500vw, 2rem);
+border-radius: 10px;
 }
 #div_input_heaader_pesq{
     margin-left: 7px;
@@ -418,27 +421,32 @@ border: 1px rgb(255, 255, 255) ;
   background-color: #00020500;
   color: #dce3ff; 
  font-size: clamp(1.100rem, 1vw + 0.5rem, 1.300rem);
+ outline: none;  
 }
 #buttonLista option{
  color: #000205;
 }
 #lbl_sair_procura{
-  display: none;
-  cursor: pointer;
-   font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
-      margin-left: 50px;
-      color: #222222;
-      margin-top: 20px;
+display: none;
+cursor: pointer;
+font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+margin-left: 50px;
+color: #222222;
+margin-top: 20px;
 }
 #lbl_sair_procura:hover{
   color: #c50202;
 }
 #itensListInit{
-     font-size: clamp(0.700rem, 1vw + 0.5rem, 0.900rem);
-     color: #dce3ff;
-     margin-left: 30px;
-     display: none;
+ font-size: clamp(0.700rem, 1vw + 0.5rem, 0.900rem);
+ color: #dce3ff;
+ margin-left: 30px;
+ display: none;
 
+}
+#I_compartilhe{
+  font-size: clamp(1.370rem, 1vw + 0.5rem, 1.600rem);
+  margin-right: 46px;
 }
 
 #footer03 button{
@@ -557,7 +565,7 @@ font-weight: bold;
 
 @media(max-width: 800px){
 #input_heaader_pesq{
-max-width: 280px;
+width: 280px;
 background-color: #e0e0e000;
 cursor: pointer;
 color: #1f1e1e;
@@ -591,7 +599,7 @@ background-color: #000305;
 text-align: center;
 }
   #input_heaader_pesq{
-max-width: 260px;
+width: 250px;
 background-color: #e0e0e000;
 cursor: pointer;
 color: #1f1e1e;
@@ -606,7 +614,7 @@ padding: clamp(0.2rem, 0.500vw, 2rem);
 }}
 @media(max-width: 600px){
   #input_heaader_pesq{
-max-width: 2200px;
+width: 220px;
 background-color: #e0e0e000;
 cursor: pointer;
 color: #1f1e1e;
@@ -636,7 +644,7 @@ padding: clamp(0.2rem, 0.500vw, 2rem);
 }}
 @media(max-width: 400px){
   #input_heaader_pesq{
-max-width: 194px;
+max-width: 190px;
 background-color: #e0e0e000;
 cursor: pointer;
 color: #1f1e1e;

@@ -508,6 +508,15 @@ var url_Inst= URL_Intagran;
  window.open( url_Inst,'_blank')
  }
 
+ // Compartlhar pagina
+function Compartilhar(){
+
+  var url = "https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html";
+var whatsappMessage =`Visite ASD Logos Pagina na Web! \n${url} `;
+var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
+window.open(whatsappLink, "_blank");
+
+}
 function whatsapp(){
    var tell= sessionStorage.getItem('Tel_Whats');
    var imagem= sessionStorage.getItem('Foto_zap');

@@ -427,6 +427,7 @@ border: 1px rgb(255, 255, 255) ;
    font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
       margin-left: 50px;
       color: #222222;
+      margin-top: 20px;
 }
 #lbl_sair_procura:hover{
   color: #c50202;
@@ -434,7 +435,7 @@ border: 1px rgb(255, 255, 255) ;
 #itensListInit{
      font-size: clamp(0.700rem, 1vw + 0.5rem, 0.900rem);
      color: #dce3ff;
-     margin-left: 20px;
+     margin-left: 30px;
      display: none;
 
 }

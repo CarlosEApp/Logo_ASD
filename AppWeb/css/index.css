@@ -45,7 +45,6 @@ max-width: 1920px;
 min-width: 400px;
 min-height: 100vh;
 background-color: rgb(255, 255, 255);
-
 }
 #div_heaad{
 width: 100%;
@@ -54,7 +53,6 @@ position: fixed;
 background-color: rgb(255, 255, 255);
 z-index: 9999;
 border-bottom: 3px solid rgb(206, 206, 206);
-
 }
 #heaad1{
 display: flex;
@@ -65,7 +63,6 @@ padding-top: 7px;
 padding-bottom: 5px;
  background-color: rgb(0, 0, 5);
 color: rgb(255, 255, 255);
-
 }
 #Titulo{
 font-size: clamp(1.200rem, 1vw + 0.5rem, 1.600rem);
@@ -82,8 +79,7 @@ padding-bottom: 5px;
 padding-top: 7px;
 border-bottom: 3px solid  rgba(21, 43, 59, 0);
 color: rgb(19, 19, 19);
-background-image: url('../src/Dese.png');
-  object-fit: cover;
+
 }
 #div_geral #div_body{
 margin: 0%;
@@ -119,7 +115,6 @@ background-color: rgb(0, 3, 12);
 height: 80vh;
 color: aliceblue;
 padding-bottom: 100px;
-
 }
 #footer01{
 margin: auto;
@@ -127,7 +122,6 @@ width: 90%;
 padding-top: 70px;
 margin-bottom: 70px;
 text-align: center;
-
 }
  #footer02{
  margin: auto;
@@ -152,27 +146,22 @@ font-weight: bold;
 #h2footer{
   width: 100%;
 font-size: clamp(1rem, 2vw + 0.5rem, 1.200rem);
-
 }
 #footer03 button{
 border: 0cap;
 background-color: rgba(0, 0, 0, 0);
 color: rgb(255, 255, 255);
 cursor: pointer;
-
 }
 #banner{
 margin: auto;
 width: 100%;
 margin-bottom: 40px;
-
 }
 #div_procura{
 margin: auto;
 width: 90%;
-
 }
-
 #div_procura select{
 padding: clamp(0.500rem, 1vw, 0.700rem);
 cursor: pointer;
@@ -310,7 +299,6 @@ text-align: center;
 max-width: 70px;
 margin-left:30px;
 margin-top: 5px;
-
 }
 #pesqheaad:hover{
   background-color: #0e008a;
@@ -352,7 +340,6 @@ margin-top: 1px;
 background-color: rgba(34, 185, 185, 0);
 min-height: 5vh;
 padding: 10px;
-
 }
 #div1List_{
 text-align: center;
@@ -367,10 +354,10 @@ padding-top: 15px;
 padding: 10px;
 }
 #imgList{
-  max-width: 61%;
-  max-height: 25vh;
-  margin-top: 10px;
-  cursor: pointer;
+max-width: 61%;
+max-height: 25vh;
+margin-top: 10px;
+cursor: pointer;
 }
 #Lista,#listaInicial{
 display: flex;

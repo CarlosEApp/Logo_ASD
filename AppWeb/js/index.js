@@ -195,7 +195,17 @@ Swal.showLoading();
 setTimeout(function(){
 var respl=  sessionStorage.getItem('itens')
 if(!respl||respl==''){
-Swal.fire('Lista Vazia')
+ Swal.fire({
+title: `Lista Vazia! `,
+text: ``,
+background: 'red', // Cor de fundo
+color: '#fff', // Cor do texto
+allowOutsideClick: false,
+showConfirmButton: true,
+didOpen: () => {
+ document.body.style.paddingRight = '0px';        
+}
+});
 document.getElementById('input_heaader_pesq').value='';
  document.getElementById('lbl_sair_procura').style.display='none'
  sessionStorage.setItem('pesQuiSar','');
@@ -221,7 +231,19 @@ Swal.showLoading();
 setTimeout(function(){
 var respl=  sessionStorage.getItem('itens_')
 if(!respl||respl==''){
-Swal.fire('Lista Vazia')
+  Swal.fire({
+title: `Lista Vazia! `,
+text: ``,
+background: 'red', // Cor de fundo
+color: '#fff', // Cor do texto
+allowOutsideClick: false,
+showConfirmButton: false,
+didOpen: () => {
+ document.body.style.paddingRight = '0px';        
+}
+});
+
+
 document.getElementById('itensListInit').style.display='none'
 
 }else{

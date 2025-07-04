@@ -513,6 +513,26 @@ font-weight: bold;
 .my-custom_alertlist{
   border-radius: 20px;
 }
+.my-custom_compartilhar{
+  width: 340px;
+  border-radius: 20px;
+}
+.my-custom_compartilhar button{
+  width: 55%;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 0cap;
+  border-color: rgb(229, 236, 255);
+  background-color: #dce3ff;
+}
+.my-custom_compartilhar button:hover{
+  background-color: rgb(0, 109, 5);
+  color: aliceblue;
+  
+  
+}
+#my-custom_l
       
 
 

@@ -158,6 +158,36 @@ botão4.addEventListener('click', () => {
  });
 
  botão3.addEventListener('click',function(){
+  Swal.fire({
+ title: `Compartilhar <i class="fa-solid fa-square-share-nodes"></i>`,
+ html: `
+       <br> 
+     <button id="face" title="">Facebook <i class="fa-brands fa-facebook-f"></i></button>  
+     <br><br>   
+     <button id="whats" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
+     <br><br><br><button id='sair_'>Cancelar</button><br><br>
+     `,
+  background: ' #077fc5', // Cor de fundo
+  color: '#fff', // Cor do texto
+    showCancelButton: false,
+    showConfirmButton: false,
+    customClass: {
+    popup: 'my-custom_compartilhar' // Aplica a classe CSS personalizada
+  },
+    didOpen: () => {
+    document.body.style.paddingRight = '0px';
+  }
+});
+document.getElementById('sair_').addEventListener('click',function(){
+  Swal.close()
+
+});
+document.getElementById('face').addEventListener('click',function(){
+  var url = encodeURIComponent("https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html");
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+
+});
+ document.getElementById('whats').addEventListener('click',function(){
 var url = "https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html";
 var img = `${doc.Titulo}: ${doc.URL}`;
 var cod=`${doc.Código}`
@@ -166,6 +196,8 @@ var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 
 window.open(whatsappLink, "_blank");
  });
+
+});
 
 botão1.addEventListener('click',function(){
     if(doc.Canvas==''){
@@ -510,12 +542,45 @@ var url_Inst= URL_Intagran;
 
  // Compartlhar pagina
 function Compartilhar(){
+  
+  Swal.fire({
+ title: `Compartilhar <i class="fa-solid fa-square-share-nodes"></i>`,
+ html: `
+       <br> 
+     <button id="face" title="">Facebook <i class="fa-brands fa-facebook-f"></i></button>  
+     <br><br>   
+     <button id="whats" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
+     <br><br><br><button id='sair_'>Cancelar</button><br><br>
+     `,
+  background: ' #077fc5', // Cor de fundo
+  color: '#fff', // Cor do texto
+    showCancelButton: false,
+    showConfirmButton: false,
+    customClass: {
+    popup: 'my-custom_compartilhar' // Aplica a classe CSS personalizada
+  },
+    didOpen: () => {
+    document.body.style.paddingRight = '0px';
+  }
+});
+document.getElementById('sair_').addEventListener('click',function(){
+  Swal.close()
 
-  var url = "https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html";
-var whatsappMessage =`Visite ASD Logos Pagina na Web! \n${url} `;
+});
+document.getElementById('face').addEventListener('click',function(){
+  var url = encodeURIComponent("https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html");
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+
+});
+ document.getElementById('whats').addEventListener('click',function(){
+var url = "https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html";
+
+var whatsappMessage =`Visite ASD logos Pagina Web: ${url}`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
+
 window.open(whatsappLink, "_blank");
 
+})
 }
 function whatsapp(){
    var tell= sessionStorage.getItem('Tel_Whats');
@@ -763,6 +828,36 @@ swal(`${doc.Titulo}`,`Formato do arquivo: ${doc.Formato}\n\n Nome: ${doc.Nome}\n
  });
 
  botão3.addEventListener('click',function(){
+  Swal.fire({
+ title: `Compartilhar <i class="fa-solid fa-square-share-nodes"></i>`,
+ html: `
+       <br> 
+     <button id="face" title="">Facebook <i class="fa-brands fa-facebook-f"></i></button>  
+     <br><br>   
+     <button id="whats" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
+     <br><br><br><button id='sair_'>Cancelar</button><br><br>
+     `,
+  background: ' #077fc5', // Cor de fundo
+  color: '#fff', // Cor do texto
+    showCancelButton: false,
+    showConfirmButton: false,
+    customClass: {
+    popup: 'my-custom_compartilhar' // Aplica a classe CSS personalizada
+  },
+    didOpen: () => {
+    document.body.style.paddingRight = '0px';
+  }
+});
+document.getElementById('sair_').addEventListener('click',function(){
+  Swal.close()
+
+});
+document.getElementById('face').addEventListener('click',function(){
+  var url = encodeURIComponent("https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html");
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+
+});
+ document.getElementById('whats').addEventListener('click',function(){
 var url = "https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html";
 var img = `${doc.Titulo}: ${doc.URL}`;
 var cod=`${doc.Código}`
@@ -771,6 +866,8 @@ var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 
 window.open(whatsappLink, "_blank");
  });
+
+});
 
 botão1.addEventListener('click',function(){
     if(doc.Canvas==''){
@@ -781,8 +878,9 @@ botão1.addEventListener('click',function(){
    
 });
 
-    
+
 })
 })
 }
+
  selectInit()

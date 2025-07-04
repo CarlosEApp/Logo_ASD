@@ -2,9 +2,11 @@
 
 
 function lbl_sair_P(){
+  document.getElementById('input_heaader_pesq').value="";
 var list= document.getElementById('Lista');
 list.innerHTML = '';
  document.getElementById('lbl_sair_procura').style.display='none'
+
 }
 // Procura
 function buscar_(){

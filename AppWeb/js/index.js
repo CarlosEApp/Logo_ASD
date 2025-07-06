@@ -184,7 +184,7 @@ document.getElementById('sair_').addEventListener('click',function(){
 });
 document.getElementById('face').addEventListener('click',function(){
   var url = encodeURIComponent("https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html");
-  window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
 
 });
  document.getElementById('whats').addEventListener('click',function(){
@@ -571,7 +571,7 @@ document.getElementById('sair_').addEventListener('click',function(){
 });
 document.getElementById('face').addEventListener('click',function(){
   var url = encodeURIComponent("https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html");
-  window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
 
 });
  document.getElementById('whats').addEventListener('click',function(){
@@ -856,7 +856,7 @@ document.getElementById('sair_').addEventListener('click',function(){
 });
 document.getElementById('face').addEventListener('click',function(){
   var url = encodeURIComponent("https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html");
-  window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+   window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
 
 });
  document.getElementById('whats').addEventListener('click',function(){

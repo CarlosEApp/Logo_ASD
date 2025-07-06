@@ -368,7 +368,7 @@ flex-wrap: wrap;
 #label1List{
 margin-top: 10px;
 font-weight: bold;
-font-size: clamp(1rem, 1vw + 0.5rem, 1.150rem);
+font-size: clamp(1.150rem, 1vw + 0.5rem, 1.150rem);
 }
 #label2List,#label3List{
 font-size: clamp(0.810rem, 1vw + 0.5rem, 0.910rem);
@@ -381,13 +381,13 @@ color: #000205;
 background-color: #e0e0e000;
 }
 #botão2List, #botão3List{
-font-size: clamp(1.500rem, 1vw + 0.5rem, 1.500rem);
+font-size: clamp(1.600rem, 1vw + 0.5rem, 1.600rem);
 border: 0cap;
 background-color: #e0e0e000;
 cursor: pointer;
 }
 #botão2List:hover, #botão3List:hover{
-  color: #0e008a;
+color: #0e008a;
 }
 #imgList2{
 width: 34px;
@@ -397,33 +397,32 @@ margin-left: 5px;
 border: 1px rgb(255, 255, 255) ;
 }
 #div3List_{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
+display: flex;
+justify-content: space-around;
+align-items: center;
+margin-top: 10px;
+margin-bottom: 10px;
 }
 #buttonLista{
-  width: 100%;
-    display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 12px;
-  padding-top: 12px;
-  background-color: #000308;
-  margin-bottom: 20px;
-
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+padding-bottom: 12px;
+padding-top: 12px;
+background-color: #000308;
+margin-bottom: 20px;
 }
 #buttonLista select{
-  width: 230px;
-  border: 0cap;
-  background-color: #00020500;
-  color: #dce3ff; 
- font-size: clamp(1.100rem, 1vw + 0.5rem, 1.300rem);
- outline: none;  
+width: 230px;
+border: 0cap;
+background-color: #00020500;
+color: #dce3ff; 
+font-size: clamp(1.100rem, 1vw + 0.5rem, 1.300rem);
+outline: none;  
 }
 #buttonLista option{
- color: #000205;
+color: #000205;
 }
 #lbl_sair_procura{
 display: none;
@@ -441,13 +440,11 @@ margin-top: 20px;
  color: #dce3ff;
  margin-left: 30px;
  display: none;
-
 }
 #I_compartilhe{
-  font-size: clamp(1.370rem, 1vw + 0.5rem, 1.600rem);
-  margin-right: 46px;
+font-size: clamp(1.370rem, 1vw + 0.5rem, 1.600rem);
+margin-right: 46px;
 }
-
 #footer03 button{
    font-size: clamp(1rem, 1vw + 0.5rem, 1.200rem);
 }
@@ -458,7 +455,6 @@ margin-top: 20px;
 max-width: 380px;
 margin-bottom: 10px;
 padding-right: 0;
-
 }
 #divWhats{
 display: flex;
@@ -481,18 +477,18 @@ cursor: pointer;
 margin-bottom: 10px;
 }
 #btn_whats{
-  width: 55%;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  border: 0cap;
-  border-color: rgb(229, 236, 255);
-  background-color: #dce3ff;
+width: 55%;
+padding: 10px;
+cursor: pointer;
+border-radius: 5px;
+border: 0cap;
+border-color: rgb(229, 236, 255);
+background-color: #dce3ff;
 }
 #btn_whats:hover{
-  background-color: rgb(0, 141, 7);
-  color: aliceblue;
-  
+background-color: rgb(0, 141, 7);
+color: aliceblue;
+
 }
 #my-custom_login_Swl #divWhats{
 display: flex;
@@ -520,31 +516,31 @@ font-weight: bold;
   font-size: 23px;
 }
 .my-custom_compartilhar button{
-  width:73%;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  border: 0cap;
-  border-color: rgb(216, 227, 255);
-  background-color: #e2e0ff;
-  font-weight: bold;
-  font-size: 13px;
+width:73%;
+padding: 10px;
+cursor: pointer;
+border-radius: 5px;
+border: 0cap;
+border-color: rgb(216, 227, 255);
+background-color: #e2e0ff;
+font-weight: bold;
+font-size: 13px;
 }
 .my-custom_compartilhar button:hover{
-  background-color: rgb(0, 109, 5);
-  color: aliceblue;
-  
+background-color: rgb(0, 109, 5);
+color: aliceblue;
+
 }
- #i_compart{
-  font-size: 25px;
+#i_compart{
+font-size: 25px;
 }
 .my-custom_compartilhar i{
-  font-size: 15px;
-  font-weight: bold;
+font-size: 15px;
+font-weight: bold;
 }
 .my-custom_alert{
-  background-color: #ffffff02;
-  color: #015dc7;
+background-color: #ffffff02;
+color: #015dc7;
 }
       
 
@@ -668,7 +664,7 @@ padding: clamp(0.2rem, 0.500vw, 2rem);
 @media(max-width: 500px){
   #body01{
 margin: auto;
-width: 96%;
+width: 95%;
 margin-top: 1px;
 background-color: rgba(34, 185, 185, 0);
 min-height: 5vh;
@@ -704,7 +700,7 @@ padding: clamp(0.2rem, 0.500vw, 2rem);
 }}
  #body01{
 margin: auto;
-width: 96%;
+width: 95%;
 margin-top: 1px;
 background-color: rgba(34, 185, 185, 0);
 min-height: 5vh;

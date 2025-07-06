@@ -99,6 +99,10 @@ if(!doc.Canvas||doc.Canvas==''){
    
 imgbotão.src='src/logoCanva.png'
 }
+botão1.title='Canva';
+botão2.title='Ver mais';
+botão3.title='Download';
+botão4.title='Compartilhar';
 
 botão2.textContent='';
 botão2.className=`fa-solid fa-eye`;
@@ -284,8 +288,6 @@ didOpen: () => {
  document.body.style.paddingRight = '0px';        
 }
 });
-
-
 document.getElementById('itensListInit').style.display='none'
 
 }else{
@@ -764,6 +766,10 @@ if(!doc.Canvas||doc.Canvas==''){
    
 imgbotão.src='src/logoCanva.png'
 }
+botão1.title='Canva';
+botão2.title='Ver mais';
+botão3.title='Download';
+botão4.title='Compartilhar';
 
 botão2.textContent='';
 botão2.className=`fa-solid fa-eye`;

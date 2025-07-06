@@ -368,20 +368,20 @@ flex-wrap: wrap;
 #label1List{
 margin-top: 10px;
 font-weight: bold;
-font-size: clamp(0.990rem, 1vw + 0.5rem, 1.150rem);
+font-size: clamp(1rem, 1vw + 0.5rem, 1.150rem);
 }
 #label2List,#label3List{
-font-size: clamp(0.790rem, 1vw + 0.5rem, 1rem);
+font-size: clamp(0.810rem, 1vw + 0.5rem, 0.910rem);
 margin-top: 10px;
 }
 #botão1List{
 border: 1cap rgb(255, 255, 255) ;
-font-size: clamp(0.300rem, 1vw + 0.5rem, 0.700rem);
+font-size: clamp(0.300rem, 1vw + 0.5rem, .700rem);
 color: #000205;
 background-color: #e0e0e000;
 }
 #botão2List, #botão3List{
-font-size: clamp(1.700rem, 1vw + 0.5rem, 1.200rem);
+font-size: clamp(1.500rem, 1vw + 0.5rem, 1.500rem);
 border: 0cap;
 background-color: #e0e0e000;
 cursor: pointer;
@@ -390,10 +390,10 @@ cursor: pointer;
   color: #0e008a;
 }
 #imgList2{
-width: 37px;
-height: 37px;
+width: 34px;
+height: 34px;
 cursor: pointer;
-margin-left: 10px; 
+margin-left: 5px; 
 border: 1px rgb(255, 255, 255) ;
 }
 #div3List_{
@@ -644,6 +644,13 @@ padding: clamp(0.2rem, 0.500vw, 2rem);
 
 }}
 @media(max-width: 600px){
+  #body01{
+margin: auto;
+width: 97%;
+margin-top: 1px;
+background-color: rgba(34, 185, 185, 0);
+min-height: 5vh;
+}
   #input_heaader_pesq{
 width: 220px;
 background-color: #e0e0e000;
@@ -659,6 +666,13 @@ padding: clamp(0.2rem, 0.500vw, 2rem);
 
 }}
 @media(max-width: 500px){
+  #body01{
+margin: auto;
+width: 97%;
+margin-top: 1px;
+background-color: rgba(34, 185, 185, 0);
+min-height: 5vh;
+}
   #input_heaader_pesq{
 max-width: 200px;
 background-color: #e0e0e000;
@@ -688,3 +702,10 @@ outline: none;
 padding: clamp(0.2rem, 0.500vw, 2rem);
 
 }}
+ #body01{
+margin: auto;
+width: 97%;
+margin-top: 1px;
+background-color: rgba(34, 185, 185, 0);
+min-height: 5vh;
+}

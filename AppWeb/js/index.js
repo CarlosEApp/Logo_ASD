@@ -152,8 +152,14 @@ botão4.addEventListener('click', () => {
     });
 });
  botão2.addEventListener('click', function(){
+  if(!doc.Criador|| doc.Criador==''){
+    var criador='Desconhecido'
+  } else{
+     var criador= doc.Criador
 
- swal(`${doc.Titulo}`,`Formato do arquivo: ${doc.Formato}\n\n Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
+  }
+
+ swal(`${doc.Titulo}`,`Formato do arquivo: ${doc.Formato}\n\n Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nCriado por: ${criador} \nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
 });
 
 
@@ -823,13 +829,16 @@ botão4.addEventListener('click', () => {
       Swal.fire("Oops!", "Não foi possível fazer o download.", "error");
     });
 });
-
-
  botão2.addEventListener('click', function(){
 
-swal(`${doc.Titulo}`,`Formato do arquivo: ${doc.Formato}\n\n Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
-});
+if(!doc.Criador|| doc.Criador==''){
+    var criador='Desconhecido'
+  } else{
+     var criador= doc.Criador
+  }
 
+ swal(`${doc.Titulo}`,`Formato do arquivo: ${doc.Formato}\n\n Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nCriado por: ${criador} \nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
+});
 
  img.addEventListener('click', function(){
    window.open(doc.URL,'_blank')

@@ -170,6 +170,7 @@ document.getElementById('criaçãoData').value= doc.Data_criação;
 document.getElementById('input_canvas').value= doc.Canvas;
 document.getElementById('img_apresent').src= doc.URL;
 document.getElementById('input_codigo').value= doc.Código;
+document.getElementById('input_criador').value= doc.Criador;
 sessionStorage.setItem('ArquivoUrl',doc.URL) 
 sessionStorage.setItem('Nome_arquivo',doc.Nome_Arquivo)
 Swal.close()
@@ -369,6 +370,7 @@ document.getElementById('criaçãoData').value= doc.Data_criação;
 document.getElementById('input_canvas').value= doc.Canvas;
 document.getElementById('img_apresent').src= doc.URL;
 document.getElementById('input_codigo').value= doc.Código;
+document.getElementById('input_criador').value= doc.Criador;
 sessionStorage.setItem('ArquivoUrl',doc.URL) 
 sessionStorage.setItem('Nome_arquivo',doc.Nome_Arquivo)
 aRefCad('click')
@@ -564,6 +566,7 @@ document.getElementById('criaçãoData').value='';
 document.getElementById('img_apresent').src='../src/Logo_ASD.png';
 document.getElementById('input_canvas').value='';
 sessionStorage.setItem('ArquivoUrl',``);
+document.getElementById('input_criador').value= '';
 var url_imagem=''
 };
 // Subir Arquivos IMG, GIF, Design...
@@ -671,6 +674,7 @@ var nomeArquivo= sessionStorage.getItem('Nome_arquivo')
 var data = sessionStorage.getItem('data');
 var hora = sessionStorage.getItem('hora');
 var urlCanvas= document.getElementById('input_canvas').value;
+var criador= document.getElementById('input_criador').value;
 
 if(!lista||lista==''||!titulo||titulo==''||!departamento||departamento==''||!descriçao||descriçao==''||!formato||formato==''||!codigo||codigo==''||!nome||nome=='') {
 Swal.fire('Preencha todos os Campoa acima!','','warning')
@@ -703,6 +707,7 @@ Hora: hora,
 URL: arquivo,
 Nome_Arquivo:nomeArquivo,
 Canvas:urlCanvas,
+Criador:criador,
 
 });
 var dbcc= firebase.firestore();
@@ -722,6 +727,7 @@ Hora: hora,
 URL: arquivo,
 Nome_Arquivo:nomeArquivo,
 Canvas:urlCanvas,
+Criador:criador,
 
 })
 setTimeout(function(){
@@ -859,6 +865,7 @@ document.getElementById('criaçãoData').value= doc.Data_criação;
 document.getElementById('input_canvas').value= doc.Canvas;
 document.getElementById('img_apresent').src= doc.URL;
 document.getElementById('input_codigo').value= doc.Código;
+document.getElementById('input_criador').value= doc.Criador;
 sessionStorage.setItem('ArquivoUrl',doc.URL) 
 sessionStorage.setItem('Nome_arquivo',doc.Nome_Arquivo)
  

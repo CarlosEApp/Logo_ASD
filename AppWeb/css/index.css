@@ -646,7 +646,7 @@ padding: clamp(0.2rem, 0.500vw, 2rem);
 @media(max-width: 600px){
   #body01{
 margin: auto;
-width: 97%;
+width: 95%;
 margin-top: 1px;
 background-color: rgba(34, 185, 185, 0);
 min-height: 5vh;
@@ -668,7 +668,7 @@ padding: clamp(0.2rem, 0.500vw, 2rem);
 @media(max-width: 500px){
   #body01{
 margin: auto;
-width: 97%;
+width: 96%;
 margin-top: 1px;
 background-color: rgba(34, 185, 185, 0);
 min-height: 5vh;
@@ -704,7 +704,7 @@ padding: clamp(0.2rem, 0.500vw, 2rem);
 }}
  #body01{
 margin: auto;
-width: 97%;
+width: 96%;
 margin-top: 1px;
 background-color: rgba(34, 185, 185, 0);
 min-height: 5vh;

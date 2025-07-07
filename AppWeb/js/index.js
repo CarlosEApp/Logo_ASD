@@ -636,7 +636,7 @@ document.getElementById('imgWhats').src=`${Foto}`
     var tel_= sessionStorage.getItem('tel_whats')       
     var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
     var mensagem = sessionStorage.getItem('Mens_Whats')  
-    var url = "https://wa.me/"+`${numero}?text= ASD Lodos design pedido de contato`;
+    var url = "https://wa.me/"+`${numero}?text= ASD Logos design pedido de contato`;
     
          window.open(url, "_blank");
           Swal.fire(`WhatsApp`,``,'success')       

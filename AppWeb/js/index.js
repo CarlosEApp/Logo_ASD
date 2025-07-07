@@ -1,6 +1,21 @@
 
+//localStorage.setItem('deviceId','');
+setTimeout(function(){
+var alt=localStorage.getItem('deviceId');
+//alert(alt)
+if(!alt||alt==''){
+  swal(`Olá, Bem vindo meu Irmão(ã)! `,'Caso você esteja usando um aparelho móvel e vindo de um Link postado no Facebook ou Instagran, pode ocorrer erro no botão de dowload ele pode não funcionar. A solução é bem simples: Click nos tres pontinhos canto superior da tela e acesse o seu navegador padrão da web. 100%  Acertivo!!\n\n\n','src/Logo_ASD.png')
+  let deviceId = localStorage.getItem('deviceId');
+ 
+  if (!deviceId || deviceId=='') {
+    deviceId = crypto.randomUUID(); // ou use outra forma de gerar UUID
+    localStorage.setItem('deviceId', deviceId);
+     //alert(deviceId)
+  }
+}else{
 
-
+}
+},7000)
 function lbl_sair_P(){
   document.getElementById('input_heaader_pesq').value="";
 var list= document.getElementById('Lista');
@@ -704,8 +719,11 @@ function selectInit(){
 
 // lista inicial firebase
 function listaInicil(){
+    var alt=localStorage.getItem('deviceId');
     var listaInt= sessionStorage.getItem('ListInicio');
     var itensListInit= document.getElementById('itensListInit');
+    var data= sessionStorage.getItem('data')
+    var hora= sessionStorage.getItem('hora')
 
 var list= document.getElementById('listaInicial');
 list.innerHTML = '';
@@ -828,9 +846,16 @@ botão4.addEventListener('click', () => {
       console.error("Erro ao baixar:", err);
       Swal.fire("Oops!", "Não foi possível fazer o download.", "error");
     });
+         var down= firebase.firestore();
+    down.collection('Dowloads').doc(`${doc.Código}-${hora}`).set({
+      Download: `${data}-${hora}`,
+      Codigo:doc.Código,
+      Nome_Arquivo: doc.Nome,
+    })
 });
  botão2.addEventListener('click', function(){
 
+  
 if(!doc.Criador|| doc.Criador==''){
     var criador='Desconhecido'
   } else{
@@ -838,8 +863,8 @@ if(!doc.Criador|| doc.Criador==''){
   }
 
  swal(`${doc.Titulo}`,`Formato do arquivo: ${doc.Formato}\n\n Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nCriado por: ${criador} \nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
-});
 
+});
  img.addEventListener('click', function(){
    window.open(doc.URL,'_blank')
  });
@@ -901,3 +926,27 @@ botão1.addEventListener('click',function(){
 }
 
  selectInit()
+
+ setInterval(function() {
+ const newDate = new Date()
+ var dia = String(newDate.getDate()).padStart(2, '0');
+ var mes = String(newDate.getMonth() + 1).padStart(2, '0');
+ var ano = String(newDate.getFullYear()).padStart(2, '0')
+ var data = `${dia}/${mes}/${ano}`
+ const now = new Date();
+ const hours = now.getHours().toString().padStart(2, '0');
+ const minutes = now.getMinutes().toString().padStart(2, '0');
+ const seconds = now.getSeconds().toString().padStart(2, '0');
+ const timeString = `${hours}:${minutes}:${seconds}`;
+ // const lbl_data = document.getElementById('lbl-data');
+ // lbl_data.innerHTML = `${data}`
+ sessionStorage.setItem('data', data)
+ sessionStorage.setItem('hora', timeString)
+ //var Data = document.getElementById('lbl_data_head')
+ //Data.innerHTML= data;
+ }, 1000)
+
+
+
+
+

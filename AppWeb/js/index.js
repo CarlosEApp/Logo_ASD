@@ -1,4 +1,4 @@
-
+  sessionStorage.setItem('logado','')
 //localStorage.setItem('deviceId','');
 setTimeout(function(){
 var alth=localStorage.getItem('userId');
@@ -370,6 +370,9 @@ var resp4=  sessionStorage.getItem('PasswordHora');
 })
 
 function Menu(){
+    sessionStorage.setItem('logado','')
+  
+  
 Swal.fire({
 title: `Menu <i class="fa-solid fa-bars"></i>`,
 html:` <div  class="menu-container">
@@ -503,6 +506,7 @@ document.getElementById('Sair').addEventListener('click',function(){
 Swal.close('click')
 }); 
 document.getElementById('Start').addEventListener('click',function(){
+    sessionStorage.setItem('logado','')
     var resp1= sessionStorage.getItem('senha')
     var resp2=  sessionStorage.getItem('RecPasswor');
     var passWord= document.getElementById('password').value;
@@ -510,6 +514,7 @@ document.getElementById('Start').addEventListener('click',function(){
         Swal.fire('Preencha o campo "Password"','','warning');
     } else{
         if(passWord== resp1|| passWord== resp2){
+         sessionStorage.setItem('logado','Esta logado')
              window.open('Paginas/Cadastro.html')
          Swal.close()
 

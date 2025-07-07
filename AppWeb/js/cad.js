@@ -946,16 +946,6 @@ Swal.fire('Código incorreto','O Código digitado não corresponde ao arquivo qu
 }
 
 
-
-
-
-
-
-
-
-
-
-
 //Time Relogio
 setInterval(function() {
  const newDate = new Date()
@@ -1000,3 +990,14 @@ setInterval(function() {
 
    
 
+setInterval(function(){
+  var logado= sessionStorage.getItem('logado')
+ 
+  if(!logado||logado==''){
+    window.location.reload()
+     window.open()
+   
+  
+  }
+   
+},200)

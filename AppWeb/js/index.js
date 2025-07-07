@@ -1,15 +1,15 @@
 
 //localStorage.setItem('deviceId','');
 setTimeout(function(){
-var alt=localStorage.getItem('deviceId');
+var alth=localStorage.getItem('userId');
 //alert(alt)
-if(!alt||alt==''){
+if(!alth||alth==''){
   swal(`Olá, Bem vindo meu Irmão(ã)! `,'Caso você esteja usando um aparelho móvel e vindo de um Link postado no Facebook ou Instagran, pode ocorrer erro no botão de dowload ele pode não funcionar. A solução é bem simples: Click nos tres pontinhos canto superior da tela e acesse o seu navegador padrão da web. 100%  Acertivo!!\n\n\n','src/Logo_ASD.png')
-  let deviceId = localStorage.getItem('deviceId');
+  let userId = localStorage.getItem('deviceId');
  
-  if (!deviceId || deviceId=='') {
-    deviceId = crypto.randomUUID(); // ou use outra forma de gerar UUID
-    localStorage.setItem('deviceId', deviceId);
+  if (!userId || userId=='') {
+    userId = crypto.randomUUID(); // ou use outra forma de gerar UUID
+    localStorage.setItem('userId', userId);
      //alert(deviceId)
   }
 }else{
@@ -144,6 +144,10 @@ list.appendChild(div1) ;
   document.getElementById('a_select_procura').click()
  document.getElementById('lbl_sair_procura').style.display='block'
 botão4.addEventListener('click', () => {
+     var id =localStorage.getItem('userId');
+     var data= sessionStorage.getItem('data')
+    var hora= sessionStorage.getItem('hora')
+
     var nome= doc.Nome_Arquivo;
     var name= nome.split('/')
     var n1= name[0]
@@ -165,6 +169,13 @@ botão4.addEventListener('click', () => {
       console.error("Erro ao baixar:", err);
       Swal.fire("Oops!", "Não foi possível fazer o download.", "error");
     });
+         var down= firebase.firestore();
+    down.collection('Dowloads').doc(`${doc.Código}-${hora}`).set({
+      Download: `${data}-${hora}`,
+      Codigo:doc.Código,
+      Nome_Arquivo: doc.Nome,
+      ID:id,
+    })
 });
  botão2.addEventListener('click', function(){
   if(!doc.Criador|| doc.Criador==''){
@@ -719,7 +730,7 @@ function selectInit(){
 
 // lista inicial firebase
 function listaInicil(){
-    var alt=localStorage.getItem('deviceId');
+  
     var listaInt= sessionStorage.getItem('ListInicio');
     var itensListInit= document.getElementById('itensListInit');
     var data= sessionStorage.getItem('data')
@@ -825,6 +836,10 @@ document.getElementById('itensListInit').style.display='block'
 //document.getElementById('a_select_procuraTdlist').click()
 
 botão4.addEventListener('click', () => {
+     var id =localStorage.getItem('userId');
+     var data= sessionStorage.getItem('data')
+    var hora= sessionStorage.getItem('hora')
+
     var nome= doc.Nome_Arquivo;
     var name= nome.split('/')
     var n1= name[0]
@@ -851,6 +866,7 @@ botão4.addEventListener('click', () => {
       Download: `${data}-${hora}`,
       Codigo:doc.Código,
       Nome_Arquivo: doc.Nome,
+      ID:id,
     })
 });
  botão2.addEventListener('click', function(){
@@ -927,24 +943,7 @@ botão1.addEventListener('click',function(){
 
  selectInit()
 
- setInterval(function() {
- const newDate = new Date()
- var dia = String(newDate.getDate()).padStart(2, '0');
- var mes = String(newDate.getMonth() + 1).padStart(2, '0');
- var ano = String(newDate.getFullYear()).padStart(2, '0')
- var data = `${dia}/${mes}/${ano}`
- const now = new Date();
- const hours = now.getHours().toString().padStart(2, '0');
- const minutes = now.getMinutes().toString().padStart(2, '0');
- const seconds = now.getSeconds().toString().padStart(2, '0');
- const timeString = `${hours}:${minutes}:${seconds}`;
- // const lbl_data = document.getElementById('lbl-data');
- // lbl_data.innerHTML = `${data}`
- sessionStorage.setItem('data', data)
- sessionStorage.setItem('hora', timeString)
- //var Data = document.getElementById('lbl_data_head')
- //Data.innerHTML= data;
- }, 1000)
+ 
 
 
 

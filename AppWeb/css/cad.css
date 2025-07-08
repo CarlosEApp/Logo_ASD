@@ -814,7 +814,14 @@ margin-left: 20px;
 #div_PDF ul:hover{
   color: #c50202;
 }
-
+#div_geral #body{
+  margin: auto;
+  width: 97%;
+  max-width: 1000px;
+  min-width: 390px;
+  background-color: #040018;
+  color: #dce3ff;
+}
 
 
 

@@ -81,6 +81,25 @@ border-radius: 20px;
  #div_head h1{
     font-size: 50px;
  }
+ .my-custom_CadExCód{
+  max-width: 370px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  
+ }
+   .my-custom_CadExCód button{
+  width: 60%;
+  padding: 7px;
+  border: 1px solid rgb(233, 233, 233);
+  background-color: #dce3ff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.my-custom_CadExCód button:hover{
+  background-color: #f0efff;
+  color: #c50202;
+    border: 1px solid rgb(255, 0, 0);
+}
     </style>
 </head>
 <body>
@@ -139,7 +158,36 @@ var itens= querySnapshot.size;
     li.appendChild(br1)
    li.appendChild(label2)
    listP.appendChild(li)
-label2.addEventListener('click', async (e) => {
+label2.addEventListener('click', function(){
+    Swal.fire({
+title: `Oque Deseja Fazer?`,
+html:` <div  class="menu-container">
+    <br>
+    <button id='Ver'> Ver PDF </button>
+    <br><br> 
+    <button id='Baixar PDF'> Baixar PDF </button> 
+     <br><br>
+    <button id='Sair' class='cancelar'> Cancelar </button>
+    </div>
+    <br><br>
+`,
+showCancelButton: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_CadExCód' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+    document.body.style.paddingRight = '0px';
+ }
+}); 
+document.getElementById('Sair').addEventListener('click',function() {
+    Swal.close()
+})
+document.getElementById('Ver').addEventListener('click',function() {
+    window.open(`${doc.url}`,'_blank')
+     Swal.close()
+})
+document.getElementById('Baixar PDF').addEventListener('click', async (e) => {
   e.preventDefault();
 
   const response = await fetch(doc.url);
@@ -156,7 +204,7 @@ label2.addEventListener('click', async (e) => {
 
 });
 
-
+})
 })
 })
 

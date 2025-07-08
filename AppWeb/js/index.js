@@ -29,6 +29,10 @@ function buscar_(){
 }
   sessionStorage.setItem('pesQuiSar', '');
 function buscar(){
+   var resp=  document.getElementById('select_procura').value;
+  if(resp=='PDF'){
+ window.open('Paginas/pdf.html','_blank')
+  }else{
     var list= document.getElementById('Lista');
 list.innerHTML = '';
 var selectLista= document.getElementById('select_procura').value;
@@ -246,7 +250,7 @@ botão1.addEventListener('click',function(){
 }
 })
 })
-}
+}}
 
 //Alerta de lista vazia
 function respList(){
@@ -381,6 +385,8 @@ html:` <div  class="menu-container">
     <br><br>
     <button id="Tela" title="">Tela Cheia <i class="fa-solid fa-desktop"></i></button>
      <br><br>  
+         <button id='PDF' > PDF </button>
+      <br><br>  
     <button id='instagran' > Instagran <i class="fa-brands fa-instagram"></i> </button>
       <br><br>  
     <button id='whatsapp' > WhatsApp <i class="fa-brands fa-whatsapp"></i> </button>
@@ -401,6 +407,11 @@ didOpen: () => {
     document.body.style.paddingRight = '0px';
  }
 });  
+document.getElementById('PDF').addEventListener('click',function(){
+  window.open('Paginas/pdf.html','_blank')
+ 
+
+});
 document.getElementById('instagran').addEventListener('click',function(){
   instagran('click')
   Swal.click()
@@ -728,13 +739,18 @@ setInterval(function() {
 
 function selectInit(){
     var selectL= document.getElementById('select_procuraTdlist').value;
+   
+  if(selectL=='PDF'){
+ window.open('Paginas/pdf.html','_blank')
+  }else{
     sessionStorage.setItem('ListInicio', selectL)
     listaInicil('click')
 }
-
+}
 
 // lista inicial firebase
 function listaInicil(){
+  
   
     var listaInt= sessionStorage.getItem('ListInicio');
     var itensListInit= document.getElementById('itensListInit');

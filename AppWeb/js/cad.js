@@ -8,7 +8,11 @@ title: `Menu <i class="fa-solid fa-bars"></i>`,
 html:` <div  class="menu-container">
  <br>
  <button id='PsqCódigo'>Código <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> </button>
+   <br><br>
+   <button id='PDF'>PDF </button>
   <br><br>
+   <button id='PDFUp'>PDF Upload <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> </button>
+     <br><br>
 <button id="Tela" title="">Tela Cheia <i class="fa-solid fa-desktop"></i></button>
 <br><br>  <button id='Sair' class='cancelar'> Cancelar </button>
 </div>
@@ -22,6 +26,114 @@ didOpen: () => {
   document.body.style.paddingRight = '0px';
 }
 });  
+document.getElementById('PDF').addEventListener('click',function(){
+PDFSTART('click')
+})
+document.getElementById('PDFUp').addEventListener('click',function(){
+
+Swal.fire({
+
+title: `Upload PDF`,
+html:` <div  class="menu-container">
+   
+     <p> nome e Observação:
+ <br>
+   <input id="Nome" type="Text" placeholder='Nome do Arquino..'>
+   <br><br>
+    <input id="obs" type="Text" placeholder='Observações...'
+  <br><br> <label id='Aguarde'>Aguarde carregando....</label> <button id='circulo'></button> <br>
+   <input type="file" id="pdfUpload" title="PDF" accept="application/pdf">
+    <br>
+   <button id="BTN">PDF </button>
+     <br><br>
+<button id="PDFUpload" title=""> SalvarPDF </button>
+<br><br>  <button id='Sair' class='cancelar'> Cancelar </button>
+</div>
+`,
+showCancelButton: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_CadExCód' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+  document.body.style.paddingRight = '0px';
+}
+});
+document.getElementById('BTN').addEventListener('click',function(){
+    var nome = document.getElementById('Nome').value;
+  var obs= document.getElementById('obs').value;
+  if(!nome|| nome==''){
+    Swal.fire('Preencha todos os Campos!')
+  } else{
+    document.getElementById('pdfUpload').click()
+   // document.getElementById('circulo').style.display='block'
+  
+  }
+})
+
+document.getElementById('PDFUpload').addEventListener('click',function(){
+  var nome = document.getElementById('Nome').value;
+  var obs= document.getElementById('obs').value;
+  if(!nome|| nome==''){
+    Swal.fire('Preencha todos os Campos!')
+  } else{
+  
+const firebaseConfig = {
+     apiKey: "AIzaSyD7q-qzsIhACByHciJkDBI3yPuKK_bgHUM",
+     authDomain: "logos-asd.firebaseapp.com",
+     projectId: "logos-asd",
+     storageBucket: "logos-asd.firebasestorage.app",
+     messagingSenderId: "801633317687",
+     appId: "1:801633317687:web:3a38f39b2e9861902e20b2",
+     measurementId: "G-GJEW931Y73"
+    };
+
+    // Verifica se o Firebase já foi inicializado
+
+        firebase.initializeApp(firebaseConfig);
+
+  const file = document.getElementById("pdfUpload").files[0];
+
+    if (!file) {
+        Swal.fire("🚫 Nenhum arquivo selecionado.");
+        return;
+    }
+
+    const storageRef = firebase.storage().ref(`pdfs/${nome}.pdf`);
+document.getElementById('Aguarde').style.display='block';
+     document.getElementById('circulo').style.display='block'
+    storageRef.put(file).then((snapshot) => {
+        // Após upload, pega a URL pública
+        return snapshot.ref.getDownloadURL();
+    }).then((downloadURL) => {
+        // Salva a URL no Firestore
+        return firebase.firestore().collection("PDF").add({
+            nome: nome,
+            url: downloadURL,
+            data: new Date(),
+            OBS:obs,
+        });
+    }).then(() => {
+        Swal.fire("PDF salvo com sucesso!",'','success');
+          document.getElementById('Aguarde').style.display='none';
+           document.getElementById('circulo').style.display='none'
+    }).catch((error) => {
+        console.error("❌ Erro:", error);
+       // Swal.fire("Erro ao enviar o PDF.",'','error');
+          document.getElementById('Aguarde').style.display='none';
+           document.getElementById('circulo').style.display='none'
+
+    });
+
+
+
+
+  }
+});
+});
+
+
+
 document.getElementById('Sair').addEventListener('click',function(){
 Swal.close()
 
@@ -274,7 +386,10 @@ document.getElementById('div_lista_result').style.display='none'
 }
 //Select Procura detalhada
 function Procura(){
-
+  var resp=  document.getElementById('select_procura').value;
+  if(resp=='PDF'){
+PDFSTART('click')
+  }else{
 document.getElementById('select_procura').style.backgroundColor=' #ffffff'
 document.getElementById('select_procura').style.color='black'
 document.getElementById('lbl_sair_procura').style.display='none'
@@ -455,6 +570,7 @@ Swal.fire('Código incorreto','O Código digitado não corresponde ao arquivo qu
 }
 })
 })
+  }
 };
 
 //iniciar da pagina
@@ -761,6 +877,10 @@ document.getElementById('select_procuraTdlist').value='';
 }
 //Selec lista do heaader função optino botão
 function select(){
+  var resp=  document.getElementById('select_procuraTdlist').value;
+  if(resp=='PDF'){
+PDFSTART('click')
+  }else{
 document.getElementById('lbl_sair_lista').style.display='none'
 document.getElementById('body02').style.display='block';
 document.getElementById('div_cadastro').style.display='none';
@@ -943,8 +1063,56 @@ Swal.fire('Código incorreto','O Código digitado não corresponde ao arquivo qu
 })
 })
 }
-}
+}}
 
+ function lbl_sair_PDF(){
+    document.getElementById('body01').style.display='block'
+    document.getElementById('div_PDF').style.display='none'
+ }
+function PDFSTART(){
+  var firebaseConfig = {
+apiKey: "AIzaSyD7q-qzsIhACByHciJkDBI3yPuKK_bgHUM",
+authDomain: "logos-asd.firebaseapp.com",
+projectId: "logos-asd",
+storageBucket: "logos-asd.firebasestorage.app",
+messagingSenderId: "801633317687",
+appId: "1:801633317687:web:3a38f39b2e9861902e20b2",
+measurementId: "G-GJEW931Y73"
+};
+firebase.initializeApp(firebaseConfig);  
+var db = firebase.firestore();
+var produtosRef = db.collection(`PDF`);
+var listP= document.getElementById('listPDF');
+listP.innerHTML = '';
+produtosRef.get().then((querySnapshot) => {
+querySnapshot.forEach(doc => {
+var doc = doc.data();
+var itens= querySnapshot.size;
+ var li= document.createElement('ul');
+ var label1=document.createElement('label');
+ var label2=document.createElement('label');
+ var br1=document.createElement('br');
+  var br2=document.createElement('br');
+ li.id='ListaPDF';
+ label1.id='lbl1PDF'
+ label2.id='lbl1PDF'
+
+ label1.textContent=`${doc.nome}`
+  label2.textContent=``
+  li.appendChild(label1)
+    li.appendChild(br1)
+   li.appendChild(label2)
+   listP.appendChild(li)
+   document.getElementById('body01').style.display='none'
+    document.getElementById('div_PDF').style.display='block'
+
+    li.addEventListener('click',function(){
+      Swal.fire(`Você Clicol em ${doc.nome}`,'','warning')
+    })
+
+})
+})
+}
 
 //Time Relogio
 setInterval(function() {

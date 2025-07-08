@@ -785,7 +785,35 @@ margin-left: 20px;
 }
 
 }
-
+#pdfUpload, #Aguarde,#circulo{
+  display: none;
+}
+#circulo{
+  width: 20px;
+  height: 20px;
+  background-color: rgb(255, 230, 7);
+  border-radius: 50%;
+}
+#div_PDF{
+  margin: auto;
+  width: 90%;
+  max-width: 800px;
+  min-width: 380px;
+  min-height: 20vh;
+  background-color: #ffffff;
+  margin-bottom: 100px;
+  display: none;
+  padding-top: 200px;
+  overflow: auto;
+}
+#div_PDF ul{
+  margin-top: 20px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.452);
+  cursor: pointer;
+}
+#div_PDF ul:hover{
+  color: #c50202;
+}
 
 
 

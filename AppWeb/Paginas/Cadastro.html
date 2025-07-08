@@ -43,12 +43,21 @@
                   <option value="GIF">GIFs</option>
                   <option value="Animes">Animes</option>
                    <option value="video">Vídeo</option>
+                    <option value="PDF">PDF</option>
            </select>
           </div> <button onclick="Cadastrar()">Cadastrar <i class="fa-solid fa-table-list"></i></button><button id="btn2_heaadMenu" onclick="Menu()">Menu <i class="fa-solid fa-bars"></i></button>
       </div>
       
+      
     </div>
     <div id="div_body">
+      <div id="div_PDF">
+         <label id="lbl_sair_pdf" for="" onclick="lbl_sair_PDF()"> <i class="fa-solid fa-delete-left"></i> Sair </label>
+      <h1>PDFS</h1>
+        <div id="listPDF">
+        
+      </div>
+    </div>
       <div id="body01">
          <h1 id="Titulo">Procurar</h1>
             <select name="Procura" id="select_procura" title="Procurar">
@@ -58,6 +67,7 @@
                      <option value="GIF">GIFs</option>
                      <option value="Animes">Animes</option>
                        <option value="video">Vídeo</option>
+                        <option value="PDF">PDF</option>
                 </select>
                   <select name="Procura" id="select_Departamentos" title="Departamentos">
                   <option value="">Departamento</option>
@@ -186,6 +196,7 @@
     <div id="a_REF">
     <a onclick="aRefCad()" href="#select_lista">#</a>
     </div>
+    
     <div id="div_footer">
       <div id="footer01">
         <label for="">Tela de Cadastro</label>

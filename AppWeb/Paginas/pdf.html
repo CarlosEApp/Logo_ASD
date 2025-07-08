@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="Pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASD PDF</title>
+    <link rel="shortcut icon" href="../src/Logo_ASD.png" type="image/x-icon">
+      <meta property="og:title" content="ASD Logos!">
+    <meta property="og:description" content="Confira design, Logos GIF para usar em seus projétos!">
+    <meta property="og:image" content="https://carloseapp.github.io/Logo_ASD/AppWeb/src/capaasd.png">
+    <meta property="og:image:secure_url" content="https://carloseapp.github.io/Logo_ASD/AppWeb/src/capaasd.png">
+    <meta property="og:url" content="https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html", target="_blank", rel="noopener noreferrer">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<style>
+*{
+  margin: 0%;
+  padding: 0%;
+}
+#div_PDF{
+margin: auto;
+width: 90%;
+max-width: 800px;
+min-width: 380px;
+min-height: 20vh;
+background-color: #ffffff00;
+padding-bottom: 50px;
+overflow: auto;
+}
+#div_PDF ul{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 20px;
+border-bottom: 2px solid rgba(0, 0, 0, 0.452);
+cursor: pointer;
+}
+#div_PDF ul:hover{
+color: #2fe900;
+}
+#lbl2PDF{
+margin-right: 20px;
+margin-bottom: 5px;
+font-size: 18px;
+font-weight: bold;
+}
+#body{
+margin: auto;
+width: 97%;
+max-width: 1000px;
+min-width: 390px;
+background-color: #040018;
+color: #dce3ff;
+padding-bottom: 100px;
+margin-bottom: 50px;
+min-height: 50vh;
+margin-top: 30px;
+border-radius: 20px;
+}
+ #div_head{
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+ #div_head h1{
+    font-size: 50px;
+ }
+    </style>
+</head>
+<body>
+<div id="geral">
+
+<div id="body">
+    <div id="div_head">
+         <img src="../src/Logo_ASD.png" alt=""width='70'>
+                  <h1>SD PDFs</h1>
+
+</div>
+ <div id="div_body">
+ <div id="div_PDF">
+ <h1>Dowloads PDFs</h1>
+<div id="listPDF">
+</div>
+
+</div>
+<div id="footer">
+
+</div>
+ 
+         <script>
+
+  var firebaseConfig = {
+apiKey: "AIzaSyD7q-qzsIhACByHciJkDBI3yPuKK_bgHUM",
+authDomain: "logos-asd.firebaseapp.com",
+projectId: "logos-asd",
+storageBucket: "logos-asd.firebasestorage.app",
+messagingSenderId: "801633317687",
+appId: "1:801633317687:web:3a38f39b2e9861902e20b2",
+measurementId: "G-GJEW931Y73"
+};
+firebase.initializeApp(firebaseConfig);  
+var db = firebase.firestore();
+var produtosRef = db.collection(`PDF`);
+var listP= document.getElementById('listPDF');
+//listP.innerHTML = '';
+produtosRef.get().then((querySnapshot) => {
+querySnapshot.forEach(doc => {
+var doc = doc.data();
+var itens= querySnapshot.size;
+ var li= document.createElement('ul');
+ var label1=document.createElement('label');
+ var label2=document.createElement('label');
+ var br1=document.createElement('br');
+  var br2=document.createElement('br');
+ li.id='ListaPDF';
+ label1.id='lbl1PDF'
+ label2.id='lbl2PDF'
+
+ label1.textContent=`${doc.nome}`
+  label2.textContent=``
+  label2.className='fa-solid fa-download'
+  li.appendChild(label1)
+    li.appendChild(br1)
+   li.appendChild(label2)
+   listP.appendChild(li)
+label2.addEventListener('click', async (e) => {
+  e.preventDefault();
+
+  const response = await fetch(doc.url);
+  const blob = await response.blob();
+  Swal.fire(`Baixando ${doc.nome}`,'','success')
+  const blobUrl = window.URL.createObjectURL(blob);
+  const tempLink = document.createElement('a');
+  tempLink.href = blobUrl;
+  tempLink.download = `${doc.nome}.pdf`;
+  document.body.appendChild(tempLink);
+  tempLink.click();
+  document.body.removeChild(tempLink);
+  window.URL.revokeObjectURL(blobUrl);
+
+});
+
+
+})
+})
+
+
+         </script>
+        
+    </div>
+    
+</body>
+</html>

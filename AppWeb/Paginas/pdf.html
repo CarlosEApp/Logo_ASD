@@ -144,7 +144,7 @@ label2.addEventListener('click', async (e) => {
 
   const response = await fetch(doc.url);
   const blob = await response.blob();
-  Swal.fire(`Baixando ${doc.nome}`,'','success')
+
   const blobUrl = window.URL.createObjectURL(blob);
   const tempLink = document.createElement('a');
   tempLink.href = blobUrl;

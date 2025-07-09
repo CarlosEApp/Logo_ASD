@@ -4,7 +4,7 @@ setTimeout(function(){
 var alth=localStorage.getItem('userId');
 //alert(alt)
 if(!alth||alth==''){
-  swal(`Olá, Bem vindo meu Irmão(ã)! `,'Caso você esteja usando um aparelho móvel e vindo de um Link postado no Facebook ou Instagran, pode ocorrer erro no botão de dowload ele pode não funcionar. A solução é bem simples: Click nos tres pontinhos canto superior da tela e acesse o seu navegador padrão da web. 100%  Acertivo!!\n\n\n','src/Logo_ASD.png')
+  swal(`Olá, Bem vindo(a)! `,'Caso você esteja usando um aparelho móvel e vindo de um Link postado no Facebook ou Instagran, pode ocorrer erro no botão de download ele pode não funcionar. A solução é bem simples: Click nos três pontinhos canto superior da tela e acesse  seu navegador padrão web. 100%  Acertivo!!\n\n','src/Logo_ASD.png')
   let userId = localStorage.getItem('userId');
  
   if (!userId || userId=='') {

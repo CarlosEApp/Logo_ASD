@@ -567,12 +567,12 @@ didOpen: () => {
 }
 
 setInterval(function(){
-    var pesquisar= document.getElementById('input_heaader_pesq').value.trim()
-    if(!pesquisar|| pesquisar==''||pesquisar.length <= 4){
-    document.getElementById('pesqheaad').style.display='none';
-    }else{
-        document.getElementById('pesqheaad').style.display='block';
-    }
+ //   var pesquisar= document.getElementById('input_heaader_pesq').value.trim()
+   // if(!pesquisar|| pesquisar==''||pesquisar.length <= 4){
+   // document.getElementById('pesqheaad').style.display='none';
+   // }else{
+   //   document.getElementById('pesqheaad').style.display='block';
+  //  }
     
 })
 

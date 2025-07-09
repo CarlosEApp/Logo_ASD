@@ -1,15 +1,15 @@
   sessionStorage.setItem('logado','')
 //localStorage.setItem('deviceId','');
 setTimeout(function(){
-var alth=localStorage.getItem('userId');
+var alth=localStorage.getItem('userID');
 //alert(alt)
 if(!alth||alth==''){
-  swal(`Olá, Bem vindo(a)! `,'Caso você esteja usando um aparelho móvel e vindo de um Link postado no Facebook ou Instagran, pode ocorrer erro no botão de download ele pode não funcionar. A solução é bem simples: Click nos três pontinhos canto superior da tela e acesse  seu navegador padrão web. 100%  Acertivo!!\n\n','src/Logo_ASD.png')
-  let userId = localStorage.getItem('userId');
+  swal(`Olá, Bem vindo(a)! `,'Caso você esteja usando um aparelho móvel e vindo de um Link postado no Facebook ou Instagran, o botão de download pode não funcionar corretamente. A solução é bem simples: Click nos três pontinhos canto superior da tela e acesse  seu navegador padrão web. 100%  Acertivo!!\n\n','src/Logo_ASD.png')
+  let userId = localStorage.getItem('userID');
  
   if (!userId || userId=='') {
     userId = crypto.randomUUID(); // ou use outra forma de gerar UUID
-    localStorage.setItem('userId', userId);
+    localStorage.setItem('userID', userId);
      //alert(deviceId)
   }
 }else{

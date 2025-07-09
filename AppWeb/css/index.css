@@ -153,20 +153,24 @@ background-color: rgba(0, 0, 0, 0);
 color: rgb(255, 255, 255);
 cursor: pointer;
 }
-#banner{
-margin: auto;
-width: 100%;
-margin-bottom: 40px;
-}
+
+
 #div_procura{
 margin: auto;
 width: 90%;
+}
+#img_procura{
+ 
+  width: 100%;
+ padding-top: 110px;
+
+
 }
 #div_procura select{
 padding: clamp(0.500rem, 1vw, 0.700rem);
 cursor: pointer;
 font-size: clamp(0.975rem, 1vw + 0.5rem, 1rem);
-min-width: 300px;
+min-width: 200px;
 margin-bottom: 12px;
 background-color: rgb(240, 248, 255);
 border: 1px solid rgb(95, 95, 95);
@@ -176,7 +180,6 @@ font-weight: bold;
 #div_procura h1{
 margin-bottom: 12px;
 font-size: clamp(1.500rem, 1vw + 0.5rem, 2rem);
-margin-top: 65px;
 }
 #buscar{
 min-width: 100px;
@@ -598,7 +601,12 @@ color: #015dc7;
   display: none;
 }
 
+
+
+
+
 @media(max-width: 800px){
+
 #input_heaader_pesq{
 width: 280px;
 background-color: #e0e0e000;
@@ -622,6 +630,7 @@ min-height: 5vh;
 }
 }
 @media(max-width: 700px){
+
  #pesqheaad{
 color: rgba(255, 255, 255, 0.877);
 cursor: pointer;

@@ -120,9 +120,8 @@ imgbotão.src='src/logoCanva.png'
 }
 botão1.title='Canva';
 botão2.title='Ver mais';
-botão3.title='Download';
-botão4.title='Compartilhar';
-
+botão3.title='Compartilhar';
+botão4.title='Download';
 botão2.textContent='';
 botão2.className=`fa-solid fa-eye`;
 botão3.textContent='';
@@ -148,15 +147,13 @@ list.appendChild(div1) ;
   document.getElementById('a_select_procura').click()
  document.getElementById('lbl_sair_procura').style.display='block'
 botão4.addEventListener('click', () => {
-     var id =localStorage.getItem('userId');
-     var data= sessionStorage.getItem('data')
-    var hora= sessionStorage.getItem('hora')
-
-    var nome= doc.Nome_Arquivo;
-    var name= nome.split('/')
-    var n1= name[0]
-    var n2= name[1]
-
+  var id =localStorage.getItem('userId');
+  var data= sessionStorage.getItem('data')
+  var hora= sessionStorage.getItem('hora')
+  var nome= doc.Nome_Arquivo;
+  var name= nome.split('/')
+  var n1= name[0]
+  var n2= name[1]
   fetch(doc.URL)
     .then(res => res.blob())
     .then(blob => {
@@ -188,15 +185,11 @@ botão4.addEventListener('click', () => {
      var criador= doc.Criador
 
   }
-
  swal(`${doc.Titulo}`,`Formato do arquivo: ${doc.Formato}\n\n Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nCriado por: ${criador} \nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
 });
-
-
  img.addEventListener('click', function(){
    window.open(doc.URL,'_blank')
  });
-
  botão3.addEventListener('click',function(){
   Swal.fire({
  title: `Compartilhar <i id='i_compart' class="fa-solid fa-square-share-nodes"></i>`,
@@ -238,20 +231,18 @@ window.open(whatsappLink, "_blank");
  });
 
 });
-
 botão1.addEventListener('click',function(){
-    if(doc.Canvas==''){
-        swal('desculpe-me!','Esse design não possui link para edição no Canva..','src/Sorry.png')
-    } else{
-       window.open(`${doc.Canvas}`,'_blank')
-    }
+ if(doc.Canvas==''){
+     swal('desculpe-me!','Esse design não possui link para edição no Canva..','src/Sorry.png')
+ } else{
+    window.open(`${doc.Canvas}`,'_blank')
+ }
 });
 } else{
 }
 })
 })
 }}
-
 //Alerta de lista vazia
 function respList(){
 Swal.fire({
@@ -273,7 +264,6 @@ if(!respl||respl==''){
  Swal.fire({
 title: `Lista Vazia! `,
 text: ``,
-
 allowOutsideClick: false,
 showConfirmButton: true,
 customClass: {
@@ -289,9 +279,7 @@ document.getElementById('input_heaader_pesq').value='';
 }else{
 Swal.close()
 }
-
 },5000)
-
 }
 //Alerta de lista vazia
 function respList_(){
@@ -314,7 +302,6 @@ if(!respl||respl==''){
   Swal.fire({
 title: `Lista Vazia! `,
 text: ``,
-
 allowOutsideClick: false,
 showConfirmButton: true,
 customClass: {
@@ -325,15 +312,11 @@ didOpen: () => {
 }
 });
 document.getElementById('itensListInit').style.display='none'
-
 }else{
 Swal.close()
 }
-
 },5000)
-
 }
-
 // Recebendo password
 sessionStorage.setItem('PasswordData', '');
 sessionStorage.setItem('PasswordHora', ''); 
@@ -353,7 +336,6 @@ firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 var produtosRef = db.collection(`PasswordAdmin`);
 
-
 produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();
@@ -361,6 +343,7 @@ sessionStorage.setItem('PasswordData', doc.Data);
 sessionStorage.setItem('PasswordHora', doc.Hora); 
 sessionStorage.setItem('senha',doc.Senha);
 sessionStorage.setItem('RecPasswor', doc.RecSenha);
+sessionStorage.setItem('Foto_zap',doc.Imagem);
 setTimeout(function(){
  var resp1= sessionStorage.getItem('senha')
 var resp2=  sessionStorage.getItem('RecPasswor');
@@ -368,15 +351,10 @@ var resp3=  sessionStorage.getItem('PasswordData');
 var resp4=  sessionStorage.getItem('PasswordHora'); 
 //Swal.fire('',`Senha: ${resp1}<br>Recuparação: ${resp2}<br><br>Data: ${resp3} - Hora: ${resp4}`,'')
 },4000)
-
-
 })
 })
-
 function Menu(){
     sessionStorage.setItem('logado','')
-  
-  
 Swal.fire({
 title: `Menu <i class="fa-solid fa-bars"></i>`,
 html:` <div  class="menu-container">
@@ -409,21 +387,16 @@ didOpen: () => {
 });  
 document.getElementById('PDF').addEventListener('click',function(){
   window.open('Paginas/pdf.html','_blank')
- 
-
 });
 document.getElementById('instagran').addEventListener('click',function(){
   instagran('click')
-  Swal.click()
-
+  Swal.click();
 });
 document.getElementById('whatsapp').addEventListener('click',function(){
-whatsapp('click')
-  
+whatsapp('click') 
   Swal.click()
 });
-document.getElementById('PsqCódigo').addEventListener('click',function(){
-   
+document.getElementById('PsqCódigo').addEventListener('click',function(){ 
      sessionStorage.setItem('pesQuiSar', '');
     Swal.fire({
 title: `Pesquise por Código`,
@@ -451,7 +424,6 @@ didOpen: () => {
  document.getElementById('idcódigo').value='';
 document.getElementById('Sair').addEventListener('click',function(){
 Swal.close()
-
 });
 document.getElementById('PasqCodigo').addEventListener('click',function(){
 sessionStorage.setItem('itens',``)
@@ -466,10 +438,8 @@ if(!respDoc|| respDoc==''){
    buscar()
   },1000)
 }
-
 })
 })
-
 document.getElementById('Sair').addEventListener('click',function(){
 Swal.close('click')
 });
@@ -478,7 +448,6 @@ document.getElementById('Tela').addEventListener('click',function(){
  Swal.close()
 });
 document.getElementById('admin').addEventListener('click',function(){
-
 Swal.fire({
 title: `Password <i class="fa-sharp-duotone fa-solid fa-lock"></i>`,
 html:` <div  class="menu-container">
@@ -502,40 +471,37 @@ didOpen: () => {
  }
 }); 
 document.getElementById('iPasWord').addEventListener('click',function(){
-    var ii= document.getElementById('iPasWord');
-    var iPW= document.getElementById('password');
-    if(iPW.type=='password'){
-        iPW.type='text'
-        ii.className='fa-solid fa-eye-low-vision';
-    } else{
-        iPW.type='password';
-        ii.className='fa-solid fa-eye';
-    }
-
+  var ii= document.getElementById('iPasWord');
+  var iPW= document.getElementById('password');
+  if(iPW.type=='password'){
+      iPW.type='text'
+      ii.className='fa-solid fa-eye-low-vision';
+  } else{
+      iPW.type='password';
+      ii.className='fa-solid fa-eye';
+  }
 });
 document.getElementById('Sair').addEventListener('click',function(){
 Swal.close('click')
 }); 
 document.getElementById('Start').addEventListener('click',function(){
-    sessionStorage.setItem('logado','')
-    var resp1= sessionStorage.getItem('senha')
-    var resp2=  sessionStorage.getItem('RecPasswor');
-    var passWord= document.getElementById('password').value;
-    if(!passWord||passWord==''){
-        Swal.fire('Preencha o campo "Password"','','warning');
-    } else{
-        if(passWord== resp1|| passWord== resp2){
-         sessionStorage.setItem('logado','Esta logado')
-             window.open('Paginas/Cadastro.html')
-         Swal.close()
-
-        }else{
-              Swal.fire('Senha incorreta!','','error');
-        }
-    }
+  sessionStorage.setItem('logado','')
+  var resp1= sessionStorage.getItem('senha')
+  var resp2=  sessionStorage.getItem('RecPasswor');
+  var passWord= document.getElementById('password').value;
+  if(!passWord||passWord==''){
+      Swal.fire('Preencha o campo "Password"','','warning');
+  } else{
+      if(passWord== resp1|| passWord== resp2){
+       sessionStorage.setItem('logado','Esta logado')
+           window.open('Paginas/Cadastro.html')
+       Swal.close()
+      }else{
+            Swal.fire('Senha incorreta!','','error');
+      }
+  }
 }); 
 });
-
 }
 //Botão para acessar a tela de cadastros
 document.getElementById('heaad_btn03').addEventListener('click',function(){
@@ -562,25 +528,19 @@ didOpen: () => {
     } else{
     sessionStorage.setItem('pesQuiSar', pesquisar);
     buscar()
-    }
-    
+    } 
 }
-
 setInterval(function(){
  //   var pesquisar= document.getElementById('input_heaader_pesq').value.trim()
    // if(!pesquisar|| pesquisar==''||pesquisar.length <= 4){
    // document.getElementById('pesqheaad').style.display='none';
    // }else{
    //   document.getElementById('pesqheaad').style.display='block';
-  //  }
-    
+  //  } 
 })
-
-
    sessionStorage.setItem('Tel_Whats','');
    sessionStorage.setItem('Foto_zap','');
 //redes sociais
-
 // instagran
  function instagran(){
   var URL_Intagran= localStorage.getItem('URL_Intagran')
@@ -591,7 +551,6 @@ var url_Inst= URL_Intagran;
 }
  window.open( url_Inst,'_blank')
  }
-
  // Compartlhar pagina
 function Compartilhar(){
   
@@ -617,21 +576,16 @@ function Compartilhar(){
 });
 document.getElementById('sair_').addEventListener('click',function(){
   Swal.close()
-
 });
 document.getElementById('face').addEventListener('click',function(){
   var url = encodeURIComponent("https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html");
     window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
-
 });
  document.getElementById('whats').addEventListener('click',function(){
 var url = "https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html";
-
 var whatsappMessage =`Visite ASD logos Pagina Web: ${url}`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
-
 window.open(whatsappLink, "_blank");
-
 })
 }
 function whatsapp(){
@@ -642,14 +596,10 @@ function whatsapp(){
    }else{
     var telefone=`${tell}`
    };
-
    if(!imagem||imagem==''){
-    var Foto=`src/Carlos.jpg`
+    var imagem=`src/Carlos.jpg`
    }else{
-    var Foto=`${imagem}`
    };
-
-
 Swal.fire({
  title: `WhatsApp <i id='i_whats' class="fa-brands fa-whatsapp"></i>`,
  html: `
@@ -669,32 +619,25 @@ Swal.fire({
     document.body.style.paddingRight = '0px';
   }
 });
-document.getElementById('imgWhats').src=`${Foto}`
+ document.getElementById('imgWhats').src=`${imagem}`
  document.getElementById('imgWhats').addEventListener('click',function(){
-  swal('','',`${imagem_Whats}`)
+  swal('','',`${imagem}`)
  })
-  document.getElementById('btn_whats').addEventListener('click',function(){
-    
-    var tel_= sessionStorage.getItem('tel_whats')       
-    var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-    var mensagem = sessionStorage.getItem('Mens_Whats')  
-    var url = "https://wa.me/"+`${numero}?text= ASD Logos design pedido de contato`;
-    
-         window.open(url, "_blank");
-          Swal.fire(`WhatsApp`,``,'success')       
+ document.getElementById('btn_whats').addEventListener('click',function(){
+  var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+  var url = "https://wa.me/"+`${numero}?text= ASD Logos design pedido de contato`;
+  window.open(url, "_blank");
+  Swal.fire(`WhatsApp`,``,'success')       
 });
 document.getElementById('sair_').addEventListener('click',function(){
-     Swal.fire('Sair')
-     Swal.close()
+  Swal.fire('Sair')
+  Swal.close()
 });
 }
-
 // A HOME
 function home(){
   document.getElementById('a_HOME').click()
 }
-
-
 //Time Relogio
 setInterval(function() {
  const newDate = new Date()
@@ -735,8 +678,6 @@ setInterval(function() {
  }
 }
 } 
-
-
 function selectInit(){
     var selectL= document.getElementById('select_procuraTdlist').value;
    
@@ -747,19 +688,14 @@ function selectInit(){
     listaInicil('click')
 }
 }
-
 // lista inicial firebase
 function listaInicil(){
-  
-  
-    var listaInt= sessionStorage.getItem('ListInicio');
-    var itensListInit= document.getElementById('itensListInit');
-    var data= sessionStorage.getItem('data')
-    var hora= sessionStorage.getItem('hora')
-
+var listaInt= sessionStorage.getItem('ListInicio');
+var itensListInit= document.getElementById('itensListInit');
+var data= sessionStorage.getItem('data')
+var hora= sessionStorage.getItem('hora')
 var list= document.getElementById('listaInicial');
 list.innerHTML = '';
-
 sessionStorage.setItem('itens_',``)
 var firebaseConfig = {
 apiKey: "AIzaSyD7q-qzsIhACByHciJkDBI3yPuKK_bgHUM",
@@ -777,8 +713,6 @@ produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();
 var itens= querySnapshot.size;
-
-
 var div1=document.createElement('div');
 var div2=document.createElement('div');
 var div3=document.createElement('div');        
@@ -824,9 +758,8 @@ imgbotão.src='src/logoCanva.png'
 }
 botão1.title='Canva';
 botão2.title='Ver mais';
-botão3.title='Download';
-botão4.title='Compartilhar';
-
+botão3.title='Compartilhar';
+botão4.title='Download';
 botão2.textContent='';
 botão2.className=`fa-solid fa-eye`;
 botão3.textContent='';
@@ -848,7 +781,6 @@ div1.appendChild(div2);
 div1.appendChild(div3);
 list.appendChild(div1) ;
 
-
 sessionStorage.setItem('pesQuiSar', '');
 sessionStorage.setItem('itens_',`${itens}`)
 itensListInit.innerHTML=`(${itens}) Itens `;
@@ -857,55 +789,49 @@ document.getElementById('itensListInit').style.display='block'
 //document.getElementById('a_select_procuraTdlist').click()
 
 botão4.addEventListener('click', () => {
-     var id =localStorage.getItem('userId');
-     var data= sessionStorage.getItem('data')
-    var hora= sessionStorage.getItem('hora')
-
-    var nome= doc.Nome_Arquivo;
-    var name= nome.split('/')
-    var n1= name[0]
-    var n2= name[1]
+  var id =localStorage.getItem('userId');
+  var data= sessionStorage.getItem('data')
+  var hora= sessionStorage.getItem('hora')
+  var nome= doc.Nome_Arquivo;
+  var name= nome.split('/')
+  var n1= name[0]
+  var n2= name[1]
 
   fetch(doc.URL)
-    .then(res => res.blob())
-    .then(blob => {
-      const blobURL = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = blobURL;
-      a.download = n2 || 'arquivo.png';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(blobURL);
-    })
-    .catch(err => {
-      console.error("Erro ao baixar:", err);
-      Swal.fire("Oops!", "Não foi possível fazer o download.", "error");
-    });
-         var down= firebase.firestore();
-    down.collection('Dowloads').doc(`${doc.Código}-${hora}`).set({
-      Download: `${data}-${hora}`,
-      Codigo:doc.Código,
-      Nome_Arquivo: doc.Nome,
-      ID:id,
-    })
+ .then(res => res.blob())
+ .then(blob => {
+   const blobURL = URL.createObjectURL(blob);
+   const a = document.createElement('a');
+   a.href = blobURL;
+   a.download = n2 || 'arquivo.png';
+   document.body.appendChild(a);
+   a.click();
+   a.remove();
+   URL.revokeObjectURL(blobURL);
+ })
+ .catch(err => {
+   console.error("Erro ao baixar:", err);
+   Swal.fire("Oops!", "Não foi possível fazer o download.", "error");
+ });
+      var down= firebase.firestore();
+ down.collection('Dowloads').doc(`${doc.Código}-${hora}`).set({
+   Download: `${data}-${hora}`,
+   Codigo:doc.Código,
+   Nome_Arquivo: doc.Nome,
+   ID:id,
+ })
 });
  botão2.addEventListener('click', function(){
-
-  
 if(!doc.Criador|| doc.Criador==''){
     var criador='Desconhecido'
   } else{
      var criador= doc.Criador
   }
-
  swal(`${doc.Titulo}`,`Formato do arquivo: ${doc.Formato}\n\n Nome: ${doc.Nome}\n\n__________________Descrição________________\n\n${doc.Descrição}\n\nCriado por: ${criador} \nData de Criação: ${doc.Data_criação}`,`${doc.URL}`)
-
 });
  img.addEventListener('click', function(){
    window.open(doc.URL,'_blank')
  });
-
  botão3.addEventListener('click',function(){
   Swal.fire({
  title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
@@ -929,12 +855,10 @@ if(!doc.Criador|| doc.Criador==''){
 });
 document.getElementById('sair_').addEventListener('click',function(){
   Swal.close()
-
 });
 document.getElementById('face').addEventListener('click',function(){
   var url = encodeURIComponent("https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html");
    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
-
 });
  document.getElementById('whats').addEventListener('click',function(){
 var url = "https://carloseapp.github.io/Logo_ASD/AppWeb/Index.html";
@@ -942,21 +866,16 @@ var img = `${doc.Titulo}: ${doc.URL}`;
 var cod=`${doc.Código}`
 var whatsappMessage =`Pagina Web: ${url}\n\n📷 ${img}\n\n Canva edite: ${doc.Canvas} \n\n Código: ${cod}\n\n`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
-
 window.open(whatsappLink, "_blank");
  });
-
 });
-
 botão1.addEventListener('click',function(){
     if(doc.Canvas==''){
        swal('desculpe-me!','Esse design não possui link para edição no Canva..','src/Sorry.png')
     } else{
        window.open(`${doc.Canvas}`,'_blank')
     }
-   
 });
-
 
 })
 })

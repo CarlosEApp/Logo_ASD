@@ -50,7 +50,7 @@ background-color: rgba(1, 0, 8, 0.342);
 width: 100%;
 max-width: 1920px;
 position: fixed;
-background-color: rgb(0, 16, 105);
+background-color: rgba(0, 16, 105, 0.945);
 z-index: 9999;
 color: rgb(255, 255, 255);
 

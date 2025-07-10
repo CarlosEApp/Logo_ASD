@@ -353,6 +353,7 @@ margin-top: 20px;
 padding-top: 15px;
 padding: 10px;
 box-shadow: 0 7px 15px rgba(83, 83, 83, 0);
+overflow: hidden;
 }
 #imgList{
 max-width: 54%;

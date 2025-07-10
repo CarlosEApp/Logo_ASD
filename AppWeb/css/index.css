@@ -352,11 +352,11 @@ margin-bottom: 20px;
 margin-top: 20px;
 padding-top: 15px;
 padding: 10px;
-box-shadow: 0 7px 15px rgba(83, 83, 83, 0.378);
+box-shadow: 0 7px 15px rgba(83, 83, 83, 0);
 
 }
 #imgList{
-max-width: 50%;
+max-width: 57%;
 max-height: 25vh;
 margin-top: 10px;
 cursor: pointer;

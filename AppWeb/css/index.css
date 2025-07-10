@@ -353,10 +353,9 @@ margin-top: 20px;
 padding-top: 15px;
 padding: 10px;
 box-shadow: 0 7px 15px rgba(83, 83, 83, 0);
-
 }
 #imgList{
-max-width: 57%;
+max-width: 54%;
 max-height: 25vh;
 margin-top: 10px;
 cursor: pointer;
@@ -377,7 +376,7 @@ font-weight: bold;
 font-size: clamp(1.150rem, 1vw + 0.5rem, 1.150rem);
 }
 #label2List,#label3List{
-font-size: clamp(0.810rem, 1vw + 0.5rem, 0.910rem);
+font-size: clamp(0.710rem, 1vw + 0.5rem, 0.810rem);
 margin-top: 10px;
 }
 #botão1List{
@@ -387,7 +386,7 @@ color: #000205;
 background-color: #e0e0e000;
 }
 #botão2List, #botão3List{
-font-size: clamp(1.450rem, 1vw + 0.5rem, 1.450rem);
+font-size: clamp(1.400rem, 1vw + 0.5rem, 1.400rem);
 border: 0cap;
 background-color: #e0e0e000;
 cursor: pointer;
@@ -396,8 +395,8 @@ cursor: pointer;
 color: #0e008a;
 }
 #imgList2{
-width: 34px;
-height: 34px;
+width: 25px;
+height: 25px;
 cursor: pointer;
 margin-left: 5px; 
 border: 1px rgb(255, 255, 255) ;

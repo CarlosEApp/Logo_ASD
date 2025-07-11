@@ -30,6 +30,7 @@
   margin: 0%;
   padding: 0%;
 }
+
 #div_PDF{
 margin: auto;
 width: 90%;
@@ -45,11 +46,15 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 margin-top: 20px;
-border-bottom: 2px solid rgba(0, 0, 0, 0.452);
+border-bottom: 2px solid rgba(94, 92, 92, 0.452);
 cursor: pointer;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #div_PDF ul:hover{
 color: #2fe900;
+}
+#div_PDF label{
+  font-size: clamp(0.975rem, 1vw + 0.5rem, 1rem);
 }
 #lbl2PDF{
 margin-right: 20px;
@@ -62,17 +67,14 @@ cursor: pointer;
 margin: auto;
 width: 97%;
 max-width: 1000px;
-min-width: 390px;
 background-color: #040018;
 color: #dce3ff;
 padding-bottom: 100px;
-margin-bottom: 50px;
-min-height: 50vh;
-margin-top: 30px;
-border-radius: 20px;
+min-height: 93vh;
+
 }
  #div_head{
-    padding-top: 30px;
+    padding-top: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,6 +82,7 @@ border-radius: 20px;
 }
  #div_head h1{
     font-size: 50px;
+    
  }
  .my-custom_CadExCód{
   max-width: 370px;
@@ -101,6 +104,28 @@ border-radius: 20px;
   color: #c50202;
     border: 1px solid rgb(255, 0, 0);
 }
+@media(max-width: 800px){
+  #div_PDF{
+margin: auto;
+width: 90%;
+min-height: 20vh;
+background-color: #ffffff00;
+padding-bottom: 50px;
+overflow: auto;
+}
+#body{
+margin: auto;
+width: 100%;
+background-color: #040018;
+color: #dce3ff;
+padding-bottom: 100px;
+min-height: 93vh;
+}
+}
+
+
+
+
     </style>
 </head>
 <body>
@@ -159,6 +184,11 @@ var itens= querySnapshot.size;
     li.appendChild(br1)
    li.appendChild(label2)
    listP.appendChild(li)
+
+   label1.addEventListener('click',function(){
+   Swal.fire(`Descrição:`,`${doc.OBS}`)
+   });
+
 label2.addEventListener('click', function(){
     Swal.fire({
 title: `Oque Deseja Fazer?`,

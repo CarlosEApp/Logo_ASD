@@ -360,10 +360,8 @@ title: `Menu <i class="fa-solid fa-bars"></i>`,
 html:` <div  class="menu-container">
     <br>
     <button id='PsqCódigo'>Código <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i> </button>
-    <br><br>
-    <button id="Tela" title="">Tela Cheia <i class="fa-solid fa-desktop"></i></button>
-     <br><br>  
-         <button id='PDF' > PDF </button>
+    <br><br> 
+    <button id='PDF' > PDF </button>
       <br><br>  
     <button id='instagran' > Instagran <i class="fa-brands fa-instagram"></i> </button>
       <br><br>  
@@ -443,10 +441,7 @@ if(!respDoc|| respDoc==''){
 document.getElementById('Sair').addEventListener('click',function(){
 Swal.close('click')
 });
-document.getElementById('Tela').addEventListener('click',function(){
- toggleFullScreen('click')
- Swal.close()
-});
+
 document.getElementById('admin').addEventListener('click',function(){
 Swal.fire({
 title: `Password <i class="fa-sharp-duotone fa-solid fa-lock"></i>`,
@@ -470,6 +465,10 @@ didOpen: () => {
     document.body.style.paddingRight = '0px';
  }
 }); 
+setTimeout(function(){
+document.getElementById('input_heaader_pesq').value='';
+sessionStorage.setItem('pesQuiSar','');
+},1000)
 document.getElementById('iPasWord').addEventListener('click',function(){
   var ii= document.getElementById('iPasWord');
   var iPW= document.getElementById('password');
@@ -682,7 +681,10 @@ function selectInit(){
     var selectL= document.getElementById('select_procuraTdlist').value;
    
   if(selectL=='PDF'){
- window.open('Paginas/pdf.html','_blank')
+  var list= document.getElementById('listaInicial');
+  list.innerHTML = '';
+  document.getElementById('itensListInit').style.display='none'
+  window.open('Paginas/pdf.html','_blank')
   }else{
     sessionStorage.setItem('ListInicio', selectL)
     listaInicil('click')
